@@ -75,41 +75,39 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            // Sign In
+            if(username.Text =="" || passwrd.Text =="")
+            {
+                mess.Visible = true;
+                mess.Text= "Please enter enough";
+                return;
+            }
+            HttpClient client = new HttpClient();
+            UserModel user = new UserModel()
+            {
+                username = username.Text,
+                password = passwrd.Text
+            };
 
-            //HttpClient client = new HttpClient();
-            //UserModel user = new UserModel()
-            //{
-            //    username = username.Text,
-            //    password = passwrd.Text
-            //};
+            var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/customers/login", user);
+            responseTask.Wait();
+            if (responseTask.IsCompleted)
+            {
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode) // login successfull
+                {
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    messageTask.Wait();
 
-            //var responseTask = client.PostAsJsonAsync("http://localhost:8080/customers/login", user);
-            //responseTask.Wait();
-            //if (responseTask.IsCompleted)
-            //{
-            //    var result = responseTask.Result;
-            //    if (result.IsSuccessStatusCode) // login successfull
-            //    {
-            //        var messageTask = result.Content.ReadAsStringAsync();
-            //        messageTask.Wait();
-            //        MessageBox.Show("mess: " + messageTask.Result);
-
-            //        // call Main form
-            //        this.Hide();
-            //        Main main_form = new Main();
-            //        main_form.ShowDialog();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Login Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-
-            // call Main form
-            this.Hide();
-            Main main_form = new Main();
-            main_form.ShowDialog();
+                    this.Hide();
+                    Main main_form = new Main();
+                    main_form.ShowDialog();
+                }
+                else
+                {
+                    mess.Visible = true;
+                    mess.Text = "Login Fail";
+                }
+            }
         }
 
         private void passwrd_TextChanged(object sender, EventArgs e)

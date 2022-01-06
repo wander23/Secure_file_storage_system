@@ -63,6 +63,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.fullname = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.mess = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -87,7 +88,7 @@
             this.lb_Signup.Location = new System.Drawing.Point(195, 54);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(181, 44);
+            this.lb_Signup.Size = new System.Drawing.Size(165, 39);
             this.lb_Signup.TabIndex = 13;
             this.lb_Signup.Text = "SIGN UP";
             // 
@@ -99,7 +100,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(50, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 16;
             this.label1.Text = "Public key";
             // 
@@ -173,7 +174,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(49, 395);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Password";
             // 
@@ -317,7 +318,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(48, 216);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.Size = new System.Drawing.Size(81, 18);
             this.label4.TabIndex = 19;
             this.label4.Text = "Full name";
             // 
@@ -408,7 +409,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(50, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 20);
+            this.label5.Size = new System.Drawing.Size(25, 18);
             this.label5.TabIndex = 25;
             this.label5.Text = "N:";
             // 
@@ -420,7 +421,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(50, 343);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 20);
+            this.label6.Size = new System.Drawing.Size(24, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "E:";
             // 
@@ -428,11 +429,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(48, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 22);
+            this.label7.Size = new System.Drawing.Size(85, 18);
             this.label7.TabIndex = 28;
             this.label7.Text = "Username";
             // 
@@ -463,7 +464,7 @@
             // 
             this.fullname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.fullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fullname.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullname.ForeColor = System.Drawing.Color.Gray;
             this.fullname.Location = new System.Drawing.Point(43, 5);
             this.fullname.Multiline = true;
@@ -483,12 +484,24 @@
             this.panel12.Size = new System.Drawing.Size(363, 5);
             this.panel12.TabIndex = 12;
             // 
+            // mess
+            // 
+            this.mess.AutoSize = true;
+            this.mess.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.mess.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mess.Location = new System.Drawing.Point(62, 500);
+            this.mess.Name = "mess";
+            this.mess.Size = new System.Drawing.Size(0, 13);
+            this.mess.TabIndex = 29;
+            // 
             // Sign_Up
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btn_signup;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.mess);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.label6);
@@ -570,5 +583,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox fullname;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label mess;
     }
 }

@@ -128,38 +128,41 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
-            // Sign In
-            
-            //HttpClient client = new HttpClient();
-            //UserModel user = new UserModel()
-            //{
-            //    username = usrname.Text,
-            //    password = passwrd.Text,
-            //    n = int.Parse(pubkey_n.Text),
-            //    e = int.Parse(pubkey_e.Text),
-            //    fullname = fullname.Text
-            //};
+            if(usrname.Text == ""|| passwrd.Text == "" || pubkey_n.Text == "" || pubkey_e.Text == "" || fullname.Text == "" )
+            {
+                mess.Text = "Please fill all";
+                mess.Visible = true;
+                return;
+            }
 
-            //var responseTask = client.PostAsJsonAsync("http://localhost:8080/customers/register", user);
-            //responseTask.Wait();
-            //if (responseTask.IsCompleted)
-            //{
-            //    var result = responseTask.Result;
-            //    if (result.IsSuccessStatusCode)
-            //    {
-            //        var messageTask = result.Content.ReadAsStringAsync();
-            //        messageTask.Wait();
-            //        MessageBox.Show("mess: " + messageTask.Result);
-            //    }
-            //    else
-            //    {
-            //        var messageTask = result.Content.ReadAsStringAsync();
-            //        messageTask.Wait();
-            //        MessageBox.Show("error:  "+ messageTask.Result);
-            //    }
-            //}
+            HttpClient client = new HttpClient();
+            UserModel user = new UserModel()
+            {
+                username = usrname.Text,
+                password = passwrd.Text,
+                n = int.Parse(pubkey_n.Text),
+                e = int.Parse(pubkey_e.Text),
+                fullname = fullname.Text
+            };
 
-            // call verify form
+            var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/customers/register", user);
+            responseTask.Wait();
+            if (responseTask.IsCompleted)
+            {
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    messageTask.Wait();
+                }
+                else
+                {
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    mess.Text = messageTask.Result;
+                    messageTask.Wait();
+                }
+            }
+
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
         }

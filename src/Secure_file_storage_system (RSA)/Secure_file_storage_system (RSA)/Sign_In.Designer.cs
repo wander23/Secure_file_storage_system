@@ -43,6 +43,7 @@
             this.lb_Login = new System.Windows.Forms.Label();
             this.lb_usrname = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.mess = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,7 +73,7 @@
             this.lb_passwrd.ForeColor = System.Drawing.Color.White;
             this.lb_passwrd.Location = new System.Drawing.Point(75, 334);
             this.lb_passwrd.Name = "lb_passwrd";
-            this.lb_passwrd.Size = new System.Drawing.Size(106, 24);
+            this.lb_passwrd.Size = new System.Drawing.Size(97, 20);
             this.lb_passwrd.TabIndex = 2;
             this.lb_passwrd.Text = "Password:";
             // 
@@ -194,7 +195,7 @@
             this.lb_Login.Location = new System.Drawing.Point(132, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(166, 44);
+            this.lb_Login.Size = new System.Drawing.Size(151, 39);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -206,7 +207,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(75, 243);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(111, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(100, 20);
             this.lb_usrname.TabIndex = 1;
             this.lb_usrname.Text = "Username:";
             // 
@@ -221,12 +222,24 @@
             this.pictureBox3.TabIndex = 24;
             this.pictureBox3.TabStop = false;
             // 
+            // mess
+            // 
+            this.mess.AutoSize = true;
+            this.mess.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mess.Location = new System.Drawing.Point(73, 453);
+            this.mess.Name = "mess";
+            this.mess.Size = new System.Drawing.Size(0, 13);
+            this.mess.TabIndex = 25;
+            this.mess.Visible = false;
+            // 
             // Sign_In
             // 
+            this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.mess);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lb_usrname);
             this.Controls.Add(this.panel2);
@@ -267,6 +280,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label mess;
     }
 }
 
