@@ -15,18 +15,22 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class Sign_In : Form
     {
-      
 
+        public static Sign_In instance;
         public Sign_In()
         {
             InitializeComponent();
+            instance = this;
 
         }
       
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
-
+            // call SignUp form
+            this.Hide();
+            Sign_Up signUp_form = new Sign_Up();
+            signUp_form.ShowDialog();
         }
 
         private void username_Enter(object sender, EventArgs e)
@@ -83,7 +87,7 @@ namespace Secure_file_storage_system__RSA_
             if (responseTask.IsCompleted)
             {
                 var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                if (result.IsSuccessStatusCode) // login successfull
                 {
                     var messageTask = result.Content.ReadAsStringAsync();
                     messageTask.Wait();

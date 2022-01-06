@@ -92,5 +92,10 @@ namespace Secure_file_storage_system__RSA_
               
 
         }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Sign_In.instance.Close();
+        }
     }
 }

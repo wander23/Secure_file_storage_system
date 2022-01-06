@@ -172,5 +172,10 @@ namespace Secure_file_storage_system__RSA_
             confirm.ForeColor = Color.Black;
             confirm.PasswordChar = '*';
         }
+
+        private void Sign_Up_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Sign_In.instance.Show();
+        }
     }
 }
