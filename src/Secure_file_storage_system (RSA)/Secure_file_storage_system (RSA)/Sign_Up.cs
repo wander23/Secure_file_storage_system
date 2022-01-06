@@ -128,35 +128,38 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            UserModel user = new UserModel()
-            {
-                username = usrname.Text,
-                password = passwrd.Text,
-                n = int.Parse(pubkey_n.Text),
-                e = int.Parse(pubkey_e.Text),
-                fullname = fullname.Text
-            };
+            // Sign In
+            
+            //HttpClient client = new HttpClient();
+            //UserModel user = new UserModel()
+            //{
+            //    username = usrname.Text,
+            //    password = passwrd.Text,
+            //    n = int.Parse(pubkey_n.Text),
+            //    e = int.Parse(pubkey_e.Text),
+            //    fullname = fullname.Text
+            //};
 
-            var responseTask = client.PostAsJsonAsync("http://localhost:8080/customers/register", user);
-            responseTask.Wait();
-            if (responseTask.IsCompleted)
-            {
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var messageTask = result.Content.ReadAsStringAsync();
-                    messageTask.Wait();
-                    MessageBox.Show("mess: " + messageTask.Result);
-                }
-                else
-                {
-                    var messageTask = result.Content.ReadAsStringAsync();
-                    messageTask.Wait();
-                    MessageBox.Show("error:  "+ messageTask.Result);
-                }
-            }
+            //var responseTask = client.PostAsJsonAsync("http://localhost:8080/customers/register", user);
+            //responseTask.Wait();
+            //if (responseTask.IsCompleted)
+            //{
+            //    var result = responseTask.Result;
+            //    if (result.IsSuccessStatusCode)
+            //    {
+            //        var messageTask = result.Content.ReadAsStringAsync();
+            //        messageTask.Wait();
+            //        MessageBox.Show("mess: " + messageTask.Result);
+            //    }
+            //    else
+            //    {
+            //        var messageTask = result.Content.ReadAsStringAsync();
+            //        messageTask.Wait();
+            //        MessageBox.Show("error:  "+ messageTask.Result);
+            //    }
+            //}
 
+            // call verify form
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
         }

@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_In));
             this.btn_signup = new System.Windows.Forms.Button();
-            this.lb_announce = new System.Windows.Forms.Label();
             this.lb_passwrd = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.username = new System.Windows.Forms.TextBox();
@@ -58,25 +56,13 @@
             this.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
-            this.btn_signup.Location = new System.Drawing.Point(259, 392);
+            this.btn_signup.Location = new System.Drawing.Point(140, 408);
             this.btn_signup.Name = "btn_signup";
-            this.btn_signup.Size = new System.Drawing.Size(113, 36);
+            this.btn_signup.Size = new System.Drawing.Size(185, 36);
             this.btn_signup.TabIndex = 8;
             this.btn_signup.Text = "SIGN UP";
             this.btn_signup.UseVisualStyleBackColor = false;
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
-            // 
-            // lb_announce
-            // 
-            this.lb_announce.AutoSize = true;
-            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
-            this.lb_announce.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_announce.ForeColor = System.Drawing.Color.Red;
-            this.lb_announce.Location = new System.Drawing.Point(123, 431);
-            this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(164, 17);
-            this.lb_announce.TabIndex = 6;
-            this.lb_announce.Text = "wrong pass or username";
             // 
             // lb_passwrd
             // 
@@ -84,24 +70,11 @@
             this.lb_passwrd.BackColor = System.Drawing.Color.Transparent;
             this.lb_passwrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_passwrd.ForeColor = System.Drawing.Color.White;
-            this.lb_passwrd.Location = new System.Drawing.Point(75, 316);
+            this.lb_passwrd.Location = new System.Drawing.Point(75, 334);
             this.lb_passwrd.Name = "lb_passwrd";
-            this.lb_passwrd.Size = new System.Drawing.Size(97, 20);
+            this.lb_passwrd.Size = new System.Drawing.Size(106, 24);
             this.lb_passwrd.TabIndex = 2;
             this.lb_passwrd.Text = "Password:";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(69, 399);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(121, 17);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot password?";
             // 
             // panel1
             // 
@@ -110,7 +83,7 @@
             this.panel1.Controls.Add(this.username);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(73, 253);
+            this.panel1.Location = new System.Drawing.Point(73, 271);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 11;
@@ -187,7 +160,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.passwrd);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel2.Location = new System.Drawing.Point(73, 343);
+            this.panel2.Location = new System.Drawing.Point(73, 361);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 41);
             this.panel2.TabIndex = 12;
@@ -221,7 +194,7 @@
             this.lb_Login.Location = new System.Drawing.Point(132, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(151, 39);
+            this.lb_Login.Size = new System.Drawing.Size(166, 44);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -231,9 +204,9 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(75, 225);
+            this.lb_usrname.Location = new System.Drawing.Point(75, 243);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(100, 20);
+            this.lb_usrname.Size = new System.Drawing.Size(111, 24);
             this.lb_usrname.TabIndex = 1;
             this.lb_usrname.Text = "Username:";
             // 
@@ -258,11 +231,9 @@
             this.Controls.Add(this.lb_usrname);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btn_signup);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.lb_passwrd);
-            this.Controls.Add(this.lb_announce);
             this.Controls.Add(this.lb_Login);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -286,10 +257,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox passwrd;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label lb_passwrd;
         private System.Windows.Forms.Label lb_usrname;
-        private System.Windows.Forms.Label lb_announce;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label lb_Login;
         private System.Windows.Forms.Panel panel1;
