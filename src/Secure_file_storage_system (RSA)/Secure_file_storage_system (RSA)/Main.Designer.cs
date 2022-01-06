@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("ddd");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("dwad");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -207,17 +205,13 @@
             // 
             this.imageList.CheckBoxes = true;
             this.imageList.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            this.imageList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
             this.imageList.Location = new System.Drawing.Point(3, 70);
             this.imageList.Name = "imageList";
-            this.imageList.Size = new System.Drawing.Size(311, 452);
+            this.imageList.Size = new System.Drawing.Size(341, 452);
             this.imageList.TabIndex = 4;
             this.imageList.UseCompatibleStateImageBehavior = false;
             this.imageList.View = System.Windows.Forms.View.List;
+            this.imageList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.imageList_ItemSelectionChanged);
             // 
             // btnDownload
             // 

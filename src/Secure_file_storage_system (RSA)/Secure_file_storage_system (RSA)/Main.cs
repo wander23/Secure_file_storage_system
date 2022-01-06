@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +16,7 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class Main : Form
     {
+        private List<Image> LoadedImages { get; set; }
         public Main()
         {
             InitializeComponent();
@@ -21,8 +24,61 @@ namespace Secure_file_storage_system__RSA_
 
         private void main_Load(object sender, EventArgs e)
         {
-            //images.ImageSize = new System.Drawing.Size(130, 40);
-            //var imageFile = Image.FromFile
+            // load images from folder
+            LoadImage();
+
+            // initializing images list
+            ImageList images = new ImageList();
+            images.ImageSize = new System.Drawing.Size(130, 40);
+
+            foreach (var image in LoadedImages)
+            {
+                images.Images.Add(image);
+            }
+
+            // setting listview with imagelist
+            imageList.LargeImageList = images;
+
+            for (int itemIndex = 1; itemIndex < LoadedImages.Count; itemIndex++)
+            {
+                imageList.Items.Add(new ListViewItem($"image {itemIndex}", itemIndex - 1));
+            }
+        }
+
+        private void LoadImage()
+        {
+            LoadedImages = new List<Image>();
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+
+            var index = 1;
+            while (index < 10)
+            {
+                try
+                {
+                    //string tempLocation = $@"..\..\..\pic\TestImage\{index}.png";
+                    string tempLocation = Path.Combine(exeDir, $@"..\..\..\..\..\pic\TestImage\{index}.png");
+
+                    var tempImage = Image.FromFile(tempLocation);
+                    LoadedImages.Add(tempImage);
+
+                }
+                catch (Exception)
+                {
+                }
+
+                index++;
+            }
+        }
+
+        private void imageList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (imageList.SelectedIndices.Count > 0)
+            {
+                var selectedIndex = imageList.SelectedIndices[0];
+                Image selectedImg = LoadedImages[selectedIndex];
+                selectedImage.Image = selectedImg;
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -95,7 +151,8 @@ namespace Secure_file_storage_system__RSA_
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Sign_In.instance.Close();
+            //Sign_In.instance.Close();
         }
+
     }
 }
