@@ -37,9 +37,9 @@ namespace Secure_file_storage_system__RSA_
         {
             if (username.Text == "type your username")
             {
+                lb_announce.Visible = false;
                 username.Text = "";
                 username.ForeColor = Color.White;
-
             }
         }
 
@@ -57,6 +57,7 @@ namespace Secure_file_storage_system__RSA_
         {
             if (passwrd.Text == "type your password")
             {
+                lb_announce.Visible = false;
                 passwrd.Text = "";
                 passwrd.ForeColor = Color.White;
 
@@ -77,8 +78,8 @@ namespace Secure_file_storage_system__RSA_
         {
             if(username.Text =="" || passwrd.Text =="")
             {
-                mess.Visible = true;
-                mess.Text= "Please enter enough";
+                lb_announce.Visible = true;
+                lb_announce.Text= "Please enter enough";
                 return;
             }
             HttpClient client = new HttpClient();
@@ -104,8 +105,8 @@ namespace Secure_file_storage_system__RSA_
                 }
                 else
                 {
-                    mess.Visible = true;
-                    mess.Text = "Login Fail";
+                    lb_announce.Visible = true;
+                    lb_announce.Text = "Login Fail";
                 }
             }
         }

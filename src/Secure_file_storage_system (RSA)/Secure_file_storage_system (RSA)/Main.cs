@@ -29,7 +29,7 @@ namespace Secure_file_storage_system__RSA_
 
             // initializing images list
             ImageList images = new ImageList();
-            images.ImageSize = new System.Drawing.Size(130, 40);
+            images.ImageSize = new System.Drawing.Size(210, 90);
 
             foreach (var image in LoadedImages)
             {
@@ -37,11 +37,12 @@ namespace Secure_file_storage_system__RSA_
             }
 
             // setting listview with imagelist
-            imageList.LargeImageList = images;
+            //imageList.LargeImageList = images;
+            imageList.SmallImageList = images;
 
             for (int itemIndex = 1; itemIndex < LoadedImages.Count; itemIndex++)
             {
-                imageList.Items.Add(new ListViewItem($"image {itemIndex}", itemIndex - 1));
+                imageList.Items.Add(new ListViewItem($"{itemIndex}.png", itemIndex - 1));
             }
         }
 
@@ -56,7 +57,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 try
                 {
-                    //string tempLocation = $@"..\..\..\pic\TestImage\{index}.png";
                     string tempLocation = Path.Combine(exeDir, $@"..\..\..\..\..\pic\TestImage\{index}.png");
 
                     var tempImage = Image.FromFile(tempLocation);

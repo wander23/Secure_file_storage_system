@@ -44,6 +44,7 @@
             this.lb_usrname = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mess = new System.Windows.Forms.Label();
+            this.lb_announce = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,7 +58,7 @@
             this.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
-            this.btn_signup.Location = new System.Drawing.Point(140, 408);
+            this.btn_signup.Location = new System.Drawing.Point(187, 408);
             this.btn_signup.Name = "btn_signup";
             this.btn_signup.Size = new System.Drawing.Size(185, 36);
             this.btn_signup.TabIndex = 8;
@@ -73,7 +74,7 @@
             this.lb_passwrd.ForeColor = System.Drawing.Color.White;
             this.lb_passwrd.Location = new System.Drawing.Point(75, 334);
             this.lb_passwrd.Name = "lb_passwrd";
-            this.lb_passwrd.Size = new System.Drawing.Size(97, 20);
+            this.lb_passwrd.Size = new System.Drawing.Size(106, 24);
             this.lb_passwrd.TabIndex = 2;
             this.lb_passwrd.Text = "Password:";
             // 
@@ -195,7 +196,7 @@
             this.lb_Login.Location = new System.Drawing.Point(132, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(151, 39);
+            this.lb_Login.Size = new System.Drawing.Size(166, 44);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -207,7 +208,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(75, 243);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(100, 20);
+            this.lb_usrname.Size = new System.Drawing.Size(111, 24);
             this.lb_usrname.TabIndex = 1;
             this.lb_usrname.Text = "Username:";
             // 
@@ -228,9 +229,22 @@
             this.mess.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.mess.Location = new System.Drawing.Point(73, 453);
             this.mess.Name = "mess";
-            this.mess.Size = new System.Drawing.Size(0, 13);
+            this.mess.Size = new System.Drawing.Size(0, 15);
             this.mess.TabIndex = 25;
             this.mess.Visible = false;
+            // 
+            // lb_announce
+            // 
+            this.lb_announce.AutoSize = true;
+            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
+            this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro Ligh", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_announce.ForeColor = System.Drawing.Color.Red;
+            this.lb_announce.Location = new System.Drawing.Point(76, 420);
+            this.lb_announce.Name = "lb_announce";
+            this.lb_announce.Size = new System.Drawing.Size(81, 22);
+            this.lb_announce.TabIndex = 26;
+            this.lb_announce.Text = "Login fail";
+            this.lb_announce.Visible = false;
             // 
             // Sign_In
             // 
@@ -239,6 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.lb_announce);
             this.Controls.Add(this.mess);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lb_usrname);
@@ -281,6 +296,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label mess;
+        private System.Windows.Forms.Label lb_announce;
     }
 }
 

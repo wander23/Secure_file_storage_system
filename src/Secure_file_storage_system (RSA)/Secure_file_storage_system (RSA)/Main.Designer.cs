@@ -173,8 +173,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
             this.splitContainer1.Panel1.Controls.Add(this.imageList);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
             this.splitContainer1.Panel1.Controls.Add(this.btnDownload);
             this.splitContainer1.Panel1.Controls.Add(this.btnShare);
             this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
@@ -203,14 +203,15 @@
             // 
             // imageList
             // 
+            this.imageList.AllowDrop = true;
             this.imageList.CheckBoxes = true;
             this.imageList.HideSelection = false;
             this.imageList.Location = new System.Drawing.Point(3, 70);
             this.imageList.Name = "imageList";
-            this.imageList.Size = new System.Drawing.Size(341, 452);
+            this.imageList.Size = new System.Drawing.Size(326, 452);
             this.imageList.TabIndex = 4;
             this.imageList.UseCompatibleStateImageBehavior = false;
-            this.imageList.View = System.Windows.Forms.View.List;
+            this.imageList.View = System.Windows.Forms.View.SmallIcon;
             this.imageList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.imageList_ItemSelectionChanged);
             // 
             // btnDownload
@@ -221,7 +222,7 @@
             this.btnDownload.Location = new System.Drawing.Point(158, 34);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDownload.Size = new System.Drawing.Size(156, 30);
+            this.btnDownload.Size = new System.Drawing.Size(171, 30);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -231,9 +232,9 @@
             this.btnShare.BackColor = System.Drawing.Color.Black;
             this.btnShare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShare.ForeColor = System.Drawing.Color.White;
-            this.btnShare.Location = new System.Drawing.Point(207, 0);
+            this.btnShare.Location = new System.Drawing.Point(216, 0);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(107, 30);
+            this.btnShare.Size = new System.Drawing.Size(113, 30);
             this.btnShare.TabIndex = 0;
             this.btnShare.Text = "Share";
             this.btnShare.UseVisualStyleBackColor = false;
@@ -245,7 +246,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(97, 0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 30);
+            this.btnAdd.Size = new System.Drawing.Size(113, 30);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add file";
             this.btnAdd.UseVisualStyleBackColor = false;
