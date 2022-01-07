@@ -13,9 +13,15 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class Sign_Up : Form
     {
+        public static Sign_Up instance;
+        public TextBox pubkey1;
+        public TextBox pubkey2;
         public Sign_Up()
         {
             InitializeComponent();
+            instance = this;
+            pubkey1 = pubkey_n;
+            pubkey2 = pubkey_e;
         }
 
         private void usrname_Enter(object sender, EventArgs e)

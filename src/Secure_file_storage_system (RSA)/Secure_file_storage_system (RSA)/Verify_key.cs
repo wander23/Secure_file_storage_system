@@ -23,7 +23,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 privateKey.Text = "";
                 privateKey.ForeColor = Color.White;
-
             }
         }
 
@@ -39,6 +38,10 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
+            //Sign_Up.instance.pubkey1.Text
+            //Sign_Up.instance.pubkey2.Text
+            //privateKey.Text
+            String text = "Slave of deadline";
         }
     }
 
