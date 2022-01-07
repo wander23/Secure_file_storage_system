@@ -32,11 +32,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnUpload = new System.Windows.Forms.Button();
             this.imageList = new System.Windows.Forms.ListView();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnShare = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
             this.selectedImage = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -177,33 +176,18 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
             this.splitContainer1.Panel1.Controls.Add(this.btnDownload);
             this.splitContainer1.Panel1.Controls.Add(this.btnShare);
-            this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.btnAll);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.selectedImage);
             this.splitContainer1.Size = new System.Drawing.Size(1101, 522);
-            this.splitContainer1.SplitterDistance = 347;
+            this.splitContainer1.SplitterDistance = 333;
             this.splitContainer1.TabIndex = 4;
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.Color.Black;
-            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(3, 34);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(149, 30);
-            this.btnUpload.TabIndex = 5;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // imageList
             // 
-            this.imageList.AllowDrop = true;
+            this.imageList.AutoArrange = false;
             this.imageList.CheckBoxes = true;
             this.imageList.HideSelection = false;
             this.imageList.Location = new System.Drawing.Point(3, 70);
@@ -212,68 +196,70 @@
             this.imageList.TabIndex = 4;
             this.imageList.UseCompatibleStateImageBehavior = false;
             this.imageList.View = System.Windows.Forms.View.SmallIcon;
+            this.imageList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.imageList_ItemChecked);
             this.imageList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.imageList_ItemSelectionChanged);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.Black;
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpload.ForeColor = System.Drawing.Color.White;
+            this.btnUpload.Location = new System.Drawing.Point(6, 3);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(149, 30);
+            this.btnUpload.TabIndex = 5;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnDownload
             // 
             this.btnDownload.BackColor = System.Drawing.Color.Black;
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(158, 34);
+            this.btnDownload.Location = new System.Drawing.Point(158, 3);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnDownload.Size = new System.Drawing.Size(171, 30);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnShare
             // 
             this.btnShare.BackColor = System.Drawing.Color.Black;
             this.btnShare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShare.ForeColor = System.Drawing.Color.White;
-            this.btnShare.Location = new System.Drawing.Point(216, 0);
+            this.btnShare.Location = new System.Drawing.Point(158, 39);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(113, 30);
+            this.btnShare.Size = new System.Drawing.Size(171, 30);
             this.btnShare.TabIndex = 0;
             this.btnShare.Text = "Share";
             this.btnShare.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Black;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(97, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(113, 30);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add file";
-            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // btnAll
             // 
             this.btnAll.BackColor = System.Drawing.Color.Black;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Location = new System.Drawing.Point(3, 0);
+            this.btnAll.Location = new System.Drawing.Point(6, 39);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(88, 30);
+            this.btnAll.Size = new System.Drawing.Size(146, 30);
             this.btnAll.TabIndex = 2;
             this.btnAll.Text = "Select all";
             this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // selectedImage
             // 
-            this.selectedImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.BackgroundImage")));
             this.selectedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.selectedImage.Location = new System.Drawing.Point(13, 15);
+            this.selectedImage.Location = new System.Drawing.Point(3, 6);
             this.selectedImage.Name = "selectedImage";
-            this.selectedImage.Size = new System.Drawing.Size(734, 501);
+            this.selectedImage.Size = new System.Drawing.Size(755, 510);
             this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.selectedImage.TabIndex = 3;
             this.selectedImage.TabStop = false;
-            this.selectedImage.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // tabPage2
             // 
@@ -522,7 +508,6 @@
             this.label18.Size = new System.Drawing.Size(193, 24);
             this.label18.TabIndex = 13;
             this.label18.Text = "Nguyễn Thanh Quân";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // panel3
             // 
@@ -1166,7 +1151,6 @@
         private System.Windows.Forms.Label lb_Signup;
         private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label22;

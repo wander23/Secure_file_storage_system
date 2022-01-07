@@ -17,9 +17,12 @@ namespace Secure_file_storage_system__RSA_
     public partial class Main : Form
     {
         private List<Image> LoadedImages { get; set; }
+        private bool CheckAll { get; set; }
+
         public Main()
         {
             InitializeComponent();
+            bool CheckedAll = false;
         }
 
         private void main_Load(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace Secure_file_storage_system__RSA_
             string exeDir = Path.GetDirectoryName(exeFile);
 
             var index = 1;
-            while (index < 10)
+            while (true)
             {
                 try
                 {
@@ -65,6 +68,7 @@ namespace Secure_file_storage_system__RSA_
                 }
                 catch (Exception)
                 {
+                    break;
                 }
 
                 index++;
@@ -81,29 +85,23 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
+        private void imageList_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+            var numSelectedImg = imageList.CheckedIndices.Count;
 
-        }
+            if (numSelectedImg > 0)
+            {
+                for (int i = 0; i<numSelectedImg;i++)
+                {
+                    var name = imageList.CheckedItems[i].Text;
+                    var name2 = imageList.CheckedIndices[i];
+                }    
 
-        private void lb_Signup_Click(object sender, EventArgs e)
-        {
+                var selectedIndex = imageList.CheckedIndices[numSelectedImg - 1];
 
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
+                Image selectedImg = LoadedImages[selectedIndex];
+                selectedImage.Image = selectedImg;
+            }
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -145,14 +143,65 @@ namespace Secure_file_storage_system__RSA_
             {
                 MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-              
+        }
 
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            var numSelectedImg = imageList.CheckedIndices.Count;
+
+            FolderBrowserDialog sf = new FolderBrowserDialog();
+
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                string path = sf.SelectedPath;
+
+                for (int i = 0; i < numSelectedImg; i++)
+                {
+                    try
+                    {
+                        // "name of the file"
+                        Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[i]]);
+                        // "path of the folder to save"
+                        string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
+                        b.Save(SavePath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            var index = 0;
+            bool state = true;
+            if (CheckAll == true)
+                state = false;
+
+            while (true)
+            {
+                try
+                {
+                    imageList.Items[index].Checked = state;
+                }
+                catch (Exception)
+                {
+                    break;
+                }
+
+                index++;
+            }
+            CheckAll = state;
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Sign_In.instance.Close();
+            Sign_In.instance.Close();
         }
 
+     
     }
 }
