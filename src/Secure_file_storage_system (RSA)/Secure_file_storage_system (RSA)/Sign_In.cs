@@ -24,7 +24,6 @@ namespace Secure_file_storage_system__RSA_
 
         }
       
-
         private void btn_signup_Click(object sender, EventArgs e)
         {
             // call SignUp form
@@ -79,7 +78,7 @@ namespace Secure_file_storage_system__RSA_
             if(username.Text =="" || passwrd.Text =="")
             {
                 lb_announce.Visible = true;
-                lb_announce.Text= "Please enter enough";
+                lb_announce.Text= "fill all";
                 return;
             }
             HttpClient client = new HttpClient();
