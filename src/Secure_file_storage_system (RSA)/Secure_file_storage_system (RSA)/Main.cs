@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using System.Net.Http;
+using System.Net.Http.Formatting;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -27,6 +29,22 @@ namespace Secure_file_storage_system__RSA_
 
         private void main_Load(object sender, EventArgs e)
         {
+            HttpClient client = new HttpClient();
+            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/"+ "61d82fd286a4206de43fefef");
+            responseTask.Wait();
+
+            if (responseTask.IsCompleted)
+            {
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    messageTask.Wait();
+
+                    MessageBox.Show(messageTask.Result);
+                }
+            }
+
             // load images from folder
             LoadImage();
 
@@ -135,9 +153,15 @@ namespace Secure_file_storage_system__RSA_
                 var uploadResult = cloudinary.Upload(uploadParams);
 
                 string url = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
-                MessageBox.Show(url);
 
-                //MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HttpClient client = new HttpClient();
+                PhotoModel photo = new PhotoModel()
+                {
+                    urlImage = url,
+                    idUser = "61d82fd286a4206de43fefef"
+                };
+                var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
+                responseTask.Wait();
             }
             catch (Exception)
             {
