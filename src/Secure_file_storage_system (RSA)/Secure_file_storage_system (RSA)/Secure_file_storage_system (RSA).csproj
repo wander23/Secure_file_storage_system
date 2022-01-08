@@ -157,6 +157,12 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="PhotoModel.cs" />
+    <Compile Include="PrivateKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrivateKey.Designer.cs">
+      <DependentUpon>PrivateKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sign_In.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivateKey.resx">
+      <DependentUpon>PrivateKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sign_In.resx">
       <DependentUpon>Sign_In.cs</DependentUpon>

@@ -43,6 +43,12 @@ namespace Secure_file_storage_system__RSA_
             //privateKey.Text
             String text = "Slave of deadline";
         }
+
+        private void btnVerify_MouseHover(object sender, EventArgs e)
+        {
+            btnVerify.Cursor = Cursors.Hand;
+
+        }
     }
 
 }

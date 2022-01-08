@@ -131,5 +131,16 @@ namespace Secure_file_storage_system__RSA_
         {
             lb_announce.Visible = false;
         }
+
+        private void btn_login_MouseHover(object sender, EventArgs e)
+        {
+            btn_login.Cursor = Cursors.Hand;
+        }
+
+        private void btn_signup_MouseHover(object sender, EventArgs e)
+        {
+            btn_signup.Cursor = Cursors.Hand;
+
+        }
     }
 }

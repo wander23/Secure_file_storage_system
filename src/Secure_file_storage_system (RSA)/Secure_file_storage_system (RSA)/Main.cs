@@ -230,6 +230,40 @@ namespace Secure_file_storage_system__RSA_
             Sign_In.instance.Close();
         }
 
-     
+        private void btnDecrypt_MouseHover(object sender, EventArgs e)
+        {
+            btnDecrypt.Cursor = Cursors.Hand;
+        }
+
+        private void btnShare_MouseHover(object sender, EventArgs e)
+        {
+            btnShare.Cursor = Cursors.Hand;
+        }
+
+        private void btnAll_MouseHover(object sender, EventArgs e)
+        {
+            btnAll.Cursor = Cursors.Hand;
+        }
+
+        private void btnUpload_MouseHover(object sender, EventArgs e)
+        {
+            btnUpload.Cursor = Cursors.Hand;
+        }
+
+        private void btnDownload_MouseHover(object sender, EventArgs e)
+        {
+            btnDownload.Cursor = Cursors.Hand;
+        }
+
+        private void tabControl1_MouseHover(object sender, EventArgs e)
+        {
+            tabControl1.Cursor = Cursors.Hand;
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            PrivateKey privateKey_form = new PrivateKey();
+            privateKey_form.ShowDialog();
+        }
     }
 }

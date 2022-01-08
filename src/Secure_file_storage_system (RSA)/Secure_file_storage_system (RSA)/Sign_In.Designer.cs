@@ -55,7 +55,6 @@
             // btn_signup
             // 
             this.btn_signup.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
             this.btn_signup.Location = new System.Drawing.Point(187, 408);
@@ -65,6 +64,7 @@
             this.btn_signup.Text = "SIGN UP";
             this.btn_signup.UseVisualStyleBackColor = false;
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
+            this.btn_signup.MouseHover += new System.EventHandler(this.btn_signup_MouseHover);
             // 
             // lb_passwrd
             // 
@@ -144,7 +144,6 @@
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.Black;
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
             this.btn_login.Location = new System.Drawing.Point(163, 475);
@@ -154,6 +153,7 @@
             this.btn_login.Text = "LOGIN";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            this.btn_login.MouseHover += new System.EventHandler(this.btn_login_MouseHover);
             // 
             // panel2
             // 
@@ -191,12 +191,12 @@
             // 
             this.lb_Login.AutoSize = true;
             this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Login.ForeColor = System.Drawing.Color.White;
             this.lb_Login.Location = new System.Drawing.Point(132, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(166, 44);
+            this.lb_Login.Size = new System.Drawing.Size(171, 49);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -267,7 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sign_In";
-            this.Text = "Secure file storage system";
+            this.Text = "Storage File System";
             this.Click += new System.EventHandler(this.Sign_In_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
