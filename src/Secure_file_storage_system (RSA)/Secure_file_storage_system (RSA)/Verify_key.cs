@@ -47,8 +47,8 @@ namespace Secure_file_storage_system__RSA_
 
             int m = 30;
             GFG test = new GFG();
-            int c = test.Encryption(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
-            int m1 = test.Decryption(c, int.Parse(privateKey.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
+            int c = test.PowerMod(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
+            int m1 = test.PowerMod(c, int.Parse(privateKey.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
 
             // case private key mismatch with public key
             if (m != m1)
