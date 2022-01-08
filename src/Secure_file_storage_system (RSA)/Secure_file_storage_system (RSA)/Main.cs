@@ -40,6 +40,8 @@ namespace Secure_file_storage_system__RSA_
             ImageList images = new ImageList();
             images.ImageSize = new System.Drawing.Size(210, 90);
 
+
+
             foreach (var image in LoadedImages)
             {
                 images.Images.Add(image);
@@ -47,6 +49,9 @@ namespace Secure_file_storage_system__RSA_
 
             // setting listview with imagelist
             imageList.SmallImageList = images;
+            
+            // Clear all item in listview in order to reload form when upload
+            imageList.Items.Clear();
 
             for (int itemIndex = 0; itemIndex < LoadedImages.Count; itemIndex++)
             {
