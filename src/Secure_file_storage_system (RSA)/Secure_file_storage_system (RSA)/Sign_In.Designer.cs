@@ -241,9 +241,9 @@
             this.lb_announce.ForeColor = System.Drawing.Color.Red;
             this.lb_announce.Location = new System.Drawing.Point(76, 420);
             this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(72, 20);
+            this.lb_announce.Size = new System.Drawing.Size(13, 20);
             this.lb_announce.TabIndex = 26;
-            this.lb_announce.Text = "Login fail";
+            this.lb_announce.Text = " ";
             this.lb_announce.Visible = false;
             // 
             // Sign_In
@@ -268,6 +268,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sign_In";
             this.Text = "Secure file storage system";
+            this.Click += new System.EventHandler(this.Sign_In_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
