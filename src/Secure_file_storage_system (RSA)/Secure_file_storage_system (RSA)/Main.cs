@@ -27,11 +27,12 @@ namespace Secure_file_storage_system__RSA_
         {
             InitializeComponent();
             bool CheckedAll = false;
-           
+
         }
 
         private void main_Load(object sender, EventArgs e)
         {
+
             // load images from Clound
             LoadImage();
 
@@ -87,7 +88,7 @@ namespace Secure_file_storage_system__RSA_
             // Load image
             for (int i = 0; i < ImageUrl.Count; i++)
             {
-               if(imgUrl[i]=="")
+                if (imgUrl[i] == "")
                 {
                     break;
                 }
@@ -145,7 +146,7 @@ namespace Secure_file_storage_system__RSA_
                 "cryption",
                 "731936666387127",
                 "INiU8DQHajhzDIZQmBWAFl4_HFk");
-                
+
                 Cloudinary cloudinary = new Cloudinary(account);
 
                 var uploadParams = new ImageUploadParams()
@@ -164,10 +165,8 @@ namespace Secure_file_storage_system__RSA_
                 };
                 var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                 responseTask.Wait();
-                this.Hide();
-                Main main_form = new Main();
-                main_form.ShowDialog();
-                this.Hide();
+
+                this.main_Load(sender, e);
             }
             catch (Exception)
             {
@@ -277,8 +276,23 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            
+            //HttpClient client = new HttpClient();
+            var numSelectedImg = imageList.CheckedIndices.Count;
+            int count = 0;
+
+            for (int i = 0; i < numSelectedImg; i++)
+            {
+                try
+                {
+                    MessageBox.Show(ImageUrl[i], imageList.CheckedItems[i].Text);
+                    count++;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
         }
     }
 }

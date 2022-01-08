@@ -7,7 +7,7 @@ using System;
 
 class GFG
 {
-    public static int PowerMod(int p, int e, int n)
+    public int PowerMod(int p, int e, int n)
     {
         int r2 = 1;
         int r1 = 0;
@@ -29,14 +29,5 @@ class GFG
             e = Q;
         }
         return r2;
-    }
-
-    public int Encryption(int m,int e, int n) {
-        return PowerMod(m, e, n);
-    }
-
-    public int Decryption(int c, int d, int n)
-    {
-        return PowerMod(c, d, n);
     }
 }
