@@ -144,7 +144,7 @@ namespace Secure_file_storage_system__RSA_
                || passwrd.Text == "Password" || pubkey_e.Text == "Public key (e)" 
                || pubkey_n.Text == "Public key (n)" || confirm.Text == "Confirm password")
             {
-                MessageBox.Show("Fill all pls");
+                MessageBox.Show("Please fill all input field!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

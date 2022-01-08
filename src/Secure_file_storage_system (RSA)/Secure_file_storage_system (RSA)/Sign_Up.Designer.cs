@@ -88,7 +88,7 @@
             this.lb_Signup.Location = new System.Drawing.Point(195, 54);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(185, 49);
+            this.lb_Signup.Size = new System.Drawing.Size(179, 47);
             this.lb_Signup.TabIndex = 13;
             this.lb_Signup.Text = "SIGN UP";
             // 
@@ -522,6 +522,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sign_Up";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Sign_Up_FormClosed);
             this.panel2.ResumeLayout(false);

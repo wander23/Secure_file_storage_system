@@ -282,6 +282,10 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
+            // open form
+            UserID userID_form = new UserID();
+            userID_form.ShowDialog();
+
             //----------- QUAN --------------------------
             // get path
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;

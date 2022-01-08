@@ -178,6 +178,12 @@
     <Compile Include="Sign_Up.Designer.cs">
       <DependentUpon>Sign_Up.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserID.Designer.cs">
+      <DependentUpon>UserID.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserModel.cs" />
     <Compile Include="Verify_key.cs">
       <SubType>Form</SubType>
@@ -205,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="Sign_Up.resx">
       <DependentUpon>Sign_Up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserID.resx">
+      <DependentUpon>UserID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Verify_key.resx">
       <DependentUpon>Verify_key.cs</DependentUpon>
