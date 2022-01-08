@@ -145,13 +145,38 @@ namespace Secure_file_storage_system__RSA_
             {
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+              
+                // find relative path of "loading image"
+                string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+                string exeDir = Path.GetDirectoryName(exeFile);
+                string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\uploading.png");
+                selectedImage.ImageLocation = TempPath;
 
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                // just show loading image
+                try
                 {
-                    imageLocation = dialog.FileName;
+                    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        imageLocation = dialog.FileName;
 
-                    selectedImage.ImageLocation = imageLocation;
+                        selectedImage.ImageLocation = imageLocation;
+                    }
                 }
+                catch
+                {
+                    try
+                    {
+                        Image firstImg = LoadedImages[0];
+                        selectedImage.Image = firstImg;
+                    }
+                    catch
+                    {
+                        TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\gray.png");
+                        selectedImage.ImageLocation = TempPath;
+                    }
+                    
+                }
+                
 
                 Account account = new Account(
                 "cryption",
