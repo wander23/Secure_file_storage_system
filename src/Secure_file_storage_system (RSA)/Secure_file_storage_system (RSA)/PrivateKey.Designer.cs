@@ -48,9 +48,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(148, 52);
+            this.pictureBox3.Location = new System.Drawing.Point(51, 39);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox3.Size = new System.Drawing.Size(110, 110);
             this.pictureBox3.TabIndex = 27;
             this.pictureBox3.TabStop = false;
             // 
@@ -59,7 +59,7 @@
             this.btn_send.BackColor = System.Drawing.Color.Black;
             this.btn_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.Location = new System.Drawing.Point(162, 462);
+            this.btn_send.Location = new System.Drawing.Point(159, 320);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(126, 53);
             this.btn_send.TabIndex = 26;
@@ -72,12 +72,12 @@
             // 
             this.lb_Login.AutoSize = true;
             this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 23.77358F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Login.ForeColor = System.Drawing.Color.White;
-            this.lb_Login.Location = new System.Drawing.Point(88, 195);
+            this.lb_Login.Location = new System.Drawing.Point(151, 68);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(281, 49);
+            this.lb_Login.Size = new System.Drawing.Size(252, 45);
             this.lb_Login.TabIndex = 25;
             this.lb_Login.Text = "PRIVATE KEY";
             // 
@@ -86,7 +86,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label1.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(93, 277);
+            this.label1.Location = new System.Drawing.Point(101, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 73);
             this.label1.TabIndex = 33;
@@ -99,7 +99,7 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(71, 366);
+            this.lb_usrname.Location = new System.Drawing.Point(71, 238);
             this.lb_usrname.Name = "lb_usrname";
             this.lb_usrname.Size = new System.Drawing.Size(143, 24);
             this.lb_usrname.TabIndex = 31;
@@ -112,7 +112,7 @@
             this.panel1.Controls.Add(this.key_d);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(69, 394);
+            this.panel1.Location = new System.Drawing.Point(75, 265);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 32;
@@ -157,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(434, 609);
+            this.ClientSize = new System.Drawing.Size(434, 429);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_usrname);
             this.Controls.Add(this.panel1);

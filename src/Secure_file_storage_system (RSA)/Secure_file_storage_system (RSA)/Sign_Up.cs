@@ -150,6 +150,7 @@ namespace Secure_file_storage_system__RSA_
 
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
+            this.Close();
         }
 
         private void passwrd_TextChanged(object sender, EventArgs e)
