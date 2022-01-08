@@ -46,12 +46,12 @@
             // 
             this.lb_Login.AutoSize = true;
             this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Login.ForeColor = System.Drawing.Color.White;
             this.lb_Login.Location = new System.Drawing.Point(114, 139);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(227, 47);
+            this.lb_Login.Size = new System.Drawing.Size(211, 39);
             this.lb_Login.TabIndex = 30;
             this.lb_Login.Text = "FIND USER";
             // 
@@ -63,7 +63,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(65, 214);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(78, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(74, 20);
             this.lb_usrname.TabIndex = 33;
             this.lb_usrname.Text = "User ID";
             // 
@@ -94,7 +94,7 @@
             // 
             this.id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.id.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id.ForeColor = System.Drawing.Color.Gray;
             this.id.Location = new System.Drawing.Point(53, 8);
             this.id.Multiline = true;
@@ -102,6 +102,7 @@
             this.id.Size = new System.Drawing.Size(243, 30);
             this.id.TabIndex = 9;
             this.id.Text = "ID";
+            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             this.id.Enter += new System.EventHandler(this.id_Enter);
             this.id.Leave += new System.EventHandler(this.id_Leave);
             // 
@@ -117,7 +118,7 @@
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.Black;
-            this.btnSend.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.White;
             this.btnSend.Location = new System.Drawing.Point(149, 313);
             this.btnSend.Name = "btnSend";
@@ -125,6 +126,7 @@
             this.btnSend.TabIndex = 32;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // pictureBox3
             // 
@@ -139,7 +141,7 @@
             // 
             // UserID
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 429);
@@ -148,7 +150,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.pictureBox3);
-            this.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 6.792453F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserID";

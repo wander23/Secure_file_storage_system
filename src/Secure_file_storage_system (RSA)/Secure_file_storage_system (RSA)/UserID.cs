@@ -12,9 +12,13 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class UserID : Form
     {
+        public static UserID instance;
+        public TextBox idUser;
         public UserID()
         {
             InitializeComponent();
+            instance = this;
+            idUser = id;
         }
 
         private void privateKey_Enter(object sender, EventArgs e)
@@ -39,6 +43,16 @@ namespace Secure_file_storage_system__RSA_
                 id.Text = "ID";
                 id.ForeColor = Color.Gray;
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void id_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
