@@ -270,12 +270,14 @@
             // 
             // selectedImage
             // 
+            this.selectedImage.BackColor = System.Drawing.Color.Gray;
             this.selectedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.selectedImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.ErrorImage")));
             this.selectedImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.InitialImage")));
             this.selectedImage.Location = new System.Drawing.Point(3, 6);
             this.selectedImage.Name = "selectedImage";
             this.selectedImage.Size = new System.Drawing.Size(755, 510);
-            this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.selectedImage.TabIndex = 3;
             this.selectedImage.TabStop = false;
             // 

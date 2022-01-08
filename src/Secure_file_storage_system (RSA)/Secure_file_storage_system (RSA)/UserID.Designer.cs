@@ -33,7 +33,7 @@
             this.lb_usrname = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.privateKey = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -71,7 +71,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.privateKey);
+            this.panel1.Controls.Add(this.id);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel1.Location = new System.Drawing.Point(69, 241);
@@ -90,18 +90,20 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // privateKey
+            // id
             // 
-            this.privateKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.privateKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.privateKey.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.privateKey.ForeColor = System.Drawing.Color.Gray;
-            this.privateKey.Location = new System.Drawing.Point(53, 8);
-            this.privateKey.Multiline = true;
-            this.privateKey.Name = "privateKey";
-            this.privateKey.Size = new System.Drawing.Size(243, 30);
-            this.privateKey.TabIndex = 9;
-            this.privateKey.Text = "ID";
+            this.id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.id.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.ForeColor = System.Drawing.Color.Gray;
+            this.id.Location = new System.Drawing.Point(53, 8);
+            this.id.Multiline = true;
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(243, 30);
+            this.id.TabIndex = 9;
+            this.id.Text = "ID";
+            this.id.Enter += new System.EventHandler(this.id_Enter);
+            this.id.Leave += new System.EventHandler(this.id_Leave);
             // 
             // panel3
             // 
@@ -167,7 +169,7 @@
         private System.Windows.Forms.Label lb_usrname;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox privateKey;
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.PictureBox pictureBox3;

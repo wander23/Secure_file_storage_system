@@ -27,7 +27,6 @@ namespace Secure_file_storage_system__RSA_
         {
             InitializeComponent();
             bool CheckedAll = false;
-
         }
 
         private void main_Load(object sender, EventArgs e)
@@ -35,6 +34,9 @@ namespace Secure_file_storage_system__RSA_
 
             // load images from Clound
             LoadImage();
+
+            Image firstImg = LoadedImages[0];
+            selectedImage.Image = firstImg;
 
             // initializing images list
             ImageList images = new ImageList();
@@ -62,9 +64,6 @@ namespace Secure_file_storage_system__RSA_
         {
             LoadedImages = new List<Image>();
             string jsonData = "";
-
-
-
 
             //Read image from clound 
             HttpClient client = new HttpClient();

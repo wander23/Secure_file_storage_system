@@ -16,5 +16,29 @@ namespace Secure_file_storage_system__RSA_
         {
             InitializeComponent();
         }
+
+        private void privateKey_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void id_Enter(object sender, EventArgs e)
+        {
+
+            if (id.Text == "ID")
+            {
+                id.Text = "";
+                id.ForeColor = Color.White;
+            }
+        }
+
+        private void id_Leave(object sender, EventArgs e)
+        {
+            if (id.Text == "")
+            {
+                id.Text = "ID";
+                id.ForeColor = Color.Gray;
+            }
+        }
     }
 }
