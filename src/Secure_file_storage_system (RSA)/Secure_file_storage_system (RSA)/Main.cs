@@ -202,13 +202,12 @@ namespace Secure_file_storage_system__RSA_
                 };
                 var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                 responseTask.Wait();
-
-                this.main_Load(sender, e);
             }
             catch (Exception)
             {
                 MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            main_Load(sender, e);
         }
 
 
@@ -361,13 +360,12 @@ namespace Secure_file_storage_system__RSA_
                     };
                     var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                     responseTask.Wait();
-                    
-                    this.main_Load(sender, e);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+                this.main_Load(sender, e);
             }
         }
     }
