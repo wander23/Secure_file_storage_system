@@ -20,6 +20,7 @@ namespace Secure_file_storage_system__RSA_
     public partial class Main : Form
     {
         private List<Image> LoadedImages { get; set; }
+        private List<string> ImageUrl { get; set; }
         private bool CheckAll { get; set; }
 
         public Main()
@@ -80,7 +81,7 @@ namespace Secure_file_storage_system__RSA_
             string[] imgUrl = jsonData.Split('[')[1].Split(']')[0].Split(',');
 
             // convert string[] to List<string>
-            List<string> ImageUrl = new List<string>();
+            ImageUrl = new List<string>();
             ImageUrl = imgUrl.ToList();
 
             // Load image
