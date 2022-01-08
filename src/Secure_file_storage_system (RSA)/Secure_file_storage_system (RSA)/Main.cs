@@ -292,60 +292,50 @@ namespace Secure_file_storage_system__RSA_
             // Download checked Image to Temp folder
             for (int i = 0; i < numSelectedImg; i++)
             {
+                int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
+                    string url = ImageUrl[imgIndex];
+
                     // "name of the file"
-                    Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[i]]);
+                    Bitmap b = new Bitmap(LoadedImages[imgIndex]);
 
                     // "path of the folder to save"
-                    string SavePath = TempPath + "\\" + imageList.CheckedItems[i].Text;
+                    string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;
                     b.Save(SavePath);
+
+                    Account account = new Account(
+                   "cryption",
+                   "731936666387127",
+                   "INiU8DQHajhzDIZQmBWAFl4_HFk");
+
+                    Cloudinary cloudinary = new Cloudinary(account);
+
+                    var uploadParams = new ImageUploadParams()
+                    {
+                        File = new FileDescription(@SavePath),
+                    };
+
+                    var uploadResult = cloudinary.Upload(uploadParams);
+
+                    string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
+
+                    HttpClient client = new HttpClient();
+                    PhotoModel photo = new PhotoModel()
+                    {
+                        urlImage = url,
+                        idUser = "61d82fd286a4206de43fefef"
+                    };
+                    var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
+                    responseTask.Wait();
+
+                    this.main_Load(sender, e);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-
-            //-------------------------
-
-            //int numSelectedImg = imageList.CheckedIndices.Count;
-
-            //for (int i = 0; i < numSelectedImg; i++)
-            //{
-            //    int imgIndex = imageList.CheckedIndices[i];
-            //    try
-            //    {
-            //        string name = imageList.Items[imgIndex].Text;
-            //        string url = ImageUrl[imgIndex];
-
-
-            //        // k l q
-            //        Account account = new Account(
-            //        "cryption",
-            //        "731936666387127",
-            //        "INiU8DQHajhzDIZQmBWAFl4_HFk");
-
-            //        Cloudinary cloudinary = new Cloudinary(account);
-
-            //        var uploadParams = new ImageUploadParams()
-            //        {
-            //            File = new FileDescription(@imageList.Items[imgIndex].Text),
-            //        };
-
-            //        var uploadResult = cloudinary.Upload(uploadParams);
-
-            //        string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-
-            //}
-
-
         }
     }
 }
