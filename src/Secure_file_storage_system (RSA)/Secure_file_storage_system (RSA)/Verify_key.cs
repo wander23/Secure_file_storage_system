@@ -39,9 +39,6 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
-            //1347
-            //59
-            //243
             int m = 30;
             GFG test = new GFG();
             int c = test.Encryption(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));

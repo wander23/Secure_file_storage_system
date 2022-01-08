@@ -87,6 +87,10 @@ namespace Secure_file_storage_system__RSA_
             // Load image
             for (int i = 0; i < ImageUrl.Count; i++)
             {
+               if(imgUrl[i]=="")
+                {
+                    break;
+                }
                 WebClient w = new WebClient();
                 byte[] imageByte = w.DownloadData(ImageUrl[i]);
                 MemoryStream stream = new MemoryStream(imageByte);
@@ -160,6 +164,10 @@ namespace Secure_file_storage_system__RSA_
                 };
                 var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                 responseTask.Wait();
+                this.Hide();
+                Main main_form = new Main();
+                main_form.ShowDialog();
+                this.Hide();
             }
             catch (Exception)
             {
@@ -265,6 +273,12 @@ namespace Secure_file_storage_system__RSA_
         {
             PrivateKey privateKey_form = new PrivateKey();
             privateKey_form.ShowDialog();
+        }
+
+        private void btnShare_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            
         }
     }
 }
