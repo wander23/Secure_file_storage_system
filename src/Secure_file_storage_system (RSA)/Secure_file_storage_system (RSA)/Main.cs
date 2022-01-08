@@ -187,7 +187,6 @@ namespace Secure_file_storage_system__RSA_
         private void btnDownload_Click(object sender, EventArgs e)
         {
             var numSelectedImg = imageList.CheckedIndices.Count;
-            int count = 0;
 
             FolderBrowserDialog sf = new FolderBrowserDialog();
 
@@ -204,7 +203,6 @@ namespace Secure_file_storage_system__RSA_
                         // "path of the folder to save"
                         string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
                         b.Save(SavePath);
-                        count++;
                     }
                     catch (Exception ex)
                     {
@@ -289,13 +287,25 @@ namespace Secure_file_storage_system__RSA_
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
             string exeDir = Path.GetDirectoryName(exeFile);
             string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
+            var numSelectedImg = imageList.CheckedIndices.Count;
 
-            // "name of the file"
-            Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[0]]);
-            
-            // "path of the folder to save"
-            string SavePath = TempPath + "\\" + imageList.CheckedItems[0].Text;
-            b.Save(SavePath);
+            // Download checked Image to Temp folder
+            for (int i = 0; i < numSelectedImg; i++)
+            {
+                try
+                {
+                    // "name of the file"
+                    Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[i]]);
+
+                    // "path of the folder to save"
+                    string SavePath = TempPath + "\\" + imageList.CheckedItems[i].Text;
+                    b.Save(SavePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
 
             //-------------------------
 
