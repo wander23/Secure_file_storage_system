@@ -117,8 +117,6 @@ namespace Secure_file_storage_system__RSA_
                     imageLocation = dialog.FileName;
 
                     selectedImage.ImageLocation = imageLocation;
-
-                    
                 }
 
                 Account account = new Account(
@@ -148,6 +146,7 @@ namespace Secure_file_storage_system__RSA_
         private void btnDownload_Click(object sender, EventArgs e)
         {
             var numSelectedImg = imageList.CheckedIndices.Count;
+            int count = 0;
 
             FolderBrowserDialog sf = new FolderBrowserDialog();
 
@@ -164,14 +163,16 @@ namespace Secure_file_storage_system__RSA_
                         // "path of the folder to save"
                         string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
                         b.Save(SavePath);
+                        count++;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
                 }
+
+                MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAll_Click(object sender, EventArgs e)
