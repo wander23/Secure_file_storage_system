@@ -40,8 +40,6 @@ namespace Secure_file_storage_system__RSA_
             ImageList images = new ImageList();
             images.ImageSize = new System.Drawing.Size(210, 90);
 
-
-
             foreach (var image in LoadedImages)
             {
                 images.Images.Add(image);
@@ -49,7 +47,7 @@ namespace Secure_file_storage_system__RSA_
 
             // setting listview with imagelist
             imageList.SmallImageList = images;
-            
+
             // Clear all item in listview in case reload form when upload
             imageList.Items.Clear();
 
@@ -159,6 +157,7 @@ namespace Secure_file_storage_system__RSA_
                 {
                     File = new FileDescription(@imageLocation),
                 };
+
                 var uploadResult = cloudinary.Upload(uploadParams);
 
                 string url = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
@@ -282,7 +281,7 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
-            //HttpClient client = new HttpClient();
+
             int numSelectedImg = imageList.CheckedIndices.Count;
 
             for (int i = 0; i < numSelectedImg; i++)
@@ -292,6 +291,24 @@ namespace Secure_file_storage_system__RSA_
                 {
                     string name = imageList.Items[imgIndex].Text;
                     string url = ImageUrl[imgIndex];
+
+
+                    // k l q
+                    Account account = new Account(
+                    "cryption",
+                    "731936666387127",
+                    "INiU8DQHajhzDIZQmBWAFl4_HFk");
+
+                    Cloudinary cloudinary = new Cloudinary(account);
+
+                    var uploadParams = new ImageUploadParams()
+                    {
+                        File = new FileDescription(@imageList.Items[imgIndex].Text),
+                    };
+                    var uploadResult = cloudinary.Upload(uploadParams);
+
+                    string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
+
                 }
                 catch (Exception ex)
                 {
@@ -299,6 +316,8 @@ namespace Secure_file_storage_system__RSA_
                 }
 
             }
+
+
         }
     }
 }
