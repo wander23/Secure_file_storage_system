@@ -156,6 +156,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhotoModel.cs" />
     <Compile Include="Sign_In.cs">
       <SubType>Form</SubType>
     </Compile>
