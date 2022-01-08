@@ -50,9 +50,10 @@ namespace Secure_file_storage_system__RSA_
             // setting listview with imagelist
             imageList.SmallImageList = images;
             
-            // Clear all item in listview in order to reload form when upload
+            // Clear all item in listview in case reload form when upload
             imageList.Items.Clear();
 
+            // add image to listview (imageList)
             for (int itemIndex = 0; itemIndex < LoadedImages.Count; itemIndex++)
             {
                 imageList.Items.Add(new ListViewItem($"{itemIndex + 1}.png", itemIndex));
@@ -282,15 +283,15 @@ namespace Secure_file_storage_system__RSA_
         private void btnShare_Click(object sender, EventArgs e)
         {
             //HttpClient client = new HttpClient();
-            var numSelectedImg = imageList.CheckedIndices.Count;
-            int count = 0;
+            int numSelectedImg = imageList.CheckedIndices.Count;
 
             for (int i = 0; i < numSelectedImg; i++)
             {
+                int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
-                    MessageBox.Show(ImageUrl[i], imageList.CheckedItems[i].Text);
-                    count++;
+                    string name = imageList.Items[imgIndex].Text;
+                    string url = ImageUrl[imgIndex];
                 }
                 catch (Exception ex)
                 {
