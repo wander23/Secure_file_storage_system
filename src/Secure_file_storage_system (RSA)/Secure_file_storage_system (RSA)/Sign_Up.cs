@@ -14,14 +14,19 @@ namespace Secure_file_storage_system__RSA_
     public partial class Sign_Up : Form
     {
         public static Sign_Up instance;
-        public TextBox pubkey1;
-        public TextBox pubkey2;
+        public TextBox pubkeyn;
+        public TextBox pubkeye;
+        public TextBox userName;
+        public TextBox fName;
+        public TextBox password;
         public Sign_Up()
         {
             InitializeComponent();
             instance = this;
-            pubkey1 = pubkey_n;
-            pubkey2 = pubkey_e;
+            pubkeyn = pubkey_n;
+            pubkeye = pubkey_e;
+            userName = usrname;
+            fName = fullname;
         }
 
         private void usrname_Enter(object sender, EventArgs e)
@@ -134,39 +139,12 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
-            if(usrname.Text == ""|| passwrd.Text == "" || pubkey_n.Text == "" || pubkey_e.Text == "" || fullname.Text == "" )
+            if (usrname.Text == "Username" || fullname.Text == "Full name"
+               || passwrd.Text == "Password" || pubkey_e.Text == "Public key (e)" 
+               || pubkey_n.Text == "Public key (n)" || confirm.Text == "Confirm password")
             {
-                mess.Text = "Please fill all";
-                mess.Visible = true;
+                MessageBox.Show("Fill all pls");
                 return;
-            }
-
-            HttpClient client = new HttpClient();
-            UserModel user = new UserModel()
-            {
-                username = usrname.Text,
-                password = passwrd.Text,
-                n = int.Parse(pubkey_n.Text),
-                e = int.Parse(pubkey_e.Text),
-                fullname = fullname.Text
-            };
-
-            var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/customers/register", user);
-            responseTask.Wait();
-            if (responseTask.IsCompleted)
-            {
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var messageTask = result.Content.ReadAsStringAsync();
-                    messageTask.Wait();
-                }
-                else
-                {
-                    var messageTask = result.Content.ReadAsStringAsync();
-                    mess.Text = messageTask.Result;
-                    messageTask.Wait();
-                }
             }
 
             Verify_key verify_form = new Verify_key();

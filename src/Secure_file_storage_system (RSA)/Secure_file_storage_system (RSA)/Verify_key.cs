@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -38,10 +39,33 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
-            //Sign_Up.instance.pubkey1.Text
-            //Sign_Up.instance.pubkey2.Text
-            //privateKey.Text
-            String text = "Slave of deadline";
+            //1347
+            //59
+            //243
+            int m = 30;
+            GFG test = new GFG();
+            int c = test.Encryption(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
+            int m1 = test.Decryption(c, int.Parse(privateKey.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
+
+            if(m!=m1)
+            {
+                lb_verify.Text = "its not RSA";
+                return;
+            }
+
+            HttpClient client = new HttpClient();
+            UserModel user = new UserModel()
+            {
+                username = Sign_Up.instance.userName.Text,
+                fullname = Sign_Up.instance.fName.Text,
+                n = int.Parse(Sign_Up.instance.pubkeyn.Text),
+                e = int.Parse(Sign_Up.instance.pubkeye.Text),
+                password = Sign_Up.instance.password.Text
+            };
+
+            var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/customers/register", user);
+            responseTask.Wait();
+
         }
     }
 
