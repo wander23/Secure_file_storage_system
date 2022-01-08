@@ -67,6 +67,12 @@ namespace Secure_file_storage_system__RSA_
             responseTask.Wait();
 
         }
+
+        private void btnVerify_MouseHover(object sender, EventArgs e)
+        {
+            btnVerify.Cursor = Cursors.Hand;
+
+        }
     }
 
 }

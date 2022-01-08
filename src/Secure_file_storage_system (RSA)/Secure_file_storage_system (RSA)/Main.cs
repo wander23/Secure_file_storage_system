@@ -13,6 +13,7 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Net;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -25,27 +26,12 @@ namespace Secure_file_storage_system__RSA_
         {
             InitializeComponent();
             bool CheckedAll = false;
+           
         }
 
         private void main_Load(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/"+ "61d82fd286a4206de43fefef");
-            responseTask.Wait();
-
-            if (responseTask.IsCompleted)
-            {
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var messageTask = result.Content.ReadAsStringAsync();
-                    messageTask.Wait();
-
-                    MessageBox.Show(messageTask.Result);
-                }
-            }
-
-            // load images from folder
+            // load images from Clound
             LoadImage();
 
             // initializing images list
@@ -58,41 +44,58 @@ namespace Secure_file_storage_system__RSA_
             }
 
             // setting listview with imagelist
-            //imageList.LargeImageList = images;
             imageList.SmallImageList = images;
 
-            for (int itemIndex = 1; itemIndex < LoadedImages.Count; itemIndex++)
+            for (int itemIndex = 0; itemIndex < LoadedImages.Count; itemIndex++)
             {
-                imageList.Items.Add(new ListViewItem($"{itemIndex}.png", itemIndex - 1));
+                imageList.Items.Add(new ListViewItem($"{itemIndex + 1}.png", itemIndex));
             }
         }
 
         private void LoadImage()
         {
             LoadedImages = new List<Image>();
-            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-            string exeDir = Path.GetDirectoryName(exeFile);
+            string jsonData = "";
 
-            var index = 1;
-            while (true)
+            //Read image from clound 
+            HttpClient client = new HttpClient();
+            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/" + "61d82fd286a4206de43fefef");
+            responseTask.Wait();
+
+            if (responseTask.IsCompleted)
             {
-                try
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
                 {
-                    string tempLocation = Path.Combine(exeDir, $@"..\..\..\..\..\pic\TestImage\{index}.png");
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    messageTask.Wait();
 
-                    var tempImage = Image.FromFile(tempLocation);
-                    LoadedImages.Add(tempImage);
-
+                    // take json data
+                    jsonData = messageTask.Result;
                 }
-                catch (Exception)
-                {
-                    break;
-                }
+            }
 
-                index++;
+            // parse json -> string[] which contain image's url
+            jsonData = jsonData.Replace("\"", "");
+            string[] imgUrl = jsonData.Split('[')[1].Split(']')[0].Split(',');
+
+            // convert string[] to List<string>
+            List<string> ImageUrl = new List<string>();
+            ImageUrl = imgUrl.ToList();
+
+            // Load image
+            for (int i = 0; i < ImageUrl.Count; i++)
+            {
+                WebClient w = new WebClient();
+                byte[] imageByte = w.DownloadData(ImageUrl[i]);
+                MemoryStream stream = new MemoryStream(imageByte);
+
+                Image im = Image.FromStream(stream);
+                LoadedImages.Add(im);
             }
         }
 
+        // action when selecte 1 item
         private void imageList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (imageList.SelectedIndices.Count > 0)
@@ -103,18 +106,13 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
+        // action when check 1 item
         private void imageList_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             var numSelectedImg = imageList.CheckedIndices.Count;
 
             if (numSelectedImg > 0)
             {
-                for (int i = 0; i<numSelectedImg;i++)
-                {
-                    var name = imageList.CheckedItems[i].Text;
-                    var name2 = imageList.CheckedIndices[i];
-                }    
-
                 var selectedIndex = imageList.CheckedIndices[numSelectedImg - 1];
 
                 Image selectedImg = LoadedImages[selectedIndex];
@@ -122,6 +120,7 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
+        // upload image
         private void btnUpload_Click(object sender, EventArgs e)
         {
             string imageLocation = "";
@@ -135,8 +134,6 @@ namespace Secure_file_storage_system__RSA_
                     imageLocation = dialog.FileName;
 
                     selectedImage.ImageLocation = imageLocation;
-
-                    
                 }
 
                 Account account = new Account(
@@ -169,9 +166,12 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
+
+        // dowload checked image
         private void btnDownload_Click(object sender, EventArgs e)
         {
             var numSelectedImg = imageList.CheckedIndices.Count;
+            int count = 0;
 
             FolderBrowserDialog sf = new FolderBrowserDialog();
 
@@ -188,16 +188,19 @@ namespace Secure_file_storage_system__RSA_
                         // "path of the folder to save"
                         string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
                         b.Save(SavePath);
+                        count++;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
                 }
+
+                MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // check all image in image list
         private void btnAll_Click(object sender, EventArgs e)
         {
             var index = 0;
@@ -221,11 +224,46 @@ namespace Secure_file_storage_system__RSA_
             CheckAll = state;
         }
 
+        // action when click close button
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Sign_In.instance.Close();
         }
 
-     
+        private void btnDecrypt_MouseHover(object sender, EventArgs e)
+        {
+            btnDecrypt.Cursor = Cursors.Hand;
+        }
+
+        private void btnShare_MouseHover(object sender, EventArgs e)
+        {
+            btnShare.Cursor = Cursors.Hand;
+        }
+
+        private void btnAll_MouseHover(object sender, EventArgs e)
+        {
+            btnAll.Cursor = Cursors.Hand;
+        }
+
+        private void btnUpload_MouseHover(object sender, EventArgs e)
+        {
+            btnUpload.Cursor = Cursors.Hand;
+        }
+
+        private void btnDownload_MouseHover(object sender, EventArgs e)
+        {
+            btnDownload.Cursor = Cursors.Hand;
+        }
+
+        private void tabControl1_MouseHover(object sender, EventArgs e)
+        {
+            tabControl1.Cursor = Cursors.Hand;
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            PrivateKey privateKey_form = new PrivateKey();
+            privateKey_form.ShowDialog();
+        }
     }
 }

@@ -34,9 +34,10 @@ namespace Secure_file_storage_system__RSA_
 
         private void username_Enter(object sender, EventArgs e)
         {
+            lb_announce.Visible = false;
+
             if (username.Text == "type your username")
             {
-                lb_announce.Visible = false;
                 username.Text = "";
                 username.ForeColor = Color.White;
             }
@@ -54,9 +55,10 @@ namespace Secure_file_storage_system__RSA_
 
         private void passwrd_Enter(object sender, EventArgs e)
         {
+            lb_announce.Visible = false;
+
             if (passwrd.Text == "type your password")
             {
-                lb_announce.Visible = false;
                 passwrd.Text = "";
                 passwrd.ForeColor = Color.White;
 
@@ -75,12 +77,18 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if(username.Text =="" || passwrd.Text =="")
+            lb_announce.Visible = true;
+
+            if (username.Text =="" || passwrd.Text =="")
             {
-                lb_announce.Visible = true;
-                lb_announce.Text= "fill all";
+                lb_announce.ForeColor = System.Drawing.Color.Red;
+                lb_announce.Text= "Fill all";
                 return;
             }
+
+            lb_announce.Text = "Verifying....";
+            lb_announce.ForeColor = System.Drawing.Color.Gray;
+
             HttpClient client = new HttpClient();
             UserModel user = new UserModel()
             {
@@ -95,6 +103,9 @@ namespace Secure_file_storage_system__RSA_
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode) // login successfull
                 {
+                    lb_announce.Text = "Login Success";
+                    lb_announce.ForeColor = System.Drawing.Color.Green;
+
                     var messageTask = result.Content.ReadAsStringAsync();
                     messageTask.Wait();
 
@@ -104,7 +115,7 @@ namespace Secure_file_storage_system__RSA_
                 }
                 else
                 {
-                    lb_announce.Visible = true;
+                    lb_announce.ForeColor = System.Drawing.Color.Red;
                     lb_announce.Text = "Login Fail";
                 }
             }
@@ -114,6 +125,22 @@ namespace Secure_file_storage_system__RSA_
         {
             passwrd.ForeColor = Color.Black;
             passwrd.PasswordChar = '*';
+        }
+
+        private void Sign_In_Click(object sender, EventArgs e)
+        {
+            lb_announce.Visible = false;
+        }
+
+        private void btn_login_MouseHover(object sender, EventArgs e)
+        {
+            btn_login.Cursor = Cursors.Hand;
+        }
+
+        private void btn_signup_MouseHover(object sender, EventArgs e)
+        {
+            btn_signup.Cursor = Cursors.Hand;
+
         }
     }
 }

@@ -167,5 +167,10 @@ namespace Secure_file_storage_system__RSA_
         {
             Sign_In.instance.Show();
         }
+
+        private void btn_signup_MouseHover(object sender, EventArgs e)
+        {
+            btn_signup.Cursor = Cursors.Hand;
+        }
     }
 }

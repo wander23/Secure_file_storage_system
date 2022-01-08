@@ -83,12 +83,12 @@
             // 
             this.lb_Signup.AutoSize = true;
             this.lb_Signup.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Signup.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Signup.ForeColor = System.Drawing.Color.White;
             this.lb_Signup.Location = new System.Drawing.Point(195, 54);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(165, 39);
+            this.lb_Signup.Size = new System.Drawing.Size(185, 49);
             this.lb_Signup.TabIndex = 13;
             this.lb_Signup.Text = "SIGN UP";
             // 
@@ -100,7 +100,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(50, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
+            this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Public key";
             // 
@@ -174,7 +174,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(49, 395);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Password";
             // 
@@ -288,7 +288,6 @@
             // btn_signup
             // 
             this.btn_signup.BackColor = System.Drawing.Color.Black;
-            this.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
             this.btn_signup.Location = new System.Drawing.Point(144, 486);
@@ -298,6 +297,7 @@
             this.btn_signup.Text = "REGISTER";
             this.btn_signup.UseVisualStyleBackColor = false;
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
+            this.btn_signup.MouseHover += new System.EventHandler(this.btn_signup_MouseHover);
             // 
             // pictureBox1
             // 
@@ -318,7 +318,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(48, 216);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 18);
+            this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Full name";
             // 
@@ -409,7 +409,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(50, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 18);
+            this.label5.Size = new System.Drawing.Size(28, 20);
             this.label5.TabIndex = 25;
             this.label5.Text = "N:";
             // 
@@ -421,7 +421,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(50, 343);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 18);
+            this.label6.Size = new System.Drawing.Size(27, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "E:";
             // 
@@ -433,7 +433,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(48, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 18);
+            this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Username";
             // 
@@ -497,7 +497,7 @@
             // Sign_Up
             // 
             this.AcceptButton = this.btn_signup;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
@@ -522,7 +522,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sign_Up";
-            this.Text = "Sign Up";
+            this.Text = "Storage File System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Sign_Up_FormClosed);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

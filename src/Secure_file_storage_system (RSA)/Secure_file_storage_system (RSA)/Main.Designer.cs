@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.imageList = new System.Windows.Forms.ListView();
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
@@ -152,6 +153,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1109, 548);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.MouseHover += new System.EventHandler(this.tabControl1_MouseHover);
             // 
             // tabPage1
             // 
@@ -172,6 +174,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnDecrypt);
             this.splitContainer1.Panel1.Controls.Add(this.imageList);
             this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
             this.splitContainer1.Panel1.Controls.Add(this.btnDownload);
@@ -184,6 +187,19 @@
             this.splitContainer1.Size = new System.Drawing.Size(1101, 522);
             this.splitContainer1.SplitterDistance = 333;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.BackColor = System.Drawing.Color.DimGray;
+            this.btnDecrypt.ForeColor = System.Drawing.Color.White;
+            this.btnDecrypt.Location = new System.Drawing.Point(211, 37);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(120, 30);
+            this.btnDecrypt.TabIndex = 6;
+            this.btnDecrypt.Text = "Decrypt Image";
+            this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            this.btnDecrypt.MouseHover += new System.EventHandler(this.btnDecrypt_MouseHover);
             // 
             // imageList
             // 
@@ -201,55 +217,55 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.BackColor = System.Drawing.Color.Black;
-            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpload.BackColor = System.Drawing.Color.DimGray;
             this.btnUpload.ForeColor = System.Drawing.Color.White;
             this.btnUpload.Location = new System.Drawing.Point(6, 3);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(149, 30);
+            this.btnUpload.Size = new System.Drawing.Size(149, 35);
             this.btnUpload.TabIndex = 5;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            this.btnUpload.MouseHover += new System.EventHandler(this.btnUpload_MouseHover);
             // 
             // btnDownload
             // 
-            this.btnDownload.BackColor = System.Drawing.Color.Black;
-            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDownload.BackColor = System.Drawing.Color.DimGray;
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(158, 3);
+            this.btnDownload.Location = new System.Drawing.Point(152, 3);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDownload.Size = new System.Drawing.Size(171, 30);
+            this.btnDownload.Size = new System.Drawing.Size(177, 35);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = false;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            this.btnDownload.MouseHover += new System.EventHandler(this.btnDownload_MouseHover);
             // 
             // btnShare
             // 
-            this.btnShare.BackColor = System.Drawing.Color.Black;
-            this.btnShare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShare.BackColor = System.Drawing.Color.DimGray;
             this.btnShare.ForeColor = System.Drawing.Color.White;
-            this.btnShare.Location = new System.Drawing.Point(158, 39);
+            this.btnShare.Location = new System.Drawing.Point(111, 37);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(171, 30);
+            this.btnShare.Size = new System.Drawing.Size(102, 30);
             this.btnShare.TabIndex = 0;
             this.btnShare.Text = "Share";
             this.btnShare.UseVisualStyleBackColor = false;
+            this.btnShare.MouseHover += new System.EventHandler(this.btnShare_MouseHover);
             // 
             // btnAll
             // 
-            this.btnAll.BackColor = System.Drawing.Color.Black;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAll.BackColor = System.Drawing.Color.DimGray;
             this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Location = new System.Drawing.Point(6, 39);
+            this.btnAll.Location = new System.Drawing.Point(6, 37);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(146, 30);
+            this.btnAll.Size = new System.Drawing.Size(107, 30);
             this.btnAll.TabIndex = 2;
             this.btnAll.Text = "Select all";
             this.btnAll.UseVisualStyleBackColor = false;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.btnAll.MouseHover += new System.EventHandler(this.btnAll_MouseHover);
             // 
             // selectedImage
             // 
@@ -1171,5 +1187,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnDecrypt;
     }
 }
