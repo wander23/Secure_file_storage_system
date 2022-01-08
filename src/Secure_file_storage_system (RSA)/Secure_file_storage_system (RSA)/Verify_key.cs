@@ -49,7 +49,7 @@ namespace Secure_file_storage_system__RSA_
 
             if(m!=m1)
             {
-                lb_verify.Text = "its not RSA";
+                MessageBox.Show("its not RSA");
                 return;
             }
 

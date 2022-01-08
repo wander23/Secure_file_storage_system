@@ -27,6 +27,7 @@ namespace Secure_file_storage_system__RSA_
             pubkeye = pubkey_e;
             userName = usrname;
             fName = fullname;
+            password = passwrd;
         }
 
         private void usrname_Enter(object sender, EventArgs e)
