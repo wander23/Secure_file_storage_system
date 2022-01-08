@@ -105,7 +105,7 @@
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Gray;
             this.username.Location = new System.Drawing.Point(42, 8);
             this.username.Multiline = true;
@@ -129,7 +129,7 @@
             // 
             this.passwrd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.passwrd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwrd.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwrd.ForeColor = System.Drawing.Color.Gray;
             this.passwrd.Location = new System.Drawing.Point(42, 4);
             this.passwrd.Multiline = true;
@@ -241,7 +241,7 @@
             this.lb_announce.ForeColor = System.Drawing.Color.Red;
             this.lb_announce.Location = new System.Drawing.Point(76, 420);
             this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(81, 22);
+            this.lb_announce.Size = new System.Drawing.Size(72, 20);
             this.lb_announce.TabIndex = 26;
             this.lb_announce.Text = "Login fail";
             this.lb_announce.Visible = false;
