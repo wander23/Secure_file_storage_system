@@ -63,6 +63,9 @@ namespace Secure_file_storage_system__RSA_
             LoadedImages = new List<Image>();
             string jsonData = "";
 
+
+
+
             //Read image from clound 
             HttpClient client = new HttpClient();
             var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/" + "61d82fd286a4206de43fefef");
@@ -281,41 +284,56 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
+            //----------- QUAN --------------------------
+            // get path
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
 
-            int numSelectedImg = imageList.CheckedIndices.Count;
+            // "name of the file"
+            Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[0]]);
+            
+            // "path of the folder to save"
+            string SavePath = TempPath + "\\" + imageList.CheckedItems[0].Text;
+            b.Save(SavePath);
 
-            for (int i = 0; i < numSelectedImg; i++)
-            {
-                int imgIndex = imageList.CheckedIndices[i];
-                try
-                {
-                    string name = imageList.Items[imgIndex].Text;
-                    string url = ImageUrl[imgIndex];
+            //-------------------------
+
+            //int numSelectedImg = imageList.CheckedIndices.Count;
+
+            //for (int i = 0; i < numSelectedImg; i++)
+            //{
+            //    int imgIndex = imageList.CheckedIndices[i];
+            //    try
+            //    {
+            //        string name = imageList.Items[imgIndex].Text;
+            //        string url = ImageUrl[imgIndex];
 
 
-                    // k l q
-                    Account account = new Account(
-                    "cryption",
-                    "731936666387127",
-                    "INiU8DQHajhzDIZQmBWAFl4_HFk");
+            //        // k l q
+            //        Account account = new Account(
+            //        "cryption",
+            //        "731936666387127",
+            //        "INiU8DQHajhzDIZQmBWAFl4_HFk");
 
-                    Cloudinary cloudinary = new Cloudinary(account);
+            //        Cloudinary cloudinary = new Cloudinary(account);
 
-                    var uploadParams = new ImageUploadParams()
-                    {
-                        File = new FileDescription(@imageList.Items[imgIndex].Text),
-                    };
-                    var uploadResult = cloudinary.Upload(uploadParams);
+            //        var uploadParams = new ImageUploadParams()
+            //        {
+            //            File = new FileDescription(@imageList.Items[imgIndex].Text),
+            //        };
 
-                    string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
+            //        var uploadResult = cloudinary.Upload(uploadParams);
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            //        string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
 
-            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+
+            //}
 
 
         }
