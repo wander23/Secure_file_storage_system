@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using Newtonsoft.Json;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -108,6 +109,17 @@ namespace Secure_file_storage_system__RSA_
 
                     var messageTask = result.Content.ReadAsStringAsync();
                     messageTask.Wait();
+
+                    dynamic json = JsonConvert.DeserializeObject(messageTask.Result);
+
+                    var username = json.data.username.ToString();
+                    var fullname = json.data.fullname.ToString();
+                    var password = json.data.password.ToString();
+                    var id = json.data.id.ToString();
+                    var nKey = Convert.ToInt32(json.data.n);
+                    var eKey = Convert.ToInt32(json.data.e);
+
+
 
                     this.Hide();
                     Main main_form = new Main();
