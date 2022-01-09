@@ -162,14 +162,6 @@ namespace Secure_file_storage_system__RSA_
                 }
             }
 
-            if(!string.Equals(confirm.Text, passwrd.Text))
-            {
-                MessageBox.Show("Your password and confirm arent the same", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                password.Text = "";
-                confirm.Text = "";
-                return;
-            }
-
 
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
