@@ -14,6 +14,8 @@ using CloudinaryDotNet.Actions;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -26,12 +28,58 @@ namespace Secure_file_storage_system__RSA_
         public Main()
         {
             InitializeComponent();
+            create_Temp_folder();
+
             bool CheckedAll = false;
+        }
+
+        static Image ScaleByPercent(Image imgPhoto, int Percent)
+        {
+            float nPercent = ((float)Percent / 100);
+
+            int sourceWidth = imgPhoto.Width;
+            int sourceHeight = imgPhoto.Height;
+            int sourceX = 0;
+            int sourceY = 0;
+
+            int destX = 0;
+            int destY = 0;
+            int destWidth = (int)(sourceWidth * nPercent);
+            int destHeight = (int)(sourceHeight * nPercent);
+
+            Bitmap bmPhoto = new Bitmap(destWidth, destHeight,
+                                     PixelFormat.Format24bppRgb);
+            bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
+                                    imgPhoto.VerticalResolution);
+
+            Graphics grPhoto = Graphics.FromImage(bmPhoto);
+            grPhoto.InterpolationMode = InterpolationMode.HighQualityBilinear;
+
+            grPhoto.DrawImage(imgPhoto,
+                new Rectangle(destX, destY, destWidth, destHeight),
+                new Rectangle(sourceX, sourceY, sourceWidth, sourceHeight),
+                GraphicsUnit.Pixel);
+
+            grPhoto.Dispose();
+            return bmPhoto;
+        }
+
+        private void create_Temp_folder()
+        {
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            string TempFolder_path = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
+
+            // check if Temp folder exist
+            if (Directory.Exists(TempFolder_path) == false) // if not 
+            {
+                //create Temp folder
+                System.IO.Directory.CreateDirectory(TempFolder_path);
+            }
         }
 
         private void main_Load(object sender, EventArgs e)
         {
-
             // load images from Clound
             LoadImage();
 
@@ -103,6 +151,7 @@ namespace Secure_file_storage_system__RSA_
                 MemoryStream stream = new MemoryStream(imageByte);
 
                 Image im = Image.FromStream(stream);
+
                 LoadedImages.Add(im);
             }
         }
@@ -144,15 +193,25 @@ namespace Secure_file_storage_system__RSA_
                 // find relative path of "loading image"
                 string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
                 string exeDir = Path.GetDirectoryName(exeFile);
-                string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\uploading.png");
-                selectedImage.ImageLocation = TempPath;
+                string uploadingPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\uploading.png");
+                selectedImage.ImageLocation = uploadingPath;
 
                 // just show loading image
                 try
                 {
                     if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        imageLocation = dialog.FileName;
+                        string TempFolder_path = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
+                        string[] file_path_arr = dialog.FileName.Split('\\');
+                        string tempImg_path = Path.Combine(TempFolder_path, dialog.FileName.Split('\\')[file_path_arr.Length - 1]);
+                        Image tempImg = Image.FromFile(dialog.FileName);
+
+                        // resize image in Temp folder (80%);
+                        tempImg = ScaleByPercent(tempImg, 80);
+
+                        //Download resized image in Temp folder
+                        DownloadImage(tempImg, tempImg_path);
+                        imageLocation = tempImg_path;
 
                         selectedImage.ImageLocation = imageLocation;
                     }
@@ -166,13 +225,12 @@ namespace Secure_file_storage_system__RSA_
                     }
                     catch
                     {
-                        TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\gray.png");
+                        string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\gray.png");
                         selectedImage.ImageLocation = TempPath;
                     }
                     
                 }
                 
-
                 Account account = new Account(
                 "cryption",
                 "731936666387127",
@@ -204,6 +262,9 @@ namespace Secure_file_storage_system__RSA_
             {
                 MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Delete temp image in Temp folder
+            DeleteFile(imageLocation);
         }
 
 
@@ -220,21 +281,40 @@ namespace Secure_file_storage_system__RSA_
 
                 for (int i = 0; i < numSelectedImg; i++)
                 {
-                    try
-                    {
-                        // "name of the file"
-                        Bitmap b = new Bitmap(LoadedImages[imageList.CheckedIndices[i]]);
-                        // "path of the folder to save"
-                        string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
-                        b.Save(SavePath);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    Image img = LoadedImages[imageList.CheckedIndices[i]];
+                    string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
+
+                    DownloadImage(img, SavePath);
                 }
 
                 MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void DeleteFile(string filePath)
+        {
+            File.Delete(filePath);
+        }
+
+        private void DownloadImage(Image img, string path)
+        {
+            try
+            {
+                // set 24 bit image
+                Bitmap bmp = new Bitmap(img.Width, img.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+                //set 96 dpi
+                bmp.SetResolution(96.0f, 96.0f);
+
+                using (var gr = Graphics.FromImage(bmp))
+                    gr.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height));
+
+                // save image with format JPEG
+                bmp.Save(path, ImageFormat.Jpeg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
