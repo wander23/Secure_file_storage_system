@@ -85,7 +85,7 @@ namespace Secure_file_storage_system__RSA_
         {
             lb_announce.Visible = true;
 
-            if (username.Text =="" || passwrd.Text =="")
+            if (username.Text == "type your username" || passwrd.Text == "type your password")
             {
                 lb_announce.ForeColor = System.Drawing.Color.Red;
                 lb_announce.Text= "Fill all";

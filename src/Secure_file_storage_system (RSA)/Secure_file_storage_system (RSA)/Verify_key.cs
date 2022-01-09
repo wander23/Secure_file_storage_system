@@ -40,7 +40,19 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
-            
+
+            foreach (char d in privateKey.Text)
+            {
+                int iN = (int)d;
+                if ((iN > 57) || (iN < 48))
+                {
+                    MessageBox.Show("Please fill nummer for private key d", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    privateKey.Text = "";
+                    return;
+                }
+            }
+           
+
             announce.Visible = true;
             announce.Text = "Verifying....";
             announce.ForeColor = System.Drawing.Color.Gray;
