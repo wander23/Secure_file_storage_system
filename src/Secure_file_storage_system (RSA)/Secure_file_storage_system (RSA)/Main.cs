@@ -456,5 +456,43 @@ namespace Secure_file_storage_system__RSA_
                 this.main_Load(sender, e);
             }
         }
+
+        private void btn_copy_Click(object sender, EventArgs e)
+        {
+            // copy ID into clipboard
+            Clipboard.SetText(lb_id.Text);
+
+            lb_copy.Visible = true;
+        }
+
+        private void Main_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_name_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_id_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_n_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_e_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
     }
 }

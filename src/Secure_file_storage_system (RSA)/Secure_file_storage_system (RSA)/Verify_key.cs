@@ -104,6 +104,11 @@ namespace Secure_file_storage_system__RSA_
         {
             announce.Visible = false;
         }
+
+        private void privateKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 
 }

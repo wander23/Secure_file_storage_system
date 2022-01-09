@@ -103,6 +103,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
+            this.btn_copy = new System.Windows.Forms.Button();
+            this.lb_copy = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -284,6 +286,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.lb_copy);
+            this.tabPage2.Controls.Add(this.btn_copy);
             this.tabPage2.Controls.Add(this.panel14);
             this.tabPage2.Controls.Add(this.lb_Signup);
             this.tabPage2.Controls.Add(this.pictureBox17);
@@ -301,6 +305,7 @@
             this.tabPage2.Size = new System.Drawing.Size(1101, 522);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "User";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel14
             // 
@@ -342,9 +347,10 @@
             this.lb_e.ForeColor = System.Drawing.Color.White;
             this.lb_e.Location = new System.Drawing.Point(52, 10);
             this.lb_e.Name = "lb_e";
-            this.lb_e.Size = new System.Drawing.Size(123, 20);
+            this.lb_e.Size = new System.Drawing.Size(135, 24);
             this.lb_e.TabIndex = 15;
             this.lb_e.Text = "68 718 952 447";
+            this.lb_e.Click += new System.EventHandler(this.lb_e_Click);
             // 
             // lb_Signup
             // 
@@ -355,7 +361,7 @@
             this.lb_Signup.Location = new System.Drawing.Point(355, 58);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(379, 39);
+            this.lb_Signup.Size = new System.Drawing.Size(414, 44);
             this.lb_Signup.TabIndex = 28;
             this.lb_Signup.Text = "USER INFORMATION";
             // 
@@ -378,7 +384,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(277, 347);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
+            this.label2.Size = new System.Drawing.Size(153, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "RSA Public key";
             // 
@@ -422,9 +428,10 @@
             this.lb_n.ForeColor = System.Drawing.Color.White;
             this.lb_n.Location = new System.Drawing.Point(52, 10);
             this.lb_n.Name = "lb_n";
-            this.lb_n.Size = new System.Drawing.Size(123, 20);
+            this.lb_n.Size = new System.Drawing.Size(135, 24);
             this.lb_n.TabIndex = 15;
             this.lb_n.Text = "68 718 952 447";
+            this.lb_n.Click += new System.EventHandler(this.lb_n_Click);
             // 
             // label1
             // 
@@ -434,7 +441,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(277, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 20);
+            this.label1.Size = new System.Drawing.Size(29, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "ID";
             // 
@@ -465,13 +472,14 @@
             // 
             this.lb_id.AutoSize = true;
             this.lb_id.BackColor = System.Drawing.Color.Transparent;
-            this.lb_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_id.ForeColor = System.Drawing.Color.White;
-            this.lb_id.Location = new System.Drawing.Point(52, 10);
+            this.lb_id.Location = new System.Drawing.Point(47, 11);
             this.lb_id.Name = "lb_id";
             this.lb_id.Size = new System.Drawing.Size(81, 20);
             this.lb_id.TabIndex = 14;
             this.lb_id.Text = "19127525";
+            this.lb_id.Click += new System.EventHandler(this.lb_id_Click);
             // 
             // panel4
             // 
@@ -490,7 +498,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(277, 142);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(94, 20);
+            this.lb_usrname.Size = new System.Drawing.Size(105, 24);
             this.lb_usrname.TabIndex = 12;
             this.lb_usrname.Text = "Username";
             // 
@@ -523,11 +531,12 @@
             this.lb_name.BackColor = System.Drawing.Color.Transparent;
             this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_name.ForeColor = System.Drawing.Color.White;
-            this.lb_name.Location = new System.Drawing.Point(52, 10);
+            this.lb_name.Location = new System.Drawing.Point(47, 10);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(161, 20);
+            this.lb_name.Size = new System.Drawing.Size(189, 24);
             this.lb_name.TabIndex = 13;
             this.lb_name.Text = "Nguyễn Thanh Quân";
+            this.lb_name.Click += new System.EventHandler(this.lb_name_Click);
             // 
             // panel3
             // 
@@ -546,7 +555,7 @@
             this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(281, 443);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(27, 20);
+            this.label26.Size = new System.Drawing.Size(30, 24);
             this.label26.TabIndex = 30;
             this.label26.Text = "E:";
             // 
@@ -558,7 +567,7 @@
             this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(279, 385);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(28, 20);
+            this.label25.Size = new System.Drawing.Size(31, 24);
             this.label25.TabIndex = 29;
             this.label25.Text = "N:";
             // 
@@ -691,7 +700,7 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(55, 77);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 20);
+            this.label15.Size = new System.Drawing.Size(90, 24);
             this.label15.TabIndex = 19;
             this.label15.Text = "19127625";
             // 
@@ -703,7 +712,7 @@
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(200, 123);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 20);
+            this.label16.Size = new System.Drawing.Size(90, 24);
             this.label16.TabIndex = 18;
             this.label16.Text = "19127625";
             // 
@@ -715,7 +724,7 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(42, 54);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(106, 20);
+            this.label17.Size = new System.Drawing.Size(118, 24);
             this.label17.TabIndex = 17;
             this.label17.Text = "Lâm Chí Văn";
             // 
@@ -762,7 +771,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(55, 77);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 20);
+            this.label12.Size = new System.Drawing.Size(90, 24);
             this.label12.TabIndex = 19;
             this.label12.Text = "19127525";
             // 
@@ -774,7 +783,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(200, 123);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 20);
+            this.label13.Size = new System.Drawing.Size(90, 24);
             this.label13.TabIndex = 18;
             this.label13.Text = "19127625";
             // 
@@ -786,7 +795,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(8, 54);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(161, 20);
+            this.label14.Size = new System.Drawing.Size(189, 24);
             this.label14.TabIndex = 17;
             this.label14.Text = "Nguyễn Thanh Quân";
             // 
@@ -833,7 +842,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(55, 77);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 20);
+            this.label9.Size = new System.Drawing.Size(90, 24);
             this.label9.TabIndex = 19;
             this.label9.Text = "19127449";
             // 
@@ -845,7 +854,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(200, 123);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 20);
+            this.label10.Size = new System.Drawing.Size(90, 24);
             this.label10.TabIndex = 18;
             this.label10.Text = "19127625";
             // 
@@ -857,7 +866,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(25, 54);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 20);
+            this.label11.Size = new System.Drawing.Size(155, 24);
             this.label11.TabIndex = 17;
             this.label11.Text = "Phùng Anh Khoa";
             // 
@@ -902,7 +911,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(55, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 19;
             this.label3.Text = "19127392";
             // 
@@ -914,7 +923,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(200, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 20);
+            this.label7.Size = new System.Drawing.Size(90, 24);
             this.label7.TabIndex = 18;
             this.label7.Text = "19127625";
             // 
@@ -926,7 +935,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(50, 54);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.Size = new System.Drawing.Size(106, 24);
             this.label8.TabIndex = 17;
             this.label8.Text = "Tô Gia Hảo";
             // 
@@ -951,7 +960,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(55, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.Size = new System.Drawing.Size(90, 24);
             this.label6.TabIndex = 19;
             this.label6.Text = "19127054";
             // 
@@ -963,7 +972,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(200, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.Size = new System.Drawing.Size(90, 24);
             this.label5.TabIndex = 18;
             this.label5.Text = "19127625";
             // 
@@ -975,7 +984,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(25, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 20);
+            this.label4.Size = new System.Drawing.Size(157, 24);
             this.label4.TabIndex = 17;
             this.label4.Text = "Thái Duy Nguyễn";
             // 
@@ -1046,6 +1055,29 @@
             this.label22.TabIndex = 29;
             this.label22.Text = "N:";
             // 
+            // btn_copy
+            // 
+            this.btn_copy.Location = new System.Drawing.Point(496, 243);
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.Size = new System.Drawing.Size(78, 24);
+            this.btn_copy.TabIndex = 31;
+            this.btn_copy.Text = "Copy ID";
+            this.btn_copy.UseVisualStyleBackColor = true;
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
+            // 
+            // lb_copy
+            // 
+            this.lb_copy.AutoSize = true;
+            this.lb_copy.BackColor = System.Drawing.Color.Transparent;
+            this.lb_copy.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_copy.ForeColor = System.Drawing.Color.Lime;
+            this.lb_copy.Location = new System.Drawing.Point(431, 245);
+            this.lb_copy.Name = "lb_copy";
+            this.lb_copy.Size = new System.Drawing.Size(64, 20);
+            this.lb_copy.TabIndex = 18;
+            this.lb_copy.Text = "Copied";
+            this.lb_copy.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,6 +1094,7 @@
             this.Text = "Storage File System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.main_Load);
+            this.Click += new System.EventHandler(this.Main_Click);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1193,5 +1226,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btn_copy;
+        private System.Windows.Forms.Label lb_copy;
     }
 }

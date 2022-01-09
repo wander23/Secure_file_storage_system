@@ -45,5 +45,10 @@ namespace Secure_file_storage_system__RSA_
         {
             btn_send.Cursor = Cursors.Hand;
         }
+
+        private void key_d_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

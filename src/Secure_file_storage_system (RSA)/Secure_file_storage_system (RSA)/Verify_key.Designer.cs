@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_verify = new System.Windows.Forms.Label();
             this.announce = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,7 +90,7 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(70, 220);
+            this.lb_usrname.Location = new System.Drawing.Point(70, 209);
             this.lb_usrname.Name = "lb_usrname";
             this.lb_usrname.Size = new System.Drawing.Size(111, 24);
             this.lb_usrname.TabIndex = 28;
@@ -102,7 +103,7 @@
             this.panel1.Controls.Add(this.privateKey);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(74, 247);
+            this.panel1.Location = new System.Drawing.Point(74, 236);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 29;
@@ -131,6 +132,7 @@
             this.privateKey.TabIndex = 9;
             this.privateKey.Text = "private key (d)";
             this.privateKey.Enter += new System.EventHandler(this.Key_Enter);
+            this.privateKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.privateKey_KeyPress);
             this.privateKey.Leave += new System.EventHandler(this.Key_Leave);
             // 
             // panel3
@@ -170,12 +172,24 @@
             this.announce.BackColor = System.Drawing.Color.Transparent;
             this.announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.announce.ForeColor = System.Drawing.Color.Black;
-            this.announce.Location = new System.Drawing.Point(239, 224);
+            this.announce.Location = new System.Drawing.Point(159, 287);
             this.announce.Name = "announce";
             this.announce.Size = new System.Drawing.Size(55, 20);
             this.announce.TabIndex = 32;
             this.announce.Text = "label2";
             this.announce.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(174, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "(Number only)";
             // 
             // Verify_key
             // 
@@ -184,6 +198,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(434, 429);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.announce);
             this.Controls.Add(this.lb_Login);
             this.Controls.Add(this.lb_verify);
@@ -221,5 +236,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_verify;
         private System.Windows.Forms.Label announce;
+        private System.Windows.Forms.Label label2;
     }
 }
