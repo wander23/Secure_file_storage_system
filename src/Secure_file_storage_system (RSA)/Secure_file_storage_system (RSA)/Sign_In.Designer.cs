@@ -105,9 +105,9 @@
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Gray;
-            this.username.Location = new System.Drawing.Point(42, 8);
+            this.username.Location = new System.Drawing.Point(42, 10);
             this.username.Multiline = true;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(254, 30);
@@ -129,9 +129,9 @@
             // 
             this.passwrd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.passwrd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwrd.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwrd.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwrd.ForeColor = System.Drawing.Color.Gray;
-            this.passwrd.Location = new System.Drawing.Point(42, 4);
+            this.passwrd.Location = new System.Drawing.Point(42, 5);
             this.passwrd.Multiline = true;
             this.passwrd.Name = "passwrd";
             this.passwrd.Size = new System.Drawing.Size(254, 30);

@@ -457,6 +457,11 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            this.main_Load(sender, e);
+        }
+
         private void btn_copy_Click(object sender, EventArgs e)
         {
             // copy ID into clipboard
@@ -493,6 +498,11 @@ namespace Secure_file_storage_system__RSA_
         private void tabPage2_Click(object sender, EventArgs e)
         {
             lb_copy.Visible = false;
+        }
+
+        private void btn_reload_MouseHover(object sender, EventArgs e)
+        {
+            btn_reload.Cursor = Cursors.Hand;
         }
     }
 }

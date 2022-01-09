@@ -84,24 +84,6 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
-        private void confirm_Enter(object sender, EventArgs e)
-        {
-            if (confirm.Text == "Confirm password")
-            {
-                confirm.Text = "";
-                confirm.ForeColor = Color.White;
-            }
-        }
-
-        private void confirm_Leave(object sender, EventArgs e)
-        {
-            if (confirm.Text == "")
-            {
-                confirm.Text = "Confirm password";
-                confirm.ForeColor = Color.Gray;
-            }
-        }
-
         private void pubkeyn_Leave(object sender, EventArgs e)
         {
             if (pubkey_n.Text == "")
@@ -142,7 +124,7 @@ namespace Secure_file_storage_system__RSA_
         {
             if (usrname.Text == "Username" || fullname.Text == "Full name"
                || passwrd.Text == "Password" || pubkey_e.Text == "Public key (e)" 
-               || pubkey_n.Text == "Public key (n)" || confirm.Text == "Confirm password")
+               || pubkey_n.Text == "Public key (n)")
             {
                 MessageBox.Show("Please fill all input field!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -159,11 +141,6 @@ namespace Secure_file_storage_system__RSA_
             passwrd.PasswordChar = '*';
         }
 
-        private void confirm_TextChanged(object sender, EventArgs e)
-        {
-            confirm.ForeColor = Color.Black;
-            confirm.PasswordChar = '*';
-        }
 
         private void Sign_Up_FormClosed(object sender, FormClosedEventArgs e)
         {

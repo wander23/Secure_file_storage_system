@@ -105,6 +105,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btn_copy = new System.Windows.Forms.Button();
             this.lb_copy = new System.Windows.Forms.Label();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -176,16 +177,17 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnDecrypt);
             this.splitContainer1.Panel1.Controls.Add(this.imageList);
-            this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDownload);
-            this.splitContainer1.Panel1.Controls.Add(this.btnShare);
-            this.splitContainer1.Panel1.Controls.Add(this.btnAll);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnDecrypt);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAll);
+            this.splitContainer1.Panel2.Controls.Add(this.btnShare);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_reload);
             this.splitContainer1.Panel2.Controls.Add(this.selectedImage);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDownload);
+            this.splitContainer1.Panel2.Controls.Add(this.btnUpload);
             this.splitContainer1.Size = new System.Drawing.Size(1101, 522);
             this.splitContainer1.SplitterDistance = 333;
             this.splitContainer1.TabIndex = 4;
@@ -194,9 +196,9 @@
             // 
             this.btnDecrypt.BackColor = System.Drawing.Color.DimGray;
             this.btnDecrypt.ForeColor = System.Drawing.Color.White;
-            this.btnDecrypt.Location = new System.Drawing.Point(211, 37);
+            this.btnDecrypt.Location = new System.Drawing.Point(140, 36);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(120, 30);
+            this.btnDecrypt.Size = new System.Drawing.Size(146, 30);
             this.btnDecrypt.TabIndex = 6;
             this.btnDecrypt.Text = "Decrypt Image";
             this.btnDecrypt.UseVisualStyleBackColor = false;
@@ -208,9 +210,9 @@
             this.imageList.AutoArrange = false;
             this.imageList.CheckBoxes = true;
             this.imageList.HideSelection = false;
-            this.imageList.Location = new System.Drawing.Point(3, 70);
+            this.imageList.Location = new System.Drawing.Point(3, 3);
             this.imageList.Name = "imageList";
-            this.imageList.Size = new System.Drawing.Size(326, 452);
+            this.imageList.Size = new System.Drawing.Size(326, 519);
             this.imageList.TabIndex = 4;
             this.imageList.UseCompatibleStateImageBehavior = false;
             this.imageList.View = System.Windows.Forms.View.SmallIcon;
@@ -220,10 +222,11 @@
             // btnUpload
             // 
             this.btnUpload.BackColor = System.Drawing.Color.DimGray;
+            this.btnUpload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(6, 3);
+            this.btnUpload.Location = new System.Drawing.Point(458, 0);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(149, 35);
+            this.btnUpload.Size = new System.Drawing.Size(149, 65);
             this.btnUpload.TabIndex = 5;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
@@ -233,11 +236,12 @@
             // btnDownload
             // 
             this.btnDownload.BackColor = System.Drawing.Color.DimGray;
+            this.btnDownload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(152, 3);
+            this.btnDownload.Location = new System.Drawing.Point(609, 0);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDownload.Size = new System.Drawing.Size(177, 35);
+            this.btnDownload.Size = new System.Drawing.Size(149, 66);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -248,9 +252,9 @@
             // 
             this.btnShare.BackColor = System.Drawing.Color.DimGray;
             this.btnShare.ForeColor = System.Drawing.Color.White;
-            this.btnShare.Location = new System.Drawing.Point(111, 37);
+            this.btnShare.Location = new System.Drawing.Point(283, 36);
             this.btnShare.Name = "btnShare";
-            this.btnShare.Size = new System.Drawing.Size(102, 30);
+            this.btnShare.Size = new System.Drawing.Size(130, 30);
             this.btnShare.TabIndex = 0;
             this.btnShare.Text = "Share";
             this.btnShare.UseVisualStyleBackColor = false;
@@ -261,9 +265,9 @@
             // 
             this.btnAll.BackColor = System.Drawing.Color.DimGray;
             this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Location = new System.Drawing.Point(6, 37);
+            this.btnAll.Location = new System.Drawing.Point(7, 36);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(107, 30);
+            this.btnAll.Size = new System.Drawing.Size(137, 30);
             this.btnAll.TabIndex = 2;
             this.btnAll.Text = "Select all";
             this.btnAll.UseVisualStyleBackColor = false;
@@ -276,9 +280,9 @@
             this.selectedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.selectedImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.ErrorImage")));
             this.selectedImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.InitialImage")));
-            this.selectedImage.Location = new System.Drawing.Point(3, 6);
+            this.selectedImage.Location = new System.Drawing.Point(3, 68);
             this.selectedImage.Name = "selectedImage";
-            this.selectedImage.Size = new System.Drawing.Size(755, 510);
+            this.selectedImage.Size = new System.Drawing.Size(755, 450);
             this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.selectedImage.TabIndex = 3;
             this.selectedImage.TabStop = false;
@@ -1078,6 +1082,20 @@
             this.lb_copy.Text = "Copied";
             this.lb_copy.Visible = false;
             // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.DimGray;
+            this.btn_reload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ForeColor = System.Drawing.Color.White;
+            this.btn_reload.Location = new System.Drawing.Point(3, 0);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(410, 39);
+            this.btn_reload.TabIndex = 6;
+            this.btn_reload.Text = "Reload";
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            this.btn_reload.MouseHover += new System.EventHandler(this.btn_reload_MouseHover);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1228,5 +1246,6 @@
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btn_copy;
         private System.Windows.Forms.Label lb_copy;
+        private System.Windows.Forms.Button btn_reload;
     }
 }

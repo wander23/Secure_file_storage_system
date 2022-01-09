@@ -95,6 +95,11 @@ namespace Secure_file_storage_system__RSA_
 
         private void privateKey_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == Convert.ToInt16(Keys.Enter))
+            {
+                btnVerify_Click(sender, e);
+            }
+
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
