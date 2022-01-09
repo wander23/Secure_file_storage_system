@@ -399,6 +399,7 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
+            HttpClient client = new HttpClient();
             // open form
             UserID userID_form = new UserID();
             userID_form.ShowDialog();
@@ -406,6 +407,18 @@ namespace Secure_file_storage_system__RSA_
             {
                 return;
             }
+
+            var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/" + userID_form.idUser.Text);
+            if (responseTask2.IsCompleted)
+            {
+                var result = responseTask2.Result;
+                if (!result.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("ID user dont exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
 
             // get path
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
@@ -419,8 +432,6 @@ namespace Secure_file_storage_system__RSA_
                 int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
-                    HttpClient client = new HttpClient();
-
                     string url = ImageUrl[imgIndex];
                     Bitmap b = new Bitmap(LoadedImages[imgIndex]);
                     string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;

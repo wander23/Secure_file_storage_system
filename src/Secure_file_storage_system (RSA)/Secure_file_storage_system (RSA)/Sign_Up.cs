@@ -138,30 +138,6 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }   
 
-            foreach (char d in pubkey_n.Text)
-            {
-                int iN = (int)d;
-                if ((iN > 57) || (iN < 48))
-                {
-                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    pubkey_n.Text = "";
-                    pubkey_e.Text = "";
-                    return;
-                }
-            }
-
-            foreach (char d in pubkey_e.Text)
-            {
-                int iN = (int)d;
-                if ((iN > 57) || (iN < 48))
-                {
-                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    pubkey_e.Text = "";
-                    pubkey_n.Text = "";
-                    return;
-                }
-            }
-
             HttpClient client = new HttpClient();
 
             var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/username/"+ usrname.Text);
