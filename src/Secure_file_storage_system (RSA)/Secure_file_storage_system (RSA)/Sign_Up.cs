@@ -130,6 +130,47 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
+            string trimmed = String.Concat(usrname.Text.Where(c => !Char.IsWhiteSpace(c)));
+            if (trimmed.Length != usrname.Text.Length)
+            {
+                MessageBox.Show("Your username Illegal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                usrname.Text = "";
+                return;
+            }
+
+            foreach (char d in pubkey_n.Text)
+            {
+                int iN = (int)d;
+                if ((iN > 57) || (iN < 48))
+                {
+                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pubkey_n.Text = "";
+                    pubkey_e.Text = "";
+                    return;
+                }
+            }
+
+            foreach (char d in pubkey_e.Text)
+            {
+                int iN = (int)d;
+                if ((iN > 57) || (iN < 48))
+                {
+                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pubkey_e.Text = "";
+                    pubkey_n.Text = "";
+                    return;
+                }
+            }
+
+            if(!string.Equals(confirm.Text, passwrd.Text))
+            {
+                MessageBox.Show("Your password and confirm arent the same", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                password.Text = "";
+                confirm.Text = "";
+                return;
+            }
+
+
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
             this.Close();
