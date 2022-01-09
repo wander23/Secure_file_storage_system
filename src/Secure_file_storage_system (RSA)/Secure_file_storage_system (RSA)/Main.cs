@@ -31,6 +31,10 @@ namespace Secure_file_storage_system__RSA_
             create_Temp_folder();
 
             bool CheckedAll = false;
+            lb_name.Text = Sign_In.instance.full_name;
+            lb_id.Text = Sign_In.instance.id_;
+            lb_e.Text = Sign_In.instance.pub_e.ToString();
+            lb_n.Text = Sign_In.instance.pub_n.ToString();
         }
 
         static Image ScaleByPercent(Image imgPhoto, int Percent)
@@ -120,7 +124,7 @@ namespace Secure_file_storage_system__RSA_
 
             //Read image from clound 
             HttpClient client = new HttpClient();
-            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/" + "61d82fd286a4206de43fefef");
+            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/photos/" + Sign_In.instance.id_);
             responseTask.Wait();
 
             if (responseTask.IsCompleted)
@@ -260,7 +264,7 @@ namespace Secure_file_storage_system__RSA_
                 PhotoModel photo = new PhotoModel()
                 {
                     urlImage = url,
-                    idUser = "61d82fd286a4206de43fefef"
+                    idUser = Sign_In.instance.id_
                 };
                 var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                 responseTask.Wait();
@@ -451,6 +455,44 @@ namespace Secure_file_storage_system__RSA_
                 }
                 this.main_Load(sender, e);
             }
+        }
+
+        private void btn_copy_Click(object sender, EventArgs e)
+        {
+            // copy ID into clipboard
+            Clipboard.SetText(lb_id.Text);
+
+            lb_copy.Visible = true;
+        }
+
+        private void Main_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_name_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_id_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_n_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void lb_e_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            lb_copy.Visible = false;
         }
     }
 }

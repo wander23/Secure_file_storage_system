@@ -18,6 +18,11 @@ namespace Secure_file_storage_system__RSA_
     {
 
         public static Sign_In instance;
+        public string user_name;
+        public string full_name;
+        public string id_;
+        public int pub_e;
+        public int pub_n;
         public Sign_In()
         {
             InitializeComponent();
@@ -112,14 +117,11 @@ namespace Secure_file_storage_system__RSA_
 
                     dynamic json = JsonConvert.DeserializeObject(messageTask.Result);
 
-                    var username = json.data.username.ToString();
-                    var fullname = json.data.fullname.ToString();
-                    var password = json.data.password.ToString();
-                    var id = json.data.id.ToString();
-                    var nKey = Convert.ToInt32(json.data.n);
-                    var eKey = Convert.ToInt32(json.data.e);
-
-
+                    user_name = json.data.username.ToString();
+                    full_name = json.data.fullname.ToString();
+                    id_ = json.data.id.ToString();
+                    pub_e = Convert.ToInt32(json.data.e);
+                    pub_n = Convert.ToInt32(json.data.n);
 
                     this.Hide();
                     Main main_form = new Main();
