@@ -197,6 +197,7 @@ namespace Secure_file_storage_system__RSA_
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
+                MessageBox.Show(dialog.FileName);
                 dialog.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
               
                 // find relative path of "loading image"
@@ -401,6 +402,10 @@ namespace Secure_file_storage_system__RSA_
             // open form
             UserID userID_form = new UserID();
             userID_form.ShowDialog();
+            if(userID_form.idUser.Text=="ID")
+            {
+                return;
+            }
 
             //----------- QUAN --------------------------
             // get path

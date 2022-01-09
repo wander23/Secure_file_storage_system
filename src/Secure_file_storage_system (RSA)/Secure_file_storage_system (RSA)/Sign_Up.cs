@@ -136,7 +136,7 @@ namespace Secure_file_storage_system__RSA_
                 MessageBox.Show("Your username Illegal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 usrname.Text = "";
                 return;
-            }
+            }   
 
             foreach (char d in pubkey_n.Text)
             {
@@ -162,6 +162,34 @@ namespace Secure_file_storage_system__RSA_
                 }
             }
 
+            HttpClient client = new HttpClient();
+
+            var responseTask = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/username/"+ usrname.Text);
+            responseTask.Wait();
+            if (responseTask.IsCompleted)
+            {
+                var result = responseTask.Result;
+                if (!result.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Username already taken", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    usrname.Text = "";
+                    return;
+                }
+            }
+
+            var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/publickey/" + pubkey_e.Text+'&'+ pubkey_n.Text);
+            responseTask2.Wait();
+            if (responseTask2.IsCompleted)
+            {
+                var result = responseTask2.Result;
+                if (!result.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("public key already taken", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pubkey_e.Text = "";
+                    pubkey_n.Text = "";
+                    return;
+                }
+            }
 
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
