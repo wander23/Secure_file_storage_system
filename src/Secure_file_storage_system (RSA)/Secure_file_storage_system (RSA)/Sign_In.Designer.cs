@@ -74,7 +74,7 @@
             this.lb_passwrd.ForeColor = System.Drawing.Color.White;
             this.lb_passwrd.Location = new System.Drawing.Point(75, 334);
             this.lb_passwrd.Name = "lb_passwrd";
-            this.lb_passwrd.Size = new System.Drawing.Size(106, 24);
+            this.lb_passwrd.Size = new System.Drawing.Size(97, 20);
             this.lb_passwrd.TabIndex = 2;
             this.lb_passwrd.Text = "Password:";
             // 
@@ -105,7 +105,7 @@
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Gray;
             this.username.Location = new System.Drawing.Point(42, 10);
             this.username.Multiline = true;
@@ -129,7 +129,7 @@
             // 
             this.passwrd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.passwrd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwrd.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwrd.ForeColor = System.Drawing.Color.Gray;
             this.passwrd.Location = new System.Drawing.Point(42, 8);
             this.passwrd.Multiline = true;
@@ -191,12 +191,12 @@
             // 
             this.lb_Login.AutoSize = true;
             this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Login.ForeColor = System.Drawing.Color.White;
-            this.lb_Login.Location = new System.Drawing.Point(132, 157);
+            this.lb_Login.Location = new System.Drawing.Point(138, 156);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(165, 47);
+            this.lb_Login.Size = new System.Drawing.Size(151, 39);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -208,7 +208,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(75, 243);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(111, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(100, 20);
             this.lb_usrname.TabIndex = 1;
             this.lb_usrname.Text = "Username:";
             // 
@@ -217,7 +217,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(146, 24);
+            this.pictureBox3.Location = new System.Drawing.Point(136, 24);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(140, 140);
             this.pictureBox3.TabIndex = 24;
@@ -229,7 +229,7 @@
             this.mess.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.mess.Location = new System.Drawing.Point(73, 453);
             this.mess.Name = "mess";
-            this.mess.Size = new System.Drawing.Size(0, 15);
+            this.mess.Size = new System.Drawing.Size(0, 13);
             this.mess.TabIndex = 25;
             this.mess.Visible = false;
             // 
@@ -237,11 +237,11 @@
             // 
             this.lb_announce.AutoSize = true;
             this.lb_announce.BackColor = System.Drawing.Color.Transparent;
-            this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro Ligh", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_announce.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_announce.ForeColor = System.Drawing.Color.Red;
             this.lb_announce.Location = new System.Drawing.Point(76, 420);
             this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(13, 20);
+            this.lb_announce.Size = new System.Drawing.Size(12, 18);
             this.lb_announce.TabIndex = 26;
             this.lb_announce.Text = " ";
             this.lb_announce.Visible = false;
