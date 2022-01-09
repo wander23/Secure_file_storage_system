@@ -174,5 +174,15 @@ namespace Secure_file_storage_system__RSA_
         {
             btn_signup.Cursor = Cursors.Hand;
         }
+
+        private void pubkey_n_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void pubkey_e_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

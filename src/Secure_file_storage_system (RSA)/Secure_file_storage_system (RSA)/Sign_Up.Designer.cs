@@ -64,6 +64,7 @@
             this.fullname = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.mess = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -140,6 +141,7 @@
             this.pubkey_n.TabIndex = 9;
             this.pubkey_n.Text = "Public key (n)";
             this.pubkey_n.Enter += new System.EventHandler(this.pubkeyn_Enter);
+            this.pubkey_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pubkey_n_KeyPress);
             this.pubkey_n.Leave += new System.EventHandler(this.pubkeyn_Leave);
             // 
             // panel4
@@ -390,6 +392,7 @@
             this.pubkey_e.TabIndex = 9;
             this.pubkey_e.Text = "Public key (e)";
             this.pubkey_e.Enter += new System.EventHandler(this.pubkey_e_Enter);
+            this.pubkey_e.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pubkey_e_KeyPress);
             this.pubkey_e.Leave += new System.EventHandler(this.pubkey_e_Leave);
             // 
             // panel10
@@ -494,6 +497,18 @@
             this.mess.Size = new System.Drawing.Size(0, 13);
             this.mess.TabIndex = 29;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label8.Location = new System.Drawing.Point(141, 264);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 17);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "(Number only)";
+            // 
             // Sign_Up
             // 
             this.AcceptButton = this.btn_signup;
@@ -501,6 +516,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.mess);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel11);
@@ -585,5 +601,6 @@
         private System.Windows.Forms.TextBox fullname;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label mess;
+        private System.Windows.Forms.Label label8;
     }
 }

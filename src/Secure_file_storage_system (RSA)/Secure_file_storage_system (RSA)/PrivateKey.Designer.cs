@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.key_d = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,7 +60,7 @@
             this.btn_send.BackColor = System.Drawing.Color.Black;
             this.btn_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.Location = new System.Drawing.Point(159, 320);
+            this.btn_send.Location = new System.Drawing.Point(159, 321);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(126, 53);
             this.btn_send.TabIndex = 26;
@@ -86,7 +87,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label1.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(101, 152);
+            this.label1.Location = new System.Drawing.Point(101, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 73);
             this.label1.TabIndex = 33;
@@ -99,7 +100,7 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(71, 238);
+            this.lb_usrname.Location = new System.Drawing.Point(71, 225);
             this.lb_usrname.Name = "lb_usrname";
             this.lb_usrname.Size = new System.Drawing.Size(143, 24);
             this.lb_usrname.TabIndex = 31;
@@ -112,7 +113,7 @@
             this.panel1.Controls.Add(this.key_d);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(75, 265);
+            this.panel1.Location = new System.Drawing.Point(75, 252);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 32;
@@ -141,6 +142,7 @@
             this.key_d.TabIndex = 9;
             this.key_d.Text = "private key (d)";
             this.key_d.Enter += new System.EventHandler(this.key_d_Enter);
+            this.key_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.key_d_KeyPress);
             this.key_d.Leave += new System.EventHandler(this.key_d_Leave);
             // 
             // panel3
@@ -152,12 +154,25 @@
             this.panel3.Size = new System.Drawing.Size(363, 5);
             this.panel3.TabIndex = 12;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(206, 229);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "(Number only)";
+            // 
             // PrivateKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 429);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_usrname);
             this.Controls.Add(this.panel1);
@@ -190,5 +205,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox key_d;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
     }
 }
