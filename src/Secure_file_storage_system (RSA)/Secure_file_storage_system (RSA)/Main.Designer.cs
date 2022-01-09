@@ -43,23 +43,23 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lb_e = new System.Windows.Forms.Label();
             this.lb_Signup = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lb_n = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lb_id = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lb_usrname = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lb_name = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -307,7 +307,7 @@
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel14.Controls.Add(this.panel16);
             this.panel14.Controls.Add(this.pictureBox20);
-            this.panel14.Controls.Add(this.label24);
+            this.panel14.Controls.Add(this.lb_e);
             this.panel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel14.Location = new System.Drawing.Point(308, 433);
             this.panel14.Name = "panel14";
@@ -334,17 +334,17 @@
             this.pictureBox20.TabIndex = 18;
             this.pictureBox20.TabStop = false;
             // 
-            // label24
+            // lb_e
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(52, 10);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(135, 24);
-            this.label24.TabIndex = 15;
-            this.label24.Text = "68 718 952 447";
+            this.lb_e.AutoSize = true;
+            this.lb_e.BackColor = System.Drawing.Color.Transparent;
+            this.lb_e.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_e.ForeColor = System.Drawing.Color.White;
+            this.lb_e.Location = new System.Drawing.Point(52, 10);
+            this.lb_e.Name = "lb_e";
+            this.lb_e.Size = new System.Drawing.Size(123, 20);
+            this.lb_e.TabIndex = 15;
+            this.lb_e.Text = "68 718 952 447";
             // 
             // lb_Signup
             // 
@@ -355,7 +355,7 @@
             this.lb_Signup.Location = new System.Drawing.Point(355, 58);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(414, 44);
+            this.lb_Signup.Size = new System.Drawing.Size(379, 39);
             this.lb_Signup.TabIndex = 28;
             this.lb_Signup.Text = "USER INFORMATION";
             // 
@@ -378,7 +378,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(277, 347);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 24);
+            this.label2.Size = new System.Drawing.Size(138, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "RSA Public key";
             // 
@@ -387,7 +387,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel5.Controls.Add(this.panel15);
             this.panel5.Controls.Add(this.pictureBox19);
-            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.lb_n);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel5.Location = new System.Drawing.Point(308, 375);
             this.panel5.Name = "panel5";
@@ -414,17 +414,17 @@
             this.pictureBox19.TabIndex = 18;
             this.pictureBox19.TabStop = false;
             // 
-            // label20
+            // lb_n
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(52, 10);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(135, 24);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "68 718 952 447";
+            this.lb_n.AutoSize = true;
+            this.lb_n.BackColor = System.Drawing.Color.Transparent;
+            this.lb_n.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_n.ForeColor = System.Drawing.Color.White;
+            this.lb_n.Location = new System.Drawing.Point(52, 10);
+            this.lb_n.Name = "lb_n";
+            this.lb_n.Size = new System.Drawing.Size(123, 20);
+            this.lb_n.TabIndex = 15;
+            this.lb_n.Text = "68 718 952 447";
             // 
             // label1
             // 
@@ -434,7 +434,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(277, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 24);
+            this.label1.Size = new System.Drawing.Size(28, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "ID";
             // 
@@ -442,7 +442,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.lb_id);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel2.Location = new System.Drawing.Point(275, 271);
@@ -461,17 +461,17 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // label19
+            // lb_id
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(52, 10);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 24);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "19127525";
+            this.lb_id.AutoSize = true;
+            this.lb_id.BackColor = System.Drawing.Color.Transparent;
+            this.lb_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_id.ForeColor = System.Drawing.Color.White;
+            this.lb_id.Location = new System.Drawing.Point(52, 10);
+            this.lb_id.Name = "lb_id";
+            this.lb_id.Size = new System.Drawing.Size(81, 20);
+            this.lb_id.TabIndex = 14;
+            this.lb_id.Text = "19127525";
             // 
             // panel4
             // 
@@ -490,7 +490,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(277, 142);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(105, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(94, 20);
             this.lb_usrname.TabIndex = 12;
             this.lb_usrname.Text = "Username";
             // 
@@ -498,7 +498,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.lb_name);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.panel1.Location = new System.Drawing.Point(275, 170);
@@ -517,17 +517,17 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // label18
+            // lb_name
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(52, 10);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(189, 24);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Nguyễn Thanh Quân";
+            this.lb_name.AutoSize = true;
+            this.lb_name.BackColor = System.Drawing.Color.Transparent;
+            this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_name.ForeColor = System.Drawing.Color.White;
+            this.lb_name.Location = new System.Drawing.Point(52, 10);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(161, 20);
+            this.lb_name.TabIndex = 13;
+            this.lb_name.Text = "Nguyễn Thanh Quân";
             // 
             // panel3
             // 
@@ -546,7 +546,7 @@
             this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(281, 443);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(30, 24);
+            this.label26.Size = new System.Drawing.Size(27, 20);
             this.label26.TabIndex = 30;
             this.label26.Text = "E:";
             // 
@@ -558,7 +558,7 @@
             this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(279, 385);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(31, 24);
+            this.label25.Size = new System.Drawing.Size(28, 20);
             this.label25.TabIndex = 29;
             this.label25.Text = "N:";
             // 
@@ -691,7 +691,7 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(55, 77);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(90, 24);
+            this.label15.Size = new System.Drawing.Size(81, 20);
             this.label15.TabIndex = 19;
             this.label15.Text = "19127625";
             // 
@@ -703,7 +703,7 @@
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(200, 123);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 24);
+            this.label16.Size = new System.Drawing.Size(81, 20);
             this.label16.TabIndex = 18;
             this.label16.Text = "19127625";
             // 
@@ -715,7 +715,7 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(42, 54);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(118, 24);
+            this.label17.Size = new System.Drawing.Size(106, 20);
             this.label17.TabIndex = 17;
             this.label17.Text = "Lâm Chí Văn";
             // 
@@ -762,7 +762,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(55, 77);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 24);
+            this.label12.Size = new System.Drawing.Size(81, 20);
             this.label12.TabIndex = 19;
             this.label12.Text = "19127525";
             // 
@@ -774,7 +774,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(200, 123);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 24);
+            this.label13.Size = new System.Drawing.Size(81, 20);
             this.label13.TabIndex = 18;
             this.label13.Text = "19127625";
             // 
@@ -786,7 +786,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(8, 54);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 24);
+            this.label14.Size = new System.Drawing.Size(161, 20);
             this.label14.TabIndex = 17;
             this.label14.Text = "Nguyễn Thanh Quân";
             // 
@@ -833,7 +833,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(55, 77);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 24);
+            this.label9.Size = new System.Drawing.Size(81, 20);
             this.label9.TabIndex = 19;
             this.label9.Text = "19127449";
             // 
@@ -845,7 +845,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(200, 123);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 24);
+            this.label10.Size = new System.Drawing.Size(81, 20);
             this.label10.TabIndex = 18;
             this.label10.Text = "19127625";
             // 
@@ -857,7 +857,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(25, 54);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(155, 24);
+            this.label11.Size = new System.Drawing.Size(133, 20);
             this.label11.TabIndex = 17;
             this.label11.Text = "Phùng Anh Khoa";
             // 
@@ -902,7 +902,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(55, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 19;
             this.label3.Text = "19127392";
             // 
@@ -914,7 +914,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(200, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 24);
+            this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "19127625";
             // 
@@ -926,7 +926,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(50, 54);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 24);
+            this.label8.Size = new System.Drawing.Size(95, 20);
             this.label8.TabIndex = 17;
             this.label8.Text = "Tô Gia Hảo";
             // 
@@ -951,7 +951,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(55, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 24);
+            this.label6.Size = new System.Drawing.Size(81, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "19127054";
             // 
@@ -963,7 +963,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(200, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 18;
             this.label5.Text = "19127625";
             // 
@@ -975,7 +975,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(25, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 24);
+            this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Thái Duy Nguyễn";
             // 
@@ -1136,10 +1136,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lb_n;
+        private System.Windows.Forms.Label lb_id;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lb_name;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -1188,7 +1188,7 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lb_e;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
