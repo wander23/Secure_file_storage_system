@@ -265,13 +265,10 @@ namespace Secure_file_storage_system__RSA_
             {
                 MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-<<<<<<< HEAD
 
             // Delete temp image in Temp folder
             DeleteFile(imageLocation);
-=======
             main_Load(sender, e);
->>>>>>> 8b0416821f3a35e197390bbc92e6b2f455b19b44
         }
 
 
