@@ -54,5 +54,10 @@ namespace Secure_file_storage_system__RSA_
         {
 
         }
+
+        private void UserID_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            id.Text = "ID";
+        }
     }
 }

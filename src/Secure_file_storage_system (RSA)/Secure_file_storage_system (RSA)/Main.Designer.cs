@@ -224,9 +224,9 @@
             this.btnUpload.BackColor = System.Drawing.Color.DimGray;
             this.btnUpload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(458, 0);
+            this.btnUpload.Location = new System.Drawing.Point(412, 0);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(149, 65);
+            this.btnUpload.Size = new System.Drawing.Size(181, 65);
             this.btnUpload.TabIndex = 5;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
@@ -238,10 +238,10 @@
             this.btnDownload.BackColor = System.Drawing.Color.DimGray;
             this.btnDownload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(609, 0);
+            this.btnDownload.Location = new System.Drawing.Point(591, 0);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDownload.Size = new System.Drawing.Size(149, 66);
+            this.btnDownload.Size = new System.Drawing.Size(170, 66);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -265,9 +265,9 @@
             // 
             this.btnAll.BackColor = System.Drawing.Color.DimGray;
             this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Location = new System.Drawing.Point(7, 36);
+            this.btnAll.Location = new System.Drawing.Point(3, 36);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(137, 30);
+            this.btnAll.Size = new System.Drawing.Size(141, 30);
             this.btnAll.TabIndex = 2;
             this.btnAll.Text = "Select all";
             this.btnAll.UseVisualStyleBackColor = false;

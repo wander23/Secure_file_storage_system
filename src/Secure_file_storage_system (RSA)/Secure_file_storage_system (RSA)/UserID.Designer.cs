@@ -51,7 +51,7 @@
             this.lb_Login.Location = new System.Drawing.Point(114, 139);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(211, 39);
+            this.lb_Login.Size = new System.Drawing.Size(230, 44);
             this.lb_Login.TabIndex = 30;
             this.lb_Login.Text = "FIND USER";
             // 
@@ -63,7 +63,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(65, 214);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(74, 20);
+            this.lb_usrname.Size = new System.Drawing.Size(78, 24);
             this.lb_usrname.TabIndex = 33;
             this.lb_usrname.Text = "User ID";
             // 
@@ -141,7 +141,7 @@
             // 
             // UserID
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 429);
@@ -156,6 +156,7 @@
             this.Name = "UserID";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserID_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

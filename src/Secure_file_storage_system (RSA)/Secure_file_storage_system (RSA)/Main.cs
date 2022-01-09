@@ -407,7 +407,6 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
-            //----------- QUAN --------------------------
             // get path
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
             string exeDir = Path.GetDirectoryName(exeFile);

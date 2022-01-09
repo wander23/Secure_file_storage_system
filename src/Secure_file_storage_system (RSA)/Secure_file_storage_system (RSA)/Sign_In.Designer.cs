@@ -131,7 +131,7 @@
             this.passwrd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwrd.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.90566F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwrd.ForeColor = System.Drawing.Color.Gray;
-            this.passwrd.Location = new System.Drawing.Point(42, 5);
+            this.passwrd.Location = new System.Drawing.Point(42, 8);
             this.passwrd.Multiline = true;
             this.passwrd.Name = "passwrd";
             this.passwrd.Size = new System.Drawing.Size(254, 30);
