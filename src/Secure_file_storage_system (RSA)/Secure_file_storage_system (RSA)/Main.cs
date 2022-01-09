@@ -419,12 +419,10 @@ namespace Secure_file_storage_system__RSA_
                 int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
+                    HttpClient client = new HttpClient();
+
                     string url = ImageUrl[imgIndex];
-
-                    // "name of the file"
                     Bitmap b = new Bitmap(LoadedImages[imgIndex]);
-
-                    // "path of the folder to save"
                     string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;
                     b.Save(SavePath);
 
@@ -434,20 +432,17 @@ namespace Secure_file_storage_system__RSA_
                    "INiU8DQHajhzDIZQmBWAFl4_HFk");
 
                     Cloudinary cloudinary = new Cloudinary(account);
-
                     var uploadParams = new ImageUploadParams()
                     {
                         File = new FileDescription(@SavePath),
                     };
-
                     var uploadResult = cloudinary.Upload(uploadParams);
-
                     string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
 
-                    HttpClient client = new HttpClient();
+                    
                     PhotoModel photo = new PhotoModel()
                     {
-                        urlImage = url,
+                        urlImage = url2,
                         idUser = userID_form.idUser.Text
                     };
                     var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
