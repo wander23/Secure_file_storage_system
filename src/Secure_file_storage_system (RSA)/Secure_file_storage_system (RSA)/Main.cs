@@ -211,8 +211,12 @@ namespace Secure_file_storage_system__RSA_
                         string tempImg_path = Path.Combine(TempFolder_path, dialog.FileName.Split('\\')[file_path_arr.Length - 1]);
                         Image tempImg = Image.FromFile(dialog.FileName);
 
-                        // resize image in Temp folder (80%);
-                        tempImg = ScaleByPercent(tempImg, 80);
+                        //resize image
+                        if (tempImg.Width > 3000)
+                            tempImg = ScaleByPercent(tempImg, 90);
+
+                        // resize image in Temp folder (95%);
+                        tempImg = ScaleByPercent(tempImg, 95);
 
                         //Download resized image in Temp folder
                         DownloadImage(tempImg, tempImg_path);
