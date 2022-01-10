@@ -62,7 +62,7 @@ class GFG
             }
         }
         sw.Close();
-        img.Save("D:\\Output.png");
+        newImg.Save("D:\\Output.png");
         return newImg;
     }
 

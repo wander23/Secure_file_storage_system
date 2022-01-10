@@ -248,6 +248,9 @@ namespace Secure_file_storage_system__RSA_
                     return;
 
                 GFG a = new GFG();
+                
+                //////////////////////////////////////////HOT/////////////////////////////////////////
+                
                 Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
                 //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
 
