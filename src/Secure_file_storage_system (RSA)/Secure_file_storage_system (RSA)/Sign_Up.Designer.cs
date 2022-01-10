@@ -61,7 +61,6 @@
             this.mess = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lb_an = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -79,12 +78,12 @@
             // 
             this.lb_Signup.AutoSize = true;
             this.lb_Signup.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Signup.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Signup.ForeColor = System.Drawing.Color.White;
             this.lb_Signup.Location = new System.Drawing.Point(195, 54);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(179, 47);
+            this.lb_Signup.Size = new System.Drawing.Size(165, 39);
             this.lb_Signup.TabIndex = 13;
             this.lb_Signup.Text = "SIGN UP";
             // 
@@ -96,7 +95,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(63, 294);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 16;
             this.label1.Text = "Public key";
             // 
@@ -171,7 +170,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(61, 417);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Password";
             // 
@@ -257,7 +256,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(61, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.Size = new System.Drawing.Size(81, 18);
             this.label4.TabIndex = 19;
             this.label4.Text = "Full name";
             // 
@@ -349,7 +348,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(63, 325);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 20);
+            this.label5.Size = new System.Drawing.Size(25, 18);
             this.label5.TabIndex = 25;
             this.label5.Text = "N:";
             // 
@@ -361,7 +360,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(63, 373);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 20);
+            this.label6.Size = new System.Drawing.Size(24, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "E:";
             // 
@@ -373,7 +372,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(63, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 20);
+            this.label7.Size = new System.Drawing.Size(85, 18);
             this.label7.TabIndex = 28;
             this.label7.Text = "Username";
             // 
@@ -438,11 +437,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.label8.Location = new System.Drawing.Point(154, 298);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 17);
+            this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 30;
             this.label8.Text = "(Number only)";
             // 
@@ -454,28 +453,18 @@
             this.lb_an.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lb_an.Location = new System.Drawing.Point(199, 108);
             this.lb_an.Name = "lb_an";
-            this.lb_an.Size = new System.Drawing.Size(161, 20);
+            this.lb_an.Size = new System.Drawing.Size(146, 17);
             this.lb_an.TabIndex = 31;
             this.lb_an.Text = "Opening Verify form...";
             this.lb_an.Visible = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(309, 577);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "label9";
-            // 
             // Sign_Up
             // 
             this.AcceptButton = this.btn_signup;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.lb_an);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.mess);
@@ -556,6 +545,5 @@
         private System.Windows.Forms.Label mess;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lb_an;
-        private System.Windows.Forms.Label label9;
     }
 }
