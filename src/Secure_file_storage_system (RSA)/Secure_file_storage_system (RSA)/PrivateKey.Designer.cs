@@ -39,6 +39,7 @@
             this.key_d = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.lb_announce = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -166,12 +167,26 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "(Number only)";
             // 
+            // lb_announce
+            // 
+            this.lb_announce.AutoSize = true;
+            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
+            this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_announce.ForeColor = System.Drawing.Color.Black;
+            this.lb_announce.Location = new System.Drawing.Point(113, 301);
+            this.lb_announce.Name = "lb_announce";
+            this.lb_announce.Size = new System.Drawing.Size(55, 20);
+            this.lb_announce.TabIndex = 35;
+            this.lb_announce.Text = "label2";
+            this.lb_announce.Visible = false;
+            // 
             // PrivateKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 429);
+            this.Controls.Add(this.lb_announce);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_usrname);
@@ -185,6 +200,7 @@
             this.Name = "PrivateKey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
+            this.Click += new System.EventHandler(this.PrivateKey_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -206,5 +222,6 @@
         private System.Windows.Forms.TextBox key_d;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_announce;
     }
 }

@@ -19,13 +19,26 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            lb_announce.Visible = true;
 
+            if (key_d.Text == "" || key_d.Text == "private key (d)")
+            {
+                lb_announce.Text = "Please fill PRIVATE KEY (d)";
+                lb_announce.ForeColor = Color.Red;
+
+                key_d.Text = "";
+                key_d_Leave(sender, e);
+                this.ActiveControl = lb_Login;
+                return;
+            }
 
         }
 
         private void key_d_Enter(object sender, EventArgs e)
         {
-            if (key_d.Text == "private key (d)")
+            lb_announce.Visible = false;
+
+            if (key_d.Text == "private key (d)" || key_d.Text == "\r\nprivate key (d)")
             {
                 key_d.Text = "";
                 key_d.ForeColor = Color.White;
@@ -51,8 +64,14 @@ namespace Secure_file_storage_system__RSA_
             if (e.KeyChar == Convert.ToInt16(Keys.Enter))
             {
                 btn_send_Click(sender, e);
+                return;
             }
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void PrivateKey_Click(object sender, EventArgs e)
+        {
+            lb_announce.Visible = false;
         }
     }
 }

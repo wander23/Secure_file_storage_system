@@ -19,7 +19,6 @@ namespace Secure_file_storage_system__RSA_
             Application.Run(new Sign_In());
             //Application.Run(new Sign_Up());
             //Application.Run(new Main());
-            //Application.Run(new PrivateKey());
         }
     }
 }

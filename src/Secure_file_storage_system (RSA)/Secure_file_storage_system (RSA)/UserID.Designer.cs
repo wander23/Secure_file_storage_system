@@ -37,6 +37,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lb_announce = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -104,6 +105,7 @@
             this.id.Text = "ID";
             this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             this.id.Enter += new System.EventHandler(this.id_Enter);
+            this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_KeyPress);
             this.id.Leave += new System.EventHandler(this.id_Leave);
             // 
             // panel3
@@ -139,12 +141,26 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
+            // lb_announce
+            // 
+            this.lb_announce.AutoSize = true;
+            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
+            this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_announce.ForeColor = System.Drawing.Color.Black;
+            this.lb_announce.Location = new System.Drawing.Point(161, 291);
+            this.lb_announce.Name = "lb_announce";
+            this.lb_announce.Size = new System.Drawing.Size(55, 20);
+            this.lb_announce.TabIndex = 35;
+            this.lb_announce.Text = "label2";
+            this.lb_announce.Visible = false;
+            // 
             // UserID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 429);
+            this.Controls.Add(this.lb_announce);
             this.Controls.Add(this.lb_Login);
             this.Controls.Add(this.lb_usrname);
             this.Controls.Add(this.panel1);
@@ -157,6 +173,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserID_FormClosing);
+            this.Click += new System.EventHandler(this.UserID_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -176,5 +193,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lb_announce;
     }
 }
