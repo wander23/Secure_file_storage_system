@@ -127,6 +127,9 @@ namespace Secure_file_storage_system__RSA_
 
         private void btn_signup_Click(object sender, EventArgs e)
         {
+            lb_an.Visible = true;
+            lb_an.Text = "Checking information...";
+
             if (usrname.Text == "Username" || fullname.Text == "Full name"
                || passwrd.Text == "Password" || pubkey_e.Text == "Public key (e)" 
                || pubkey_n.Text == "Public key (n)")
@@ -142,30 +145,6 @@ namespace Secure_file_storage_system__RSA_
                 usrname.Text = "";
                 return;
             }   
-
-            foreach (char d in pubkey_n.Text)
-            {
-                int iN = (int)d;
-                if ((iN > 57) || (iN < 48))
-                {
-                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    pubkey_n.Text = "";
-                    pubkey_e.Text = "";
-                    return;
-                }
-            }
-
-            foreach (char d in pubkey_e.Text)
-            {
-                int iN = (int)d;
-                if ((iN > 57) || (iN < 48))
-                {
-                    MessageBox.Show("Please fill nummer for public key n and e!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    pubkey_e.Text = "";
-                    pubkey_n.Text = "";
-                    return;
-                }
-            }
 
             HttpClient client = new HttpClient();
 
@@ -195,9 +174,12 @@ namespace Secure_file_storage_system__RSA_
                     return;
                 }
             }
+            
 
             Verify_key verify_form = new Verify_key();
             verify_form.ShowDialog();
+
+            lb_an.Visible = false;
             this.Close();
         }
 

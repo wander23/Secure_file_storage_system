@@ -60,6 +60,8 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.mess = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lb_an = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -444,6 +446,28 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "(Number only)";
             // 
+            // lb_an
+            // 
+            this.lb_an.AutoSize = true;
+            this.lb_an.BackColor = System.Drawing.Color.Transparent;
+            this.lb_an.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_an.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lb_an.Location = new System.Drawing.Point(199, 108);
+            this.lb_an.Name = "lb_an";
+            this.lb_an.Size = new System.Drawing.Size(161, 20);
+            this.lb_an.TabIndex = 31;
+            this.lb_an.Text = "Opening Verify form...";
+            this.lb_an.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(309, 577);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "label9";
+            // 
             // Sign_Up
             // 
             this.AcceptButton = this.btn_signup;
@@ -451,6 +475,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lb_an);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.mess);
             this.Controls.Add(this.label7);
@@ -529,5 +555,7 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label mess;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lb_an;
+        private System.Windows.Forms.Label label9;
     }
 }
