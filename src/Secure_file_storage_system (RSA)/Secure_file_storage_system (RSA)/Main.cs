@@ -205,7 +205,7 @@ namespace Secure_file_storage_system__RSA_
                 string exeDir = Path.GetDirectoryName(exeFile);
                 string uploadingPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\uploading.png");
                 selectedImage.ImageLocation = uploadingPath;
-
+                 
                 // just show loading image
                 try
                 {
@@ -244,7 +244,8 @@ namespace Secure_file_storage_system__RSA_
                     }
                     
                 }
-                
+                if (dialog.FileName == "")
+                    return;
                 Account account = new Account(
                 "cryption",
                 "731936666387127",
