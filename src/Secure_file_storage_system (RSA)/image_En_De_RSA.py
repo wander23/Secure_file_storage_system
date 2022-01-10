@@ -189,8 +189,12 @@ def encryption_image(n,e,file_name):
     pixels = jpgfile.load()
     
     #Encryted:
+    ##Khởi tạo mảng rõng để chứa giá trị pixel sẽ được đọc từ ảnh.
     enc = [[0 for x in range(col)] for y in range(row)]
-    dec = [[0 for x in range(col)] for y in range(row)]
+
+    #chạy 2 vòng for để đọc ra giá trị R,G,B của từng pixel sau đó mã hóa 3 giá trị này,
+    #Rồi lưu vào mảng đã khởi tạo bên trên.
+    
     for i in range(row):
         for j in range(col):
             r,g,b = pixels[j,i]
@@ -200,6 +204,9 @@ def encryption_image(n,e,file_name):
             enc[i][j] = [r1,g1,b1]
                      
     ##-----
+    ## Khởi tạo thêm 1 mảng có kích thước gấp đôi mảng cũ.
+    ## ta sẽ thực hiện chai lấy thương cho 256 với từng giá trị màu cho từng pixel để được giá trị mày R,G,B luôn nằm trong (0,256)
+    ## Ta lưu giá trị thương vào cột chẵn 0,2,4,.. và Giá trị dư vào cột lẻ 1,3,5,..
     enc_t = [[0 for x in range(col+col)] for y in range(row)]
 
     for i in range(row):
@@ -218,16 +225,18 @@ def encryption_image(n,e,file_name):
             g2 = g%256
             b2 = b%256
                 
-            enc_t[i][col+j] = [r1,g1,b1]
-            enc_t[i][j] = [r2,g2,b2]
+            enc_t[i][j*2+1] = [r1,g1,b1]##right
+            enc_t[i][j*2] = [r2,g2,b2]##left
             temp = enc_t[i][col+j]
-
+    
     rdt = numpy.array(enc_t,dtype=numpy.uint8)
-
+    ## Ta lưu mảng các pixel đã được mã hóa vào Ảnh định dạng .bmp.
     img1 = Image.fromarray(rdt,"RGB")
-    img1.save('in.bmp')
+    img1.save('pic/temp/in.bmp')
     img1.show()
 
+## Hàm return_Ori giúp trả về giá trị ban đầu đã mã hóa với kích thước của mảng ban đầu.
+## Bằng cách tính toán thương*256 + dư. Với 2 giá trị đầu vào là cột chẵn và cột lẽ kế bên nhau.
 def return_Ori(enc_t1,enc_t2):
     result = [0,0,0]
     r1,g1,b1 = enc_t1
@@ -238,25 +247,28 @@ def return_Ori(enc_t1,enc_t2):
     return result
 
 def decryption_image(n,d,file_name):
-    #img = Image.open("in.bmp")
-    img = Image.open(file_name)
+    img = Image.open('pic/temp/'+file_name)
     pixels = img.load()
+    ## Lấy ra cột và dòng của mảng cần được giải mã.
+    ## Vì kích thước mảng gấp đôi mảng ban đầu nên ta chia 2 ở số cột.
     col,row = img.size
     col=col//2
-
+    
     dec = [[0 for x in range(col)] for y in range(row)]
+    ## ta thực hiện lấy giá trị R,G,B đã được mã hóa bằng hàm return_Ori.
+    ## Sau đó giải mã 3 giá trị này ta sẽ được 1 điểm ảnh.
     for i in range(row):
         for j in range(col):
-            r,g,b = return_Ori(pixels[j,i],pixels[col+j,i])
+            r,g,b = return_Ori(pixels[j*2,i],pixels[j*2+1,i])
             r1 = pow(r,d,n)-10
             g1 = pow(g,d,n)-10
             b1 = pow(b,d,n)-10
             dec[i][j] = [r1,g1,b1]
-		
+    ## Lưu mảng đã được giải mã ta sẽ được hình ảnh ban đầu.		
     img2 = numpy.array(dec,dtype = numpy.uint8)
     img3 = Image.fromarray(img2,"RGB")
     img3.show()
-    img3.save('out.bmp')
+    img3.save('out.jpg')
 
 def menu(os):
     if os == 'window':
