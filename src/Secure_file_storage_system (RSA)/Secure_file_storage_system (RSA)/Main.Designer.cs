@@ -32,14 +32,17 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnDecrypt = new System.Windows.Forms.Button();
             this.imageList = new System.Windows.Forms.ListView();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.btnDownload = new System.Windows.Forms.Button();
-            this.btnShare = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
+            this.btnShare = new System.Windows.Forms.Button();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.selectedImage = new System.Windows.Forms.PictureBox();
+            this.btnDownload = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lb_copy = new System.Windows.Forms.Label();
+            this.btn_copy = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -103,9 +106,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
-            this.btn_copy = new System.Windows.Forms.Button();
-            this.lb_copy = new System.Windows.Forms.Label();
-            this.btn_reload = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -154,7 +154,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1109, 548);
+            this.tabControl1.Size = new System.Drawing.Size(1109, 568);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.MouseHover += new System.EventHandler(this.tabControl1_MouseHover);
             // 
@@ -165,7 +165,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1101, 522);
+            this.tabPage1.Size = new System.Drawing.Size(1101, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -188,9 +188,24 @@
             this.splitContainer1.Panel2.Controls.Add(this.selectedImage);
             this.splitContainer1.Panel2.Controls.Add(this.btnDownload);
             this.splitContainer1.Panel2.Controls.Add(this.btnUpload);
-            this.splitContainer1.Size = new System.Drawing.Size(1101, 522);
-            this.splitContainer1.SplitterDistance = 333;
+            this.splitContainer1.Size = new System.Drawing.Size(1101, 658);
+            this.splitContainer1.SplitterDistance = 253;
             this.splitContainer1.TabIndex = 4;
+            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // imageList
+            // 
+            this.imageList.AutoArrange = false;
+            this.imageList.CheckBoxes = true;
+            this.imageList.HideSelection = false;
+            this.imageList.Location = new System.Drawing.Point(3, 3);
+            this.imageList.Name = "imageList";
+            this.imageList.Size = new System.Drawing.Size(247, 537);
+            this.imageList.TabIndex = 4;
+            this.imageList.UseCompatibleStateImageBehavior = false;
+            this.imageList.View = System.Windows.Forms.View.SmallIcon;
+            this.imageList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.imageList_ItemChecked);
+            this.imageList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.imageList_ItemSelectionChanged);
             // 
             // btnDecrypt
             // 
@@ -205,48 +220,18 @@
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             this.btnDecrypt.MouseHover += new System.EventHandler(this.btnDecrypt_MouseHover);
             // 
-            // imageList
+            // btnAll
             // 
-            this.imageList.AutoArrange = false;
-            this.imageList.CheckBoxes = true;
-            this.imageList.HideSelection = false;
-            this.imageList.Location = new System.Drawing.Point(3, 3);
-            this.imageList.Name = "imageList";
-            this.imageList.Size = new System.Drawing.Size(326, 519);
-            this.imageList.TabIndex = 4;
-            this.imageList.UseCompatibleStateImageBehavior = false;
-            this.imageList.View = System.Windows.Forms.View.SmallIcon;
-            this.imageList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.imageList_ItemChecked);
-            this.imageList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.imageList_ItemSelectionChanged);
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.Color.DimGray;
-            this.btnUpload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(412, 0);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(181, 65);
-            this.btnUpload.TabIndex = 5;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            this.btnUpload.MouseHover += new System.EventHandler(this.btnUpload_MouseHover);
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.DimGray;
-            this.btnDownload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(591, 0);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnDownload.Size = new System.Drawing.Size(170, 66);
-            this.btnDownload.TabIndex = 3;
-            this.btnDownload.Text = "Download";
-            this.btnDownload.UseVisualStyleBackColor = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
-            this.btnDownload.MouseHover += new System.EventHandler(this.btnDownload_MouseHover);
+            this.btnAll.BackColor = System.Drawing.Color.DimGray;
+            this.btnAll.ForeColor = System.Drawing.Color.White;
+            this.btnAll.Location = new System.Drawing.Point(3, 36);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(141, 30);
+            this.btnAll.TabIndex = 2;
+            this.btnAll.Text = "Select all";
+            this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.btnAll.MouseHover += new System.EventHandler(this.btnAll_MouseHover);
             // 
             // btnShare
             // 
@@ -261,18 +246,19 @@
             this.btnShare.Click += new System.EventHandler(this.btnShare_Click);
             this.btnShare.MouseHover += new System.EventHandler(this.btnShare_MouseHover);
             // 
-            // btnAll
+            // btn_reload
             // 
-            this.btnAll.BackColor = System.Drawing.Color.DimGray;
-            this.btnAll.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Location = new System.Drawing.Point(3, 36);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(141, 30);
-            this.btnAll.TabIndex = 2;
-            this.btnAll.Text = "Select all";
-            this.btnAll.UseVisualStyleBackColor = false;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
-            this.btnAll.MouseHover += new System.EventHandler(this.btnAll_MouseHover);
+            this.btn_reload.BackColor = System.Drawing.Color.DimGray;
+            this.btn_reload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ForeColor = System.Drawing.Color.White;
+            this.btn_reload.Location = new System.Drawing.Point(3, 0);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(410, 39);
+            this.btn_reload.TabIndex = 6;
+            this.btn_reload.Text = "Reload";
+            this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            this.btn_reload.MouseHover += new System.EventHandler(this.btn_reload_MouseHover);
             // 
             // selectedImage
             // 
@@ -282,10 +268,39 @@
             this.selectedImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("selectedImage.InitialImage")));
             this.selectedImage.Location = new System.Drawing.Point(3, 68);
             this.selectedImage.Name = "selectedImage";
-            this.selectedImage.Size = new System.Drawing.Size(755, 450);
+            this.selectedImage.Size = new System.Drawing.Size(840, 472);
             this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.selectedImage.TabIndex = 3;
             this.selectedImage.TabStop = false;
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.DimGray;
+            this.btnDownload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.ForeColor = System.Drawing.Color.White;
+            this.btnDownload.Location = new System.Drawing.Point(628, -1);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnDownload.Size = new System.Drawing.Size(217, 66);
+            this.btnDownload.TabIndex = 3;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            this.btnDownload.MouseHover += new System.EventHandler(this.btnDownload_MouseHover);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.DimGray;
+            this.btnUpload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.ForeColor = System.Drawing.Color.White;
+            this.btnUpload.Location = new System.Drawing.Point(412, 0);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(217, 65);
+            this.btnUpload.TabIndex = 5;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            this.btnUpload.MouseHover += new System.EventHandler(this.btnUpload_MouseHover);
             // 
             // tabPage2
             // 
@@ -306,10 +321,33 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1101, 522);
+            this.tabPage2.Size = new System.Drawing.Size(1101, 542);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "User";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // lb_copy
+            // 
+            this.lb_copy.AutoSize = true;
+            this.lb_copy.BackColor = System.Drawing.Color.Transparent;
+            this.lb_copy.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_copy.ForeColor = System.Drawing.Color.Lime;
+            this.lb_copy.Location = new System.Drawing.Point(421, 252);
+            this.lb_copy.Name = "lb_copy";
+            this.lb_copy.Size = new System.Drawing.Size(64, 20);
+            this.lb_copy.TabIndex = 18;
+            this.lb_copy.Text = "Copied";
+            this.lb_copy.Visible = false;
+            // 
+            // btn_copy
+            // 
+            this.btn_copy.Location = new System.Drawing.Point(486, 250);
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.Size = new System.Drawing.Size(78, 24);
+            this.btn_copy.TabIndex = 31;
+            this.btn_copy.Text = "Copy ID";
+            this.btn_copy.UseVisualStyleBackColor = true;
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
             // panel14
             // 
@@ -318,7 +356,7 @@
             this.panel14.Controls.Add(this.pictureBox20);
             this.panel14.Controls.Add(this.lb_e);
             this.panel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel14.Location = new System.Drawing.Point(308, 433);
+            this.panel14.Location = new System.Drawing.Point(298, 440);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(266, 47);
             this.panel14.TabIndex = 19;
@@ -360,12 +398,12 @@
             // 
             this.lb_Signup.AutoSize = true;
             this.lb_Signup.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Signup.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Signup.ForeColor = System.Drawing.Color.White;
             this.lb_Signup.Location = new System.Drawing.Point(355, 58);
             this.lb_Signup.Name = "lb_Signup";
             this.lb_Signup.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Signup.Size = new System.Drawing.Size(414, 44);
+            this.lb_Signup.Size = new System.Drawing.Size(421, 49);
             this.lb_Signup.TabIndex = 28;
             this.lb_Signup.Text = "USER INFORMATION";
             // 
@@ -374,7 +412,7 @@
             this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox17.Location = new System.Drawing.Point(623, 175);
+            this.pictureBox17.Location = new System.Drawing.Point(613, 182);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(300, 300);
             this.pictureBox17.TabIndex = 27;
@@ -386,7 +424,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(277, 347);
+            this.label2.Location = new System.Drawing.Point(267, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 24);
             this.label2.TabIndex = 16;
@@ -399,7 +437,7 @@
             this.panel5.Controls.Add(this.pictureBox19);
             this.panel5.Controls.Add(this.lb_n);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel5.Location = new System.Drawing.Point(308, 375);
+            this.panel5.Location = new System.Drawing.Point(298, 382);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 47);
             this.panel5.TabIndex = 17;
@@ -443,7 +481,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(277, 243);
+            this.label1.Location = new System.Drawing.Point(267, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 24);
             this.label1.TabIndex = 14;
@@ -456,7 +494,7 @@
             this.panel2.Controls.Add(this.lb_id);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel2.Location = new System.Drawing.Point(275, 271);
+            this.panel2.Location = new System.Drawing.Point(265, 278);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 47);
             this.panel2.TabIndex = 15;
@@ -500,7 +538,7 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(277, 142);
+            this.lb_usrname.Location = new System.Drawing.Point(267, 149);
             this.lb_usrname.Name = "lb_usrname";
             this.lb_usrname.Size = new System.Drawing.Size(105, 24);
             this.lb_usrname.TabIndex = 12;
@@ -513,7 +551,7 @@
             this.panel1.Controls.Add(this.lb_name);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(275, 170);
+            this.panel1.Location = new System.Drawing.Point(265, 192);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 13;
@@ -557,7 +595,7 @@
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(281, 443);
+            this.label26.Location = new System.Drawing.Point(271, 450);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(30, 24);
             this.label26.TabIndex = 30;
@@ -569,7 +607,7 @@
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(279, 385);
+            this.label25.Location = new System.Drawing.Point(269, 392);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(31, 24);
             this.label25.TabIndex = 29;
@@ -600,7 +638,7 @@
             this.tabPage3.Controls.Add(this.panel7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1101, 522);
+            this.tabPage3.Size = new System.Drawing.Size(1101, 542);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "About us";
             // 
@@ -642,7 +680,7 @@
             this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox12.InitialImage = null;
-            this.pictureBox12.Location = new System.Drawing.Point(912, 259);
+            this.pictureBox12.Location = new System.Drawing.Point(912, 323);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(130, 130);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -654,7 +692,7 @@
             this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox10.InitialImage = null;
-            this.pictureBox10.Location = new System.Drawing.Point(696, 259);
+            this.pictureBox10.Location = new System.Drawing.Point(696, 323);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(130, 130);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -665,7 +703,7 @@
             // 
             this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox13.Location = new System.Drawing.Point(904, 252);
+            this.pictureBox13.Location = new System.Drawing.Point(904, 316);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(145, 145);
             this.pictureBox13.TabIndex = 25;
@@ -676,7 +714,7 @@
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(480, 259);
+            this.pictureBox7.Location = new System.Drawing.Point(480, 323);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(130, 130);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -691,7 +729,7 @@
             this.panel11.Controls.Add(this.label15);
             this.panel11.Controls.Add(this.label16);
             this.panel11.Controls.Add(this.label17);
-            this.panel11.Location = new System.Drawing.Point(877, 343);
+            this.panel11.Location = new System.Drawing.Point(877, 407);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(210, 115);
             this.panel11.TabIndex = 24;
@@ -736,7 +774,7 @@
             // 
             this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(688, 252);
+            this.pictureBox11.Location = new System.Drawing.Point(688, 316);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(145, 145);
             this.pictureBox11.TabIndex = 25;
@@ -747,7 +785,7 @@
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(264, 259);
+            this.pictureBox4.Location = new System.Drawing.Point(264, 323);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(130, 130);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -762,7 +800,7 @@
             this.panel10.Controls.Add(this.label12);
             this.panel10.Controls.Add(this.label13);
             this.panel10.Controls.Add(this.label14);
-            this.panel10.Location = new System.Drawing.Point(661, 343);
+            this.panel10.Location = new System.Drawing.Point(661, 407);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(210, 115);
             this.panel10.TabIndex = 24;
@@ -807,7 +845,7 @@
             // 
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(472, 252);
+            this.pictureBox8.Location = new System.Drawing.Point(472, 316);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(145, 145);
             this.pictureBox8.TabIndex = 25;
@@ -818,7 +856,7 @@
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(48, 259);
+            this.pictureBox5.Location = new System.Drawing.Point(48, 323);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(130, 130);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -833,7 +871,7 @@
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.label11);
-            this.panel9.Location = new System.Drawing.Point(445, 343);
+            this.panel9.Location = new System.Drawing.Point(445, 407);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(210, 115);
             this.panel9.TabIndex = 24;
@@ -878,7 +916,7 @@
             // 
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(256, 252);
+            this.pictureBox6.Location = new System.Drawing.Point(256, 316);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(145, 145);
             this.pictureBox6.TabIndex = 25;
@@ -888,7 +926,7 @@
             // 
             this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(40, 252);
+            this.pictureBox9.Location = new System.Drawing.Point(40, 316);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(145, 145);
             this.pictureBox9.TabIndex = 22;
@@ -902,7 +940,7 @@
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(229, 343);
+            this.panel8.Location = new System.Drawing.Point(229, 407);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(210, 115);
             this.panel8.TabIndex = 24;
@@ -951,7 +989,7 @@
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Location = new System.Drawing.Point(13, 343);
+            this.panel7.Location = new System.Drawing.Point(13, 407);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(210, 115);
             this.panel7.TabIndex = 2;
@@ -1059,50 +1097,13 @@
             this.label22.TabIndex = 29;
             this.label22.Text = "N:";
             // 
-            // btn_copy
-            // 
-            this.btn_copy.Location = new System.Drawing.Point(496, 243);
-            this.btn_copy.Name = "btn_copy";
-            this.btn_copy.Size = new System.Drawing.Size(78, 24);
-            this.btn_copy.TabIndex = 31;
-            this.btn_copy.Text = "Copy ID";
-            this.btn_copy.UseVisualStyleBackColor = true;
-            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
-            // 
-            // lb_copy
-            // 
-            this.lb_copy.AutoSize = true;
-            this.lb_copy.BackColor = System.Drawing.Color.Transparent;
-            this.lb_copy.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_copy.ForeColor = System.Drawing.Color.Lime;
-            this.lb_copy.Location = new System.Drawing.Point(431, 245);
-            this.lb_copy.Name = "lb_copy";
-            this.lb_copy.Size = new System.Drawing.Size(64, 20);
-            this.lb_copy.TabIndex = 18;
-            this.lb_copy.Text = "Copied";
-            this.lb_copy.Visible = false;
-            // 
-            // btn_reload
-            // 
-            this.btn_reload.BackColor = System.Drawing.Color.DimGray;
-            this.btn_reload.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.ForeColor = System.Drawing.Color.White;
-            this.btn_reload.Location = new System.Drawing.Point(3, 0);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(410, 39);
-            this.btn_reload.TabIndex = 6;
-            this.btn_reload.Text = "Reload";
-            this.btn_reload.UseVisualStyleBackColor = false;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
-            this.btn_reload.MouseHover += new System.EventHandler(this.btn_reload_MouseHover);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1135, 576);
+            this.ClientSize = new System.Drawing.Size(1135, 596);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -130,8 +130,8 @@
             this.pubkey_n.Location = new System.Drawing.Point(42, 5);
             this.pubkey_n.Multiline = true;
             this.pubkey_n.Name = "pubkey_n";
-            this.pubkey_n.Size = new System.Drawing.Size(246, 30);
-            this.pubkey_n.TabIndex = 9;
+            this.pubkey_n.Size = new System.Drawing.Size(236, 30);
+            this.pubkey_n.TabIndex = 2;
             this.pubkey_n.Text = "Public key (n)";
             this.pubkey_n.Enter += new System.EventHandler(this.pubkeyn_Enter);
             this.pubkey_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pubkey_n_KeyPress);
@@ -155,8 +155,8 @@
             this.usrname.Location = new System.Drawing.Point(43, 5);
             this.usrname.Multiline = true;
             this.usrname.Name = "usrname";
-            this.usrname.Size = new System.Drawing.Size(189, 30);
-            this.usrname.TabIndex = 9;
+            this.usrname.Size = new System.Drawing.Size(263, 30);
+            this.usrname.TabIndex = 0;
             this.usrname.Text = "Username";
             this.usrname.Enter += new System.EventHandler(this.usrname_Enter);
             this.usrname.Leave += new System.EventHandler(this.usrname_Leave);
@@ -202,11 +202,11 @@
             this.passwrd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwrd.ForeColor = System.Drawing.Color.Gray;
-            this.passwrd.Location = new System.Drawing.Point(42, 5);
+            this.passwrd.Location = new System.Drawing.Point(45, 5);
             this.passwrd.Multiline = true;
             this.passwrd.Name = "passwrd";
-            this.passwrd.Size = new System.Drawing.Size(187, 30);
-            this.passwrd.TabIndex = 9;
+            this.passwrd.Size = new System.Drawing.Size(260, 30);
+            this.passwrd.TabIndex = 4;
             this.passwrd.Text = "Password";
             this.passwrd.TextChanged += new System.EventHandler(this.passwrd_TextChanged);
             this.passwrd.Enter += new System.EventHandler(this.passwrd_Enter);
@@ -230,6 +230,7 @@
             this.btn_signup.Name = "btn_signup";
             this.btn_signup.Size = new System.Drawing.Size(165, 53);
             this.btn_signup.TabIndex = 21;
+            this.btn_signup.TabStop = false;
             this.btn_signup.Text = "REGISTER";
             this.btn_signup.UseVisualStyleBackColor = false;
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
@@ -322,8 +323,8 @@
             this.pubkey_e.Location = new System.Drawing.Point(42, 5);
             this.pubkey_e.Multiline = true;
             this.pubkey_e.Name = "pubkey_e";
-            this.pubkey_e.Size = new System.Drawing.Size(246, 30);
-            this.pubkey_e.TabIndex = 9;
+            this.pubkey_e.Size = new System.Drawing.Size(236, 30);
+            this.pubkey_e.TabIndex = 3;
             this.pubkey_e.Text = "Public key (e)";
             this.pubkey_e.Enter += new System.EventHandler(this.pubkey_e_Enter);
             this.pubkey_e.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pubkey_e_KeyPress);
@@ -406,8 +407,8 @@
             this.fullname.Location = new System.Drawing.Point(43, 5);
             this.fullname.Multiline = true;
             this.fullname.Name = "fullname";
-            this.fullname.Size = new System.Drawing.Size(190, 30);
-            this.fullname.TabIndex = 9;
+            this.fullname.Size = new System.Drawing.Size(260, 30);
+            this.fullname.TabIndex = 1;
             this.fullname.Text = "Full name";
             this.fullname.Enter += new System.EventHandler(this.fullname_Enter);
             this.fullname.Leave += new System.EventHandler(this.fullname_Leave);
@@ -473,6 +474,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Sign_Up_FormClosed);
+            this.Load += new System.EventHandler(this.Sign_Up_Load);
+            this.Click += new System.EventHandler(this.Sign_Up_Click);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

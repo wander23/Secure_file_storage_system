@@ -13,6 +13,8 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class Verify_key : Form
     {
+        public System.Drawing.Point Location { get; set; }
+
         public Verify_key()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace Secure_file_storage_system__RSA_
         {
             announce.Visible = false; 
 
-            if (privateKey.Text == "private key (d)")
+            if (privateKey.Text == "private key (d)" || privateKey.Text == "\r\nprivate key (d)")
             {
                 privateKey.Text = "";
                 privateKey.ForeColor = Color.White;
@@ -40,39 +42,49 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
+            announce.Visible = true;
+            announce.Location = new Point(160, 287);
 
-            foreach (char d in privateKey.Text)
+            if (privateKey.Text == "" || privateKey.Text == "private key (d)")
             {
-                int iN = (int)d;
-                if ((iN > 57) || (iN < 48))
-                {
-                    MessageBox.Show("Please fill nummer for private key d", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    privateKey.Text = "";
-                    return;
-                }
+                announce.Location = new Point(100, 287);
+                announce.Text = "Please fill PRIVATE KEY (d)";
+                announce.ForeColor = Color.Red;
+
+                privateKey.Text = "";
+                Key_Leave(sender, e);
+                this.ActiveControl = lb_VKey;
+                return;
             }
            
-
-            announce.Visible = true;
             announce.Text = "Verifying....";
             announce.ForeColor = System.Drawing.Color.Gray;
 
             int m = 30;
             GFG test = new GFG();
-            int c = test.PowerMod(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
-            int m1 = test.PowerMod(c, int.Parse(privateKey.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
 
-            // case private key mismatch with public key
-            if (m != m1)
+            try
             {
-                announce.Text = "Key mismatch";
-                announce.ForeColor = System.Drawing.Color.Red;
-                MessageBox.Show("This key mismatched with public key!", "Mismatched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int c = test.PowerMod(m, int.Parse(Sign_Up.instance.pubkeye.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
+                int m1 = test.PowerMod(c, int.Parse(privateKey.Text), int.Parse(Sign_Up.instance.pubkeyn.Text));
 
-                privateKey.Text = "private key (d)";
-                privateKey.ForeColor = Color.Gray;
-                announce.Visible = false;
-                return;
+                // case private key mismatch with public key
+                if (m != m1)
+                {
+                    announce.Text = "Key mismatch";
+                    announce.ForeColor = System.Drawing.Color.Red;
+                    MessageBox.Show("This key mismatched with public key!", "Mismatched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    privateKey.Text = "private key (d)";
+                    privateKey.ForeColor = Color.Gray;
+                    announce.Visible = false;
+                    return;
+                }
+            }
+            catch
+            {
+                privateKey.Text = "";
+                return; 
             }
 
             // case private key match with public key 
@@ -110,9 +122,18 @@ namespace Secure_file_storage_system__RSA_
             if (e.KeyChar == Convert.ToInt16(Keys.Enter))
             {
                 btnVerify_Click(sender, e);
+                return;
             }
 
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void Verify_key_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == Convert.ToInt16(Keys.Enter))
+            //{
+            //    btnVerify_Click(sender, e);
+            //}
         }
     }
 

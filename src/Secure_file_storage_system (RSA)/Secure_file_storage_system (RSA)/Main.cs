@@ -97,7 +97,7 @@ namespace Secure_file_storage_system__RSA_
 
             // initializing images list
             ImageList images = new ImageList();
-            images.ImageSize = new System.Drawing.Size(210, 90);
+            images.ImageSize = new System.Drawing.Size(150, 90);
 
             foreach (var image in LoadedImages)
             {
@@ -502,6 +502,11 @@ namespace Secure_file_storage_system__RSA_
         private void btn_reload_MouseHover(object sender, EventArgs e)
         {
             btn_reload.Cursor = Cursors.Hand;
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
         }
     }
 }

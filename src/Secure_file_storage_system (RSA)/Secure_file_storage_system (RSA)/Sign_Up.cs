@@ -30,6 +30,11 @@ namespace Secure_file_storage_system__RSA_
             password = passwrd;
         }
 
+        private void Sign_Up_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = lb_Signup;
+        }
+
         private void usrname_Enter(object sender, EventArgs e)
         {
             if (usrname.Text == "Username")
@@ -198,7 +203,7 @@ namespace Secure_file_storage_system__RSA_
 
         private void passwrd_TextChanged(object sender, EventArgs e)
         {
-            passwrd.ForeColor = Color.Black;
+            passwrd.ForeColor = Color.White;
             passwrd.PasswordChar = '*';
         }
 
@@ -221,6 +226,11 @@ namespace Secure_file_storage_system__RSA_
         private void pubkey_e_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void Sign_Up_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = lb_Signup;
         }
     }
 }

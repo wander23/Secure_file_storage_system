@@ -57,10 +57,11 @@
             this.btn_signup.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
-            this.btn_signup.Location = new System.Drawing.Point(187, 408);
+            this.btn_signup.Location = new System.Drawing.Point(211, 408);
             this.btn_signup.Name = "btn_signup";
-            this.btn_signup.Size = new System.Drawing.Size(185, 36);
+            this.btn_signup.Size = new System.Drawing.Size(161, 36);
             this.btn_signup.TabIndex = 8;
+            this.btn_signup.TabStop = false;
             this.btn_signup.Text = "SIGN UP";
             this.btn_signup.UseVisualStyleBackColor = false;
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
@@ -150,6 +151,7 @@
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(126, 53);
             this.btn_login.TabIndex = 5;
+            this.btn_login.TabStop = false;
             this.btn_login.Text = "LOGIN";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -191,12 +193,12 @@
             // 
             this.lb_Login.AutoSize = true;
             this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Login.Font = new System.Drawing.Font("Microsoft YaHei", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Login.ForeColor = System.Drawing.Color.White;
             this.lb_Login.Location = new System.Drawing.Point(132, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(165, 47);
+            this.lb_Login.Size = new System.Drawing.Size(175, 50);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -269,6 +271,7 @@
             this.Name = "Sign_In";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
+            this.Load += new System.EventHandler(this.Sign_In_Load);
             this.Click += new System.EventHandler(this.Sign_In_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

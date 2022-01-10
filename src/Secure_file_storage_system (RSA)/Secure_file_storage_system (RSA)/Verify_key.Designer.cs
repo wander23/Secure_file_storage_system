@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verify_key));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lb_Login = new System.Windows.Forms.Label();
+            this.lb_VKey = new System.Windows.Forms.Label();
             this.btnVerify = new System.Windows.Forms.Button();
             this.lb_usrname = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,18 +57,18 @@
             this.pictureBox3.TabIndex = 26;
             this.pictureBox3.TabStop = false;
             // 
-            // lb_Login
+            // lb_VKey
             // 
-            this.lb_Login.AutoSize = true;
-            this.lb_Login.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Login.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Login.ForeColor = System.Drawing.Color.White;
-            this.lb_Login.Location = new System.Drawing.Point(145, 59);
-            this.lb_Login.Name = "lb_Login";
-            this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(249, 47);
-            this.lb_Login.TabIndex = 25;
-            this.lb_Login.Text = "VERIFY KEY";
+            this.lb_VKey.AutoSize = true;
+            this.lb_VKey.BackColor = System.Drawing.Color.Transparent;
+            this.lb_VKey.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 25.81132F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_VKey.ForeColor = System.Drawing.Color.White;
+            this.lb_VKey.Location = new System.Drawing.Point(145, 59);
+            this.lb_VKey.Name = "lb_VKey";
+            this.lb_VKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lb_VKey.Size = new System.Drawing.Size(249, 47);
+            this.lb_VKey.TabIndex = 25;
+            this.lb_VKey.Text = "VERIFY KEY";
             // 
             // btnVerify
             // 
@@ -172,7 +172,7 @@
             this.announce.BackColor = System.Drawing.Color.Transparent;
             this.announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.announce.ForeColor = System.Drawing.Color.Black;
-            this.announce.Location = new System.Drawing.Point(159, 287);
+            this.announce.Location = new System.Drawing.Point(90, 286);
             this.announce.Name = "announce";
             this.announce.Size = new System.Drawing.Size(55, 20);
             this.announce.TabIndex = 32;
@@ -200,7 +200,7 @@
             this.ClientSize = new System.Drawing.Size(434, 429);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.announce);
-            this.Controls.Add(this.lb_Login);
+            this.Controls.Add(this.lb_VKey);
             this.Controls.Add(this.lb_verify);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_usrname);
@@ -214,6 +214,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storage File System";
             this.Click += new System.EventHandler(this.Verify_key_Click);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Verify_key_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -226,7 +227,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label lb_Login;
+        private System.Windows.Forms.Label lb_VKey;
         private System.Windows.Forms.Button btnVerify;
         private System.Windows.Forms.Label lb_usrname;
         private System.Windows.Forms.Panel panel1;

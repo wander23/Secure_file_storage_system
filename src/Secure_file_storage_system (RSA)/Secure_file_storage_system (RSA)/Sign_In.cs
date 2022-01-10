@@ -85,10 +85,10 @@ namespace Secure_file_storage_system__RSA_
         {
             lb_announce.Visible = true;
 
-            if (username.Text == "type your username" || passwrd.Text == "type your password")
+            if (username.Text == "type your username" || username.Text == "" || passwrd.Text == "type your password" || passwrd.Text == "")
             {
                 lb_announce.ForeColor = System.Drawing.Color.Red;
-                lb_announce.Text= "Fill all";
+                lb_announce.Text= "Please fill all field";
                 return;
             }
 
@@ -137,13 +137,14 @@ namespace Secure_file_storage_system__RSA_
 
         private void passwrd_TextChanged(object sender, EventArgs e)
         {
-            passwrd.ForeColor = Color.Black;
+            passwrd.ForeColor = Color.White;
             passwrd.PasswordChar = '*';
         }
 
         private void Sign_In_Click(object sender, EventArgs e)
         {
             lb_announce.Visible = false;
+            this.ActiveControl = lb_Login;
         }
 
         private void btn_login_MouseHover(object sender, EventArgs e)
@@ -154,6 +155,12 @@ namespace Secure_file_storage_system__RSA_
         private void btn_signup_MouseHover(object sender, EventArgs e)
         {
             btn_signup.Cursor = Cursors.Hand;
+
+        }
+
+        private void Sign_In_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = lb_Login;
 
         }
     }
