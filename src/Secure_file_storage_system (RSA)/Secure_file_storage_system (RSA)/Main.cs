@@ -198,7 +198,6 @@ namespace Secure_file_storage_system__RSA_
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
-                MessageBox.Show(dialog.FileName);
                 dialog.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
               
                 // find relative path of "loading image"
