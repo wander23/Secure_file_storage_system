@@ -199,6 +199,10 @@ namespace Secure_file_storage_system__RSA_
                 selectedImage.Image = selectedImg;
             }
         }
+        private void SetPicturBoxImg(Image img)
+        {
+            selectedImage.Image = img;
+        }
 
         // upload image
         private void btnUpload_Click(object sender, EventArgs e)
@@ -411,7 +415,8 @@ namespace Secure_file_storage_system__RSA_
                 }
                 catch
                 {
-                    selectedImage.Image = LoadedImages[0];
+                    //selectedImage.Image = LoadedImages[0];
+                    SetPicturBoxImg(LoadedImages[0]);
                     return;
                 }
 
