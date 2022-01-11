@@ -119,9 +119,10 @@ namespace Secure_file_storage_system__RSA_
                     pub_e = Convert.ToInt32(json.data.e);
                     pub_n = Convert.ToInt32(json.data.n);
 
-                    //this.Hide();
+                    
                     Main main_form = new Main();
-                    main_form.ShowDialog();
+                    main_form.Show();
+                    this.Hide();
                 }
                 else
                 {

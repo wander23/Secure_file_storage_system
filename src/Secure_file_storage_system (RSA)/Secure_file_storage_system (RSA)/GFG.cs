@@ -15,26 +15,32 @@ public class GFG
 {
     public int PowerMod(int p, int e, int n)
     {
-        int r2 = 1;
-        int r1 = 0;
-        int Q = 0;
-        int R = 0;
+        ProcessStartInfo psi = new ProcessStartInfo();
+        psi.FileName = @"python.exe";
 
-        while (e != 0)
+        string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+        string exeDir = Path.GetDirectoryName(exeFile);
+        var script = Path.Combine(exeDir, @"..\..\..\..\..\src\Secure_file_storage_system (RSA)\image_En_De_RSA.py");
+
+        var error = "";
+        var result = "";
+
+        psi.Arguments = $"\"{script}\" \"{p}\" \"{e}\" \"{n}\"";
+
+        psi.UseShellExecute = false;
+        psi.CreateNoWindow = true;
+        psi.RedirectStandardOutput = true;
+        psi.RedirectStandardError = true;
+
+        using (Process pro = Process.Start(psi))
         {
-            R = (e % 2);
-            Q = ((e - R) / 2);
-
-            r1 = ((p * p) % n);
-
-            if (R == 1)
-            {
-                r2 = ((r2 * p) % n);
-            }
-            p = r1;
-            e = Q;
+            error = pro.StandardError.ReadToEnd();
+            result = pro.StandardOutput.ReadToEnd();
         }
-        return r2;
+
+        int rs = int.Parse(result.Replace("\r\n", string.Empty));
+
+        return rs;
     }
 
     public void encryptImage(int n, int e, string imgPath, string saveName)
