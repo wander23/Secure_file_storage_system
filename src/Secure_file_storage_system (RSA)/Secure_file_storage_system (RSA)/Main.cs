@@ -224,8 +224,8 @@ namespace Secure_file_storage_system__RSA_
                         string[] file_path_arr = dialog.FileName.Split('\\');
                         string tempImg_path = Path.Combine(TempFolder_path, dialog.FileName.Split('\\')[file_path_arr.Length - 1]);
                         string imgName = file_path_arr[file_path_arr.Length - 1];
-                        string imgName_bmp = imgName.Split('.')[0] + ".png";
-                        string tempImg_bmp_path = Path.Combine(TempFolder_path, imgName_bmp);
+                        string imgName_png = imgName.Split('.')[0] + ".png";
+                        string tempImg_png_path = Path.Combine(TempFolder_path, imgName_png);
 
                         Image tempImg = Image.FromFile(dialog.FileName);
 
@@ -242,10 +242,10 @@ namespace Secure_file_storage_system__RSA_
 
                         //dang..................
                         GFG g = new GFG();
-                        g.encryptImage(Sign_In.instance.pub_n, Sign_In.instance.pub_e, tempImg_bmp_path, imgName_bmp);
+                        g.encryptImage(Sign_In.instance.pub_n, Sign_In.instance.pub_e, tempImg_png_path, imgName_png);
                         
                         //imageLocation = tempImg_path;
-                        imageLocation = tempImg_bmp_path;
+                        imageLocation = tempImg_png_path;
 
                         selectedImage.ImageLocation = imageLocation;
                     }
@@ -449,11 +449,19 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
-            // private key = ?
-            // pub key ID 2: n = ?, e = ?
-            int privatekey = int.Parse(UserID.instance.privkey.Text);
+            int my_private_d = int.Parse(UserID.instance.privkey.Text);
+            int my_pub_n = Sign_In.instance.pub_n;
+
             int pub_n = 0;
             int pub_e = 0;
+
+            // get path
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
+            var numSelectedImg = imageList.CheckedIndices.Count;
+            string sendingPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\sending.png");
+
 
             // Kiem tra va nhan khoa
             var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/pubkey/" + userID_form.idUser.Text);
@@ -471,42 +479,43 @@ namespace Secure_file_storage_system__RSA_
                     var messageTask = result.Content.ReadAsStringAsync();
                     messageTask.Wait();
 
+                    // get shared User public key
                     dynamic json = JsonConvert.DeserializeObject(messageTask.Result);
                     pub_e = Convert.ToInt32(json.data.e);
                     pub_n = Convert.ToInt32(json.data.n);
+                    
+                    Image im = Image.FromFile(sendingPath);
+                    selectedImage.Image = im;
                 }
             }
-            MessageBox.Show(privatekey.ToString()+' ' + pub_e.ToString()+' ' + pub_n.ToString());
-            
 
-            //for (int i = 0; i < numSelectedImg; i++)
-            //{
-            //    Image img = LoadedImages[imageList.CheckedIndices[i]];
-            //    string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
 
-            //    DownloadImage(img, SavePath, "bmp");
-            //}
 
-            // get path
-            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-            string exeDir = Path.GetDirectoryName(exeFile);
-            string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
-            var numSelectedImg = imageList.CheckedIndices.Count;
 
-            // Download checked Image to Temp folder
+            // Send each image
             for (int i = 0; i < numSelectedImg; i++)
             {
                 int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
 
-                    // Quan - Download 
-                    string url = ImageUrl[imgIndex];
-                    Bitmap b = new Bitmap(LoadedImages[imgIndex]);
-                    string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;
-                    b.Save(SavePath);
+                    // Download image
+                    Image img = LoadedImages[imageList.CheckedIndices[i]];
+                    string SaveName = imageList.CheckedItems[i].Text.Split('.')[0] + ".png";
+                    string SavePath = TempPath + "\\" + SaveName;
 
-                    // Khoa
+                    DownloadImage(img, SavePath, "png");
+
+
+                    // Decrypt image by key of Sender
+                    GFG g = new GFG();
+                    g.decryptImage(my_pub_n, my_private_d, SavePath, SaveName);
+
+                    // Encrypt image by Key of Receiver
+                    g.encryptImage(pub_n, pub_e, SavePath, SaveName);
+
+
+                    // Send Encrypt image to server
                     Account account = new Account(
                    "cryption",
                    "731936666387127",
@@ -528,13 +537,17 @@ namespace Secure_file_storage_system__RSA_
                     };
                     var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                     responseTask.Wait();
+
+                    DeleteFile(SavePath);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                this.main_Load(sender, e);
             }
+
+            selectedImage.Image = LoadedImages[0];
+            MessageBox.Show("Share complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 

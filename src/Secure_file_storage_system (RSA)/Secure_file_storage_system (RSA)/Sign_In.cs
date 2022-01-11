@@ -27,7 +27,6 @@ namespace Secure_file_storage_system__RSA_
         {
             InitializeComponent();
             instance = this;
-
         }
       
         private void btn_signup_Click(object sender, EventArgs e)
@@ -55,7 +54,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 username.Text = "type your username";
                 username.ForeColor = Color.Gray;
-
             }
         }
 
@@ -67,7 +65,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 passwrd.Text = "";
                 passwrd.ForeColor = Color.White;
-
             }
         }
 
@@ -77,7 +74,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 passwrd.Text = "type your password";
                 passwrd.ForeColor = Color.Gray;
-
             }
         }
 
