@@ -226,7 +226,6 @@ namespace Secure_file_storage_system__RSA_
                         string imgName_bmp = imgName.Split('.')[0] + ".png";
                         string tempImg_bmp_path = Path.Combine(TempFolder_path, imgName_bmp);
 
-
                         Image tempImg = Image.FromFile(dialog.FileName);
 
                         //resize image
@@ -241,17 +240,8 @@ namespace Secure_file_storage_system__RSA_
                         DownloadImage(tempImg, tempImg_path, "jpeg");
                         //tempImg.Save(tempImg_bmp_path, ImageFormat.Bmp);
 
-                        //dang..................
-                        //GFG g = new GFG();
-                        //g.encryptImage(33667, 3, tempImg_path, imgName_bmp);
-                        //g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
-
                         //imageLocation = tempImg_path;
                         imageLocation = tempImg_bmp_path;
-
-                        //GFG a = new GFG();
-                        //Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
-                        //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
 
                         selectedImage.ImageLocation = imageLocation;
                     }
@@ -272,12 +262,6 @@ namespace Secure_file_storage_system__RSA_
                 }
                 if (dialog.FileName == "")
                     return;
-
-                GFG a = new GFG();
-                
-                
-                //Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
-                //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
 
                 Account account = new Account(
                 "cryption",
@@ -400,7 +384,6 @@ namespace Secure_file_storage_system__RSA_
             PrivateKey privateKey_form = new PrivateKey();
             privateKey_form.ShowDialog();
 
-
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
             string exeDir = Path.GetDirectoryName(exeFile);
             string path = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
@@ -419,7 +402,7 @@ namespace Secure_file_storage_system__RSA_
                 DownloadImage(LoadedImages[i], savePath, "png");
 
                 //key
-                g.decryptImage(33667, 22187, savePath, saveName);
+                g.decryptImage(Sign_In.instance.pub_n, int.Parse(PrivateKey.instance.private_key.Text), savePath, saveName);
 
                 Image im = Image.FromFile(savePath);
                 LImages.Add(im);
