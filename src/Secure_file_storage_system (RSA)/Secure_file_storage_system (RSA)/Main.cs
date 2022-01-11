@@ -17,6 +17,7 @@ using System.Net;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Secure_file_storage_system__RSA_
 {
@@ -450,7 +451,32 @@ namespace Secure_file_storage_system__RSA_
 
             // private key = ?
             // pub key ID 2: n = ?, e = ?
+            int privatekey = int.Parse(UserID.instance.privkey.Text);
+            int pub_n = 0;
+            int pub_e = 0;
 
+            // Kiem tra va nhan khoa
+            var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/pubkey/" + userID_form.idUser.Text);
+            responseTask2.Wait();
+            if (responseTask2.IsCompleted)
+            {
+                var result = responseTask2.Result;
+                if (!result.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("ID user dont exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    var messageTask = result.Content.ReadAsStringAsync();
+                    messageTask.Wait();
+
+                    dynamic json = JsonConvert.DeserializeObject(messageTask.Result);
+                    pub_e = Convert.ToInt32(json.data.e);
+                    pub_n = Convert.ToInt32(json.data.n);
+                }
+            }
+            MessageBox.Show(privatekey.ToString()+' ' + pub_e.ToString()+' ' + pub_n.ToString());
             
 
             //for (int i = 0; i < numSelectedImg; i++)
@@ -460,18 +486,6 @@ namespace Secure_file_storage_system__RSA_
 
             //    DownloadImage(img, SavePath, "bmp");
             //}
-
-            var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/" + userID_form.idUser.Text);
-            if (responseTask2.IsCompleted)
-            {
-                var result = responseTask2.Result;
-                if (!result.IsSuccessStatusCode)
-                {
-                    MessageBox.Show("ID user dont exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-            }
-
 
             // get path
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
@@ -491,8 +505,6 @@ namespace Secure_file_storage_system__RSA_
                     Bitmap b = new Bitmap(LoadedImages[imgIndex]);
                     string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;
                     b.Save(SavePath);
-
-
 
                     // Khoa
                     Account account = new Account(

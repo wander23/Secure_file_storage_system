@@ -14,11 +14,13 @@ namespace Secure_file_storage_system__RSA_
     {
         public static UserID instance;
         public TextBox idUser;
+        public TextBox privkey;
         public UserID()
         {
             InitializeComponent();
             instance = this;
             idUser = id;
+            privkey = key_d;
         }
 
 

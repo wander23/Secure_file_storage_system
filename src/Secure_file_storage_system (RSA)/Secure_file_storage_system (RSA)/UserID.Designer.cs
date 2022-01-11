@@ -37,12 +37,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lb_announce = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.key_d = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lb_announce = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,7 +59,7 @@
             this.lb_Login.Location = new System.Drawing.Point(114, 139);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(230, 44);
+            this.lb_Login.Size = new System.Drawing.Size(211, 39);
             this.lb_Login.TabIndex = 30;
             this.lb_Login.Text = "FIND USER";
             // 
@@ -71,7 +71,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(67, 288);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(78, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(74, 20);
             this.lb_usrname.TabIndex = 33;
             this.lb_usrname.Text = "User ID";
             // 
@@ -147,19 +147,6 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
-            // lb_announce
-            // 
-            this.lb_announce.AutoSize = true;
-            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
-            this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_announce.ForeColor = System.Drawing.Color.Black;
-            this.lb_announce.Location = new System.Drawing.Point(130, 456);
-            this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(55, 20);
-            this.lb_announce.TabIndex = 35;
-            this.lb_announce.Text = "label2";
-            this.lb_announce.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -168,7 +155,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(67, 374);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.Size = new System.Drawing.Size(132, 20);
             this.label1.TabIndex = 36;
             this.label1.Text = "Private key (d)";
             // 
@@ -220,9 +207,22 @@
             this.panel4.Size = new System.Drawing.Size(363, 5);
             this.panel4.TabIndex = 12;
             // 
+            // lb_announce
+            // 
+            this.lb_announce.AutoSize = true;
+            this.lb_announce.BackColor = System.Drawing.Color.Transparent;
+            this.lb_announce.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_announce.ForeColor = System.Drawing.Color.Black;
+            this.lb_announce.Location = new System.Drawing.Point(130, 456);
+            this.lb_announce.Name = "lb_announce";
+            this.lb_announce.Size = new System.Drawing.Size(46, 17);
+            this.lb_announce.TabIndex = 35;
+            this.lb_announce.Text = "label2";
+            this.lb_announce.Visible = false;
+            // 
             // UserID
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
@@ -264,11 +264,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label lb_announce;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox key_d;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lb_announce;
     }
 }
