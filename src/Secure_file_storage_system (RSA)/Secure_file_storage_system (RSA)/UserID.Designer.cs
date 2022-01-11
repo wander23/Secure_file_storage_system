@@ -109,7 +109,7 @@
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(243, 30);
             this.id.TabIndex = 9;
-            this.id.Text = "61dd479bb977e807839ef359";
+            this.id.Text = "ID";
             this.id.Enter += new System.EventHandler(this.id_Enter);
             this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_KeyPress);
             this.id.Leave += new System.EventHandler(this.id_Leave);
@@ -193,7 +193,7 @@
             this.key_d.Name = "key_d";
             this.key_d.Size = new System.Drawing.Size(243, 30);
             this.key_d.TabIndex = 9;
-            this.key_d.Text = "22187";
+            this.key_d.Text = "private key (d)";
             this.key_d.Enter += new System.EventHandler(this.key_d_Enter);
             this.key_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.key_d_KeyPress);
             this.key_d.Leave += new System.EventHandler(this.key_d_Leave);
@@ -222,6 +222,7 @@
             // 
             // UserID
             // 
+            this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
