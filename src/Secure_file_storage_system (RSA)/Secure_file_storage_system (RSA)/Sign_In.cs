@@ -32,7 +32,7 @@ namespace Secure_file_storage_system__RSA_
         private void btn_signup_Click(object sender, EventArgs e)
         {
             // call SignUp form
-            this.Hide();
+            //this.Hide();
             Sign_Up signUp_form = new Sign_Up();
             signUp_form.ShowDialog();
         }
@@ -119,7 +119,7 @@ namespace Secure_file_storage_system__RSA_
                     pub_e = Convert.ToInt32(json.data.e);
                     pub_n = Convert.ToInt32(json.data.n);
 
-                    this.Hide();
+                    //this.Hide();
                     Main main_form = new Main();
                     main_form.ShowDialog();
                 }

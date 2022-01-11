@@ -242,7 +242,7 @@ namespace Secure_file_storage_system__RSA_
 
                         //dang..................
                         GFG g = new GFG();
-                        g.encryptImage(Sign_In.instance.pub_n, Sign_In.instance.pub_e, tempImg_png_path, imgName_png);
+                        g.encryptImage(Sign_In.instance.pub_n, Sign_In.instance.pub_e, Path.Combine(TempFolder_path, imgName), imgName_png);
                         
                         //imageLocation = tempImg_path;
                         imageLocation = tempImg_png_path;
@@ -405,7 +405,15 @@ namespace Secure_file_storage_system__RSA_
                 DownloadImage(LoadedImages[i], savePath, "png");
 
                 //key
-                g.decryptImage(Sign_In.instance.pub_n, int.Parse(PrivateKey.instance.private_key.Text), savePath, saveName);
+                try
+                {
+                    g.decryptImage(Sign_In.instance.pub_n, int.Parse(PrivateKey.instance.private_key.Text), savePath, saveName);
+                }
+                catch
+                {
+                    selectedImage.Image = LoadedImages[0];
+                    return;
+                }
 
                 Image im = Image.FromFile(savePath);
                 LImages.Add(im);
@@ -413,7 +421,18 @@ namespace Secure_file_storage_system__RSA_
 
             LoadedImages = LImages;
 
-            Image firstImg = LoadedImages[0];
+            Image firstImg;
+
+            // case close form Private Key
+            try
+            {
+                firstImg = LoadedImages[0];
+            }
+            catch
+            {
+                return;
+            }
+
             selectedImage.Image = firstImg;
 
             // initializing images list
@@ -440,6 +459,14 @@ namespace Secure_file_storage_system__RSA_
 
         private void btnShare_Click(object sender, EventArgs e)
         {
+            int numSelectedImg = imageList.CheckedIndices.Count;
+
+            if (numSelectedImg == 0)
+            {
+                MessageBox.Show("Nothing to share", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             HttpClient client = new HttpClient();
             // open form
             UserID userID_form = new UserID();
@@ -459,9 +486,7 @@ namespace Secure_file_storage_system__RSA_
             string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
             string exeDir = Path.GetDirectoryName(exeFile);
             string TempPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
-            var numSelectedImg = imageList.CheckedIndices.Count;
             string sendingPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\sending.png");
-
 
             // Kiem tra va nhan khoa
             var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/pubkey/" + userID_form.idUser.Text);
@@ -489,9 +514,6 @@ namespace Secure_file_storage_system__RSA_
                 }
             }
 
-
-
-
             // Send each image
             for (int i = 0; i < numSelectedImg; i++)
             {
@@ -505,7 +527,6 @@ namespace Secure_file_storage_system__RSA_
                     string SavePath = TempPath + "\\" + SaveName;
 
                     DownloadImage(img, SavePath, "png");
-
 
                     // Decrypt image by key of Sender
                     GFG g = new GFG();
@@ -547,6 +568,7 @@ namespace Secure_file_storage_system__RSA_
             }
 
             selectedImage.Image = LoadedImages[0];
+
             MessageBox.Show("Share complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
