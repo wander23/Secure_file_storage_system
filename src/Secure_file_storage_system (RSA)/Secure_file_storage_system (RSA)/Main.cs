@@ -242,16 +242,13 @@ namespace Secure_file_storage_system__RSA_
                         //tempImg.Save(tempImg_bmp_path, ImageFormat.Bmp);
 
                         //dang..................
-                        //GFG g = new GFG();
+                        GFG g = new GFG();
                         //g.encryptImage(33667, 3, tempImg_path, imgName_bmp);
-                        //g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
+                        g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
 
                         //imageLocation = tempImg_path;
                         imageLocation = tempImg_bmp_path;
 
-                        //GFG a = new GFG();
-                        //Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
-                        //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
 
                         selectedImage.ImageLocation = imageLocation;
                     }
