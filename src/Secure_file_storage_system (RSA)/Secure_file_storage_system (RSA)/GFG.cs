@@ -37,7 +37,7 @@ public class GFG
         return r2;
     }
 
-<<<<<<< HEAD
+
     public void encryptImage(int n, int e, string imgPath, string saveName)
     {
         ProcessStartInfo psi = new ProcessStartInfo();
@@ -90,7 +90,8 @@ public class GFG
             error = pro.StandardError.ReadToEnd();
             result = pro.StandardOutput.ReadToEnd();
         }
-=======
+    }
+
     public Bitmap Encrypt(string filePath, int e, int n)
     {
         Bitmap img = new Bitmap("D:\\capyberus_by_tsaoshin_dexgpn3.png");
@@ -163,6 +164,5 @@ public class GFG
         sr.Close();
         newImg.Save("D:\\Input.png");
         return newImg;
->>>>>>> 3b488484ca523ed43a0aeda91687337ba4ad4c3b
     }
 }
