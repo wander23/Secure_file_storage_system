@@ -70,7 +70,6 @@ def encryption_image(n,e,file_name):
     img1 = Image.fromarray(rdt,"RGB")
     # img1.save('./in.bmp')
     img1.save(save_path)
-    img1.show()
 
 ## Hàm return_Ori giúp trả về giá trị ban đầu đã mã hóa với kích thước của mảng ban đầu.
 ## Bằng cách tính toán thương*256 + dư. Với 2 giá trị đầu vào là cột chẵn và cột lẽ kế bên nhau.
