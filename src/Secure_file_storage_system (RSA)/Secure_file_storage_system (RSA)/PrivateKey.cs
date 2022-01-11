@@ -12,9 +12,13 @@ namespace Secure_file_storage_system__RSA_
 {
     public partial class PrivateKey : Form
     {
+        public static PrivateKey instance;
+        public TextBox private_key;
         public PrivateKey()
         {
             InitializeComponent();
+            instance = this;
+            private_key = key_d;
         }
 
         private void btn_send_Click(object sender, EventArgs e)
