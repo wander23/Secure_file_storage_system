@@ -241,11 +241,10 @@ namespace Secure_file_storage_system__RSA_
 
                         //dang..................
                         GFG g = new GFG();
-                        g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
-
+                        g.encryptImage(Sign_In.instance.pub_n, Sign_In.instance.pub_e, tempImg_bmp_path, imgName_bmp);
+                        
                         //imageLocation = tempImg_path;
                         imageLocation = tempImg_bmp_path;
-
 
                         selectedImage.ImageLocation = imageLocation;
                     }
