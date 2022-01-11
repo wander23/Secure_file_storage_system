@@ -227,6 +227,10 @@ namespace Secure_file_storage_system__RSA_
                         DownloadImage(tempImg, tempImg_path);
                         imageLocation = tempImg_path;
 
+                        GFG a = new GFG();
+                        Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
+                        Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
+
                         selectedImage.ImageLocation = imageLocation;
                     }
                 }
@@ -246,13 +250,6 @@ namespace Secure_file_storage_system__RSA_
                 }
                 if (dialog.FileName == "")
                     return;
-
-                GFG a = new GFG();
-                
-                //////////////////////////////////////////HOT/////////////////////////////////////////
-                
-                Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
-                //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
 
                 Account account = new Account(
                 "cryption",
@@ -278,15 +275,15 @@ namespace Secure_file_storage_system__RSA_
                 };
                 var responseTask = client.PostAsJsonAsync("https://slave-of-deadlines.herokuapp.com/photos/one", photo);
                 responseTask.Wait();
+
+                // Delete temp image in Temp folder
+                DeleteFile(imageLocation);
+                main_Load(sender, e);
             }
             catch (Exception err)
             {
                 MessageBox.Show("An Error occured"+err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Delete temp image in Temp folder
-            DeleteFile(imageLocation);
-            main_Load(sender, e);
         }
 
 

@@ -36,9 +36,9 @@ class GFG
 
     public Bitmap Encrypt(string filePath, int e, int n)
     {
-        Bitmap img = new Bitmap(filePath);
+        Bitmap img = new Bitmap("D:\\capyberus_by_tsaoshin_dexgpn3.png");
 
-        Bitmap newImg = new Bitmap(img.Width, img.Height);
+        Bitmap newImg = new Bitmap(img.Width, img.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
         StreamWriter sw = new StreamWriter("D:\\Output.txt");
 
         for (int i = 0; i < img.Width; i++)
@@ -57,10 +57,11 @@ class GFG
                 b = b % 256;
                 g = g % 256;
 
-                Color newColor = Color.FromArgb(r, g, b);
-                newImg.SetPixel(i, j, newColor);
+                Color newColor = Color.FromArgb(255,r, g, b);
+                newImg.SetPixel(i, j, newColor); //95 - 144 - 217
             }
         }
+        img.Dispose();
         sw.Close();
         newImg.Save("D:\\Output.png");
         return newImg;
@@ -70,9 +71,8 @@ class GFG
     {
         
         StreamReader sr = new StreamReader("D:\\Output.txt");
-
-        Bitmap img = new Bitmap(filePath);
-        Bitmap newImg = new Bitmap(img.Width, img.Height);
+        Bitmap img = new Bitmap("D:\\Output.png");
+        Bitmap newImg = new Bitmap(img.Width, img.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
         string line;
         for (int i = 0; i < img.Width; i++)
@@ -98,12 +98,13 @@ class GFG
                 b = b % 256;
                 g = g % 256;
 
-                Color newColor = Color.FromArgb(r, g, b);
+                Color newColor = Color.FromArgb(255,r, g, b);
                 newImg.SetPixel(i, j, newColor);
             }
         }
+        img.Dispose();
         sr.Close();
-        newImg.Save("D:\\Output1.png");
+        newImg.Save("D:\\Input.png");
         return newImg;
     }
 }
