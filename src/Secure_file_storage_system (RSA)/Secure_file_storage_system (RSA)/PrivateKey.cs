@@ -36,6 +36,7 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
+            this.Close();
         }
 
         private void key_d_Enter(object sender, EventArgs e)
