@@ -104,8 +104,8 @@ def decryption_image(n,d,file_name):
     ## Lưu mảng đã được giải mã ta sẽ được hình ảnh ban đầu.		
     img2 = numpy.array(dec,dtype = numpy.uint8)
     img3 = Image.fromarray(img2,"RGB")
-    img3.show()
-    img3.save('./out.jpg')
+    img3.save(save_path)
+
 
 # def encryption_image(n,e, filename):
 #     jpgfile = Image.open(filename)
