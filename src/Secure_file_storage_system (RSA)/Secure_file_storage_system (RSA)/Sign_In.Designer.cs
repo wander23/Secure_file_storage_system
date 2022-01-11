@@ -75,7 +75,7 @@
             this.lb_passwrd.ForeColor = System.Drawing.Color.White;
             this.lb_passwrd.Location = new System.Drawing.Point(75, 334);
             this.lb_passwrd.Name = "lb_passwrd";
-            this.lb_passwrd.Size = new System.Drawing.Size(106, 24);
+            this.lb_passwrd.Size = new System.Drawing.Size(97, 20);
             this.lb_passwrd.TabIndex = 2;
             this.lb_passwrd.Text = "Password:";
             // 
@@ -113,7 +113,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(254, 30);
             this.username.TabIndex = 9;
-            this.username.Text = "wander";
+            this.username.Text = "type your username";
             this.username.Enter += new System.EventHandler(this.username_Enter);
             this.username.Leave += new System.EventHandler(this.username_Leave);
             // 
@@ -137,7 +137,7 @@
             this.passwrd.Name = "passwrd";
             this.passwrd.Size = new System.Drawing.Size(254, 30);
             this.passwrd.TabIndex = 9;
-            this.passwrd.Text = "123456";
+            this.passwrd.Text = "type your password";
             this.passwrd.TextChanged += new System.EventHandler(this.passwrd_TextChanged);
             this.passwrd.Enter += new System.EventHandler(this.passwrd_Enter);
             this.passwrd.Leave += new System.EventHandler(this.passwrd_Leave);
@@ -198,7 +198,7 @@
             this.lb_Login.Location = new System.Drawing.Point(127, 157);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(175, 50);
+            this.lb_Login.Size = new System.Drawing.Size(162, 46);
             this.lb_Login.TabIndex = 0;
             this.lb_Login.Text = "SIGN IN";
             // 
@@ -210,7 +210,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(75, 243);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(111, 24);
+            this.lb_usrname.Size = new System.Drawing.Size(100, 20);
             this.lb_usrname.TabIndex = 1;
             this.lb_usrname.Text = "Username:";
             // 
@@ -231,7 +231,7 @@
             this.mess.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.mess.Location = new System.Drawing.Point(73, 453);
             this.mess.Name = "mess";
-            this.mess.Size = new System.Drawing.Size(0, 15);
+            this.mess.Size = new System.Drawing.Size(0, 13);
             this.mess.TabIndex = 25;
             this.mess.Visible = false;
             // 
@@ -243,7 +243,7 @@
             this.lb_announce.ForeColor = System.Drawing.Color.Red;
             this.lb_announce.Location = new System.Drawing.Point(76, 420);
             this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(13, 20);
+            this.lb_announce.Size = new System.Drawing.Size(12, 18);
             this.lb_announce.TabIndex = 26;
             this.lb_announce.Text = " ";
             this.lb_announce.Visible = false;
