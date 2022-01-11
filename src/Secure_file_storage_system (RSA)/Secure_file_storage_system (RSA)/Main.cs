@@ -238,10 +238,14 @@ namespace Secure_file_storage_system__RSA_
 
                         //Download image in Temp folder
                         DownloadImage(tempImg, tempImg_path, "jpeg");
-                        //tempImg.Save(tempImg_bmp_path, ImageFormat.Bmp);
+
+                        //dang..................
+                        GFG g = new GFG();
+                        g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
 
                         //imageLocation = tempImg_path;
                         imageLocation = tempImg_bmp_path;
+
 
                         selectedImage.ImageLocation = imageLocation;
                     }
