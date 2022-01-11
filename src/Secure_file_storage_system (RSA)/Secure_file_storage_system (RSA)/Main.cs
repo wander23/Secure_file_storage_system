@@ -273,6 +273,12 @@ namespace Secure_file_storage_system__RSA_
                 if (dialog.FileName == "")
                     return;
 
+                GFG a = new GFG();
+                
+                
+                //Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
+                //Bitmap test2 = a.Decrypt(imageLocation, 243, Sign_In.instance.pub_n);
+
                 Account account = new Account(
                 "cryption",
                 "731936666387127",
@@ -306,6 +312,7 @@ namespace Secure_file_storage_system__RSA_
             {
                 MessageBox.Show("An Error occured"+err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
 
@@ -353,8 +360,10 @@ namespace Secure_file_storage_system__RSA_
                 if (type == "bmp")
                     // save image with format JPEG
                     bmp.Save(path, ImageFormat.Bmp);
-                else 
+                else if (type == "jpeg")
                     bmp.Save(path, ImageFormat.Jpeg);
+                else if (type == "png")
+                    bmp.Save(path, ImageFormat.Png);
             }
             catch (Exception ex)
             {
@@ -386,49 +395,61 @@ namespace Secure_file_storage_system__RSA_
             CheckAll = state;
         }
 
-        // action when click close button
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Sign_In.instance.Close();
-        }
-
-        private void btnDecrypt_MouseHover(object sender, EventArgs e)
-        {
-            btnDecrypt.Cursor = Cursors.Hand;
-        }
-
-        private void btnShare_MouseHover(object sender, EventArgs e)
-        {
-            btnShare.Cursor = Cursors.Hand;
-        }
-
-        private void btnAll_MouseHover(object sender, EventArgs e)
-        {
-            btnAll.Cursor = Cursors.Hand;
-        }
-
-        private void btnUpload_MouseHover(object sender, EventArgs e)
-        {
-            btnUpload.Cursor = Cursors.Hand;
-        }
-
-        private void btnDownload_MouseHover(object sender, EventArgs e)
-        {
-            btnDownload.Cursor = Cursors.Hand;
-        }
-
-        private void tabControl1_MouseHover(object sender, EventArgs e)
-        {
-            tabControl1.Cursor = Cursors.Hand;
-        }
-
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            //PrivateKey privateKey_form = new PrivateKey();
-            //privateKey_form.ShowDialog();
+            PrivateKey privateKey_form = new PrivateKey();
+            privateKey_form.ShowDialog();
 
-            // ma hoa python trong nay !
 
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            string path = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
+            string decryptingPath = Path.Combine(exeDir, @"..\..\..\..\..\pic\decrypting.png");
+            selectedImage.ImageLocation = decryptingPath;
+
+            GFG g = new GFG();
+
+            List<Image> LImages = new List<Image>();
+
+
+            for (int i = 0; i < LoadedImages.Count; i++)
+            {
+                string saveName = imageList.Items[i].Text.Split('.')[0] + ".png";
+                string savePath = path + "\\" + saveName;
+                DownloadImage(LoadedImages[i], savePath, "png");
+
+                //key
+                g.decryptImage(33667, 22187, savePath, saveName);
+
+                Image im = Image.FromFile(savePath);
+                LImages.Add(im);
+            }
+
+            LoadedImages = LImages;
+
+            Image firstImg = LoadedImages[0];
+            selectedImage.Image = firstImg;
+
+            // initializing images list
+            ImageList images = new ImageList();
+            images.ImageSize = new System.Drawing.Size(150, 90);
+            
+            images.Images.Clear();
+            imageList.Items.Clear();
+
+            foreach (var image in LoadedImages)
+            {
+                images.Images.Add(image);
+            }
+
+            // setting listview with imagelist
+            imageList.SmallImageList = images;
+
+            // add image to listview (imageList)
+            for (int itemIndex = 0; itemIndex < LoadedImages.Count; itemIndex++)
+            {
+                imageList.Items.Add(new ListViewItem($"{itemIndex + 1}.png", itemIndex));
+            }
         }
 
         private void btnShare_Click(object sender, EventArgs e)
@@ -437,7 +458,7 @@ namespace Secure_file_storage_system__RSA_
             // open form
             UserID userID_form = new UserID();
             userID_form.ShowDialog();
-            if(userID_form.idUser.Text=="ID")
+            if (userID_form.idUser.Text == "ID")
             {
                 return;
             }
@@ -484,7 +505,7 @@ namespace Secure_file_storage_system__RSA_
                     var uploadResult = cloudinary.Upload(uploadParams);
                     string url2 = cloudinary.Api.UrlImgUp.BuildUrl(String.Format("{0}.{1}", uploadResult.PublicId, uploadResult.Format));
 
-                    
+
                     PhotoModel photo = new PhotoModel()
                     {
                         urlImage = url2,
@@ -501,6 +522,44 @@ namespace Secure_file_storage_system__RSA_
             }
         }
 
+
+        // action when click close button
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Sign_In.instance.Close();
+        }
+
+        private void btnDecrypt_MouseHover(object sender, EventArgs e)
+        {
+            btnDecrypt.Cursor = Cursors.Hand;
+        }
+
+        private void btnShare_MouseHover(object sender, EventArgs e)
+        {
+            btnShare.Cursor = Cursors.Hand;
+        }
+
+        private void btnAll_MouseHover(object sender, EventArgs e)
+        {
+            btnAll.Cursor = Cursors.Hand;
+        }
+
+        private void btnUpload_MouseHover(object sender, EventArgs e)
+        {
+            btnUpload.Cursor = Cursors.Hand;
+        }
+
+        private void btnDownload_MouseHover(object sender, EventArgs e)
+        {
+            btnDownload.Cursor = Cursors.Hand;
+        }
+
+        private void tabControl1_MouseHover(object sender, EventArgs e)
+        {
+            tabControl1.Cursor = Cursors.Hand;
+        }
+
+       
         private void btn_reload_Click(object sender, EventArgs e)
         {
             this.main_Load(sender, e);
