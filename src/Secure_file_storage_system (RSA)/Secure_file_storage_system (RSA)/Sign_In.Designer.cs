@@ -113,7 +113,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(254, 30);
             this.username.TabIndex = 9;
-            this.username.Text = "wander";
+            this.username.Text = "type your username";
             this.username.Enter += new System.EventHandler(this.username_Enter);
             this.username.Leave += new System.EventHandler(this.username_Leave);
             // 
@@ -137,7 +137,7 @@
             this.passwrd.Name = "passwrd";
             this.passwrd.Size = new System.Drawing.Size(254, 30);
             this.passwrd.TabIndex = 9;
-            this.passwrd.Text = "123456";
+            this.passwrd.Text = "type your password";
             this.passwrd.TextChanged += new System.EventHandler(this.passwrd_TextChanged);
             this.passwrd.Enter += new System.EventHandler(this.passwrd_Enter);
             this.passwrd.Leave += new System.EventHandler(this.passwrd_Leave);
