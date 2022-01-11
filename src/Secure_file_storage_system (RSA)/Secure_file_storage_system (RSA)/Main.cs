@@ -448,6 +448,11 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
+            // private key = ?
+            // pub key ID 2: n = ?, e = ?
+
+            
+
             //for (int i = 0; i < numSelectedImg; i++)
             //{
             //    Image img = LoadedImages[imageList.CheckedIndices[i]];
@@ -480,11 +485,16 @@ namespace Secure_file_storage_system__RSA_
                 int imgIndex = imageList.CheckedIndices[i];
                 try
                 {
+
+                    // Quan - Download 
                     string url = ImageUrl[imgIndex];
                     Bitmap b = new Bitmap(LoadedImages[imgIndex]);
                     string SavePath = TempPath + "\\" + imageList.Items[imgIndex].Text;
                     b.Save(SavePath);
 
+
+
+                    // Khoa
                     Account account = new Account(
                    "cryption",
                    "731936666387127",
