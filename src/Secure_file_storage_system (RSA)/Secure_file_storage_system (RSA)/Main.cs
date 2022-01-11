@@ -114,7 +114,7 @@ namespace Secure_file_storage_system__RSA_
             // add image to listview (imageList)
             for (int itemIndex = 0; itemIndex < LoadedImages.Count; itemIndex++)
             {
-                imageList.Items.Add(new ListViewItem($"{itemIndex + 1}.png", itemIndex));
+                imageList.Items.Add(new ListViewItem($"{itemIndex + 1}.bmp", itemIndex));
             }
         }
 
@@ -156,13 +156,21 @@ namespace Secure_file_storage_system__RSA_
                 {
                     break;
                 }
-                WebClient w = new WebClient();
-                byte[] imageByte = w.DownloadData(ImageUrl[i]);
-                MemoryStream stream = new MemoryStream(imageByte);
+                try
+                {
+                    WebClient w = new WebClient();
+                    byte[] imageByte = w.DownloadData(ImageUrl[i]);
+                    MemoryStream stream = new MemoryStream(imageByte);
 
-                Image im = Image.FromStream(stream);
+                    Image im = Image.FromStream(stream);
 
-                LoadedImages.Add(im);
+                    LoadedImages.Add(im);
+                }
+                catch
+                {
+                    continue;
+                }
+                
             }
         }
 
@@ -214,6 +222,11 @@ namespace Secure_file_storage_system__RSA_
                         string TempFolder_path = Path.Combine(exeDir, @"..\..\..\..\..\pic\Temp");
                         string[] file_path_arr = dialog.FileName.Split('\\');
                         string tempImg_path = Path.Combine(TempFolder_path, dialog.FileName.Split('\\')[file_path_arr.Length - 1]);
+                        string imgName = file_path_arr[file_path_arr.Length - 1];
+                        string imgName_bmp = imgName.Split('.')[0] + ".png";
+                        string tempImg_bmp_path = Path.Combine(TempFolder_path, imgName_bmp);
+
+
                         Image tempImg = Image.FromFile(dialog.FileName);
 
                         //resize image
@@ -223,9 +236,18 @@ namespace Secure_file_storage_system__RSA_
                         // resize image in Temp folder (95%);
                         tempImg = ScaleByPercent(tempImg, 95);
 
-                        //Download resized image in Temp folder
-                        DownloadImage(tempImg, tempImg_path);
-                        imageLocation = tempImg_path;
+
+                        //Download image in Temp folder
+                        DownloadImage(tempImg, tempImg_path, "jpeg");
+                        //tempImg.Save(tempImg_bmp_path, ImageFormat.Bmp);
+
+                        //dang..................
+                        GFG g = new GFG();
+                        g.encryptImage(33667, 3, tempImg_path, imgName_bmp);
+                        //g.encryptImage(33667, 3, tempImg_bmp_path, imgName_bmp);
+
+                        //imageLocation = tempImg_path;
+                        imageLocation = tempImg_bmp_path;
 
                         GFG a = new GFG();
                         Bitmap test = a.Encrypt(imageLocation, Sign_In.instance.pub_e, Sign_In.instance.pub_n);
@@ -303,7 +325,7 @@ namespace Secure_file_storage_system__RSA_
                     Image img = LoadedImages[imageList.CheckedIndices[i]];
                     string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
 
-                    DownloadImage(img, SavePath);
+                    DownloadImage(img, SavePath, "bmp");
                 }
 
                 MessageBox.Show("Download complete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -315,7 +337,7 @@ namespace Secure_file_storage_system__RSA_
             File.Delete(filePath);
         }
 
-        private void DownloadImage(Image img, string path)
+        private void DownloadImage(Image img, string path, string type)
         {
             try
             {
@@ -328,8 +350,11 @@ namespace Secure_file_storage_system__RSA_
                 using (var gr = Graphics.FromImage(bmp))
                     gr.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height));
 
-                // save image with format JPEG
-                bmp.Save(path, ImageFormat.Jpeg);
+                if (type == "bmp")
+                    // save image with format JPEG
+                    bmp.Save(path, ImageFormat.Bmp);
+                else 
+                    bmp.Save(path, ImageFormat.Jpeg);
             }
             catch (Exception ex)
             {
