@@ -38,9 +38,16 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lb_announce = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.key_d = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_Login
@@ -62,7 +69,7 @@
             this.lb_usrname.BackColor = System.Drawing.Color.Transparent;
             this.lb_usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
-            this.lb_usrname.Location = new System.Drawing.Point(65, 214);
+            this.lb_usrname.Location = new System.Drawing.Point(67, 288);
             this.lb_usrname.Name = "lb_usrname";
             this.lb_usrname.Size = new System.Drawing.Size(78, 24);
             this.lb_usrname.TabIndex = 33;
@@ -75,7 +82,7 @@
             this.panel1.Controls.Add(this.id);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.panel1.Location = new System.Drawing.Point(69, 241);
+            this.panel1.Location = new System.Drawing.Point(71, 315);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 47);
             this.panel1.TabIndex = 34;
@@ -102,8 +109,7 @@
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(243, 30);
             this.id.TabIndex = 9;
-            this.id.Text = "ID";
-            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
+            this.id.Text = "61dd479bb977e807839ef359";
             this.id.Enter += new System.EventHandler(this.id_Enter);
             this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_KeyPress);
             this.id.Leave += new System.EventHandler(this.id_Leave);
@@ -122,7 +128,7 @@
             this.btnSend.BackColor = System.Drawing.Color.Black;
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location = new System.Drawing.Point(149, 313);
+            this.btnSend.Location = new System.Drawing.Point(149, 479);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(126, 53);
             this.btnSend.TabIndex = 32;
@@ -147,19 +153,81 @@
             this.lb_announce.BackColor = System.Drawing.Color.Transparent;
             this.lb_announce.Font = new System.Drawing.Font("Neue Haas Grotesk Text Pro", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_announce.ForeColor = System.Drawing.Color.Black;
-            this.lb_announce.Location = new System.Drawing.Point(161, 291);
+            this.lb_announce.Location = new System.Drawing.Point(130, 456);
             this.lb_announce.Name = "lb_announce";
             this.lb_announce.Size = new System.Drawing.Size(55, 20);
             this.lb_announce.TabIndex = 35;
             this.lb_announce.Text = "label2";
             this.lb_announce.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(67, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Private key (d)";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.key_d);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.panel2.Location = new System.Drawing.Point(71, 401);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(299, 47);
+            this.panel2.TabIndex = 37;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // key_d
+            // 
+            this.key_d.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.key_d.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.key_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.key_d.ForeColor = System.Drawing.Color.Gray;
+            this.key_d.Location = new System.Drawing.Point(53, 8);
+            this.key_d.Multiline = true;
+            this.key_d.Name = "key_d";
+            this.key_d.Size = new System.Drawing.Size(243, 30);
+            this.key_d.TabIndex = 9;
+            this.key_d.Text = "22187";
+            this.key_d.Enter += new System.EventHandler(this.key_d_Enter);
+            this.key_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.key_d_KeyPress);
+            this.key_d.Leave += new System.EventHandler(this.key_d_Leave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(75)))), ((int)(((byte)(56)))));
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.panel4.Location = new System.Drawing.Point(0, 42);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(363, 5);
+            this.panel4.TabIndex = 12;
+            // 
             // UserID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(434, 429);
+            this.ClientSize = new System.Drawing.Size(434, 609);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lb_announce);
             this.Controls.Add(this.lb_Login);
             this.Controls.Add(this.lb_usrname);
@@ -178,6 +246,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +265,10 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lb_announce;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox key_d;
+        private System.Windows.Forms.Panel panel4;
     }
 }

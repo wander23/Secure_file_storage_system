@@ -1,12 +1,22 @@
 #from random import randint
 from os import system
 from os import path, system
-import sys
-import numpy
+
+try:
+    import sys
+except:
+    system("pip install sys")
+    import sys
+
+try:
+    import numpy
+except:
+    system("pip install numpy")
+    import numpy
+
 try:
     from PIL import Image
 except:
-    ##system("pip install --upgrade pip")
     system("pip install Pillow")
     from PIL import Image
 
@@ -112,79 +122,7 @@ def decryption_image(n,d,file_name):
     img3.save(save_path)
 
 
-# def encryption_image(n,e, filename):
-#     jpgfile = Image.open(filename)
-#     col,row = jpgfile.size
-#     pixels = jpgfile.load()
-    
-#     #Encryted:
-#     enc = [[0 for x in range(col)] for y in range(row)]
-
-    
-#     for i in range(row):
-#         for j in range(col):
-#             r,g,b = pixels[j,i]
-#             r1 = pow(r+10,e,n)
-#             g1 = pow(g+10,e,n)
-#             b1 = pow(b+10,e,n)
-#             enc[i][j] = [r1,g1,b1]
-                     
-#     ##-----
-#     enc_t = [[0 for x in range(col+col)] for y in range(row)]
-
-#     for i in range(row):
-#         for j in range(col):
-#             enc_t[i][j] = enc[i][j]
-                
-#     for i in range(row):
-#         for j in range(col):
-#             r,g,b = enc[i][j]
-                
-#             r1 = r//256
-#             g1 = g//256
-#             b1 = b//256
-                
-#             r2 = r%256
-#             g2 = g%256
-#             b2 = b%256
-                
-#             enc_t[i][j*2+1] = [r1,g1,b1]##right
-#             enc_t[i][j*2] = [r2,g2,b2]##left
-#             temp = enc_t[i][col+j]
-    
-#     rdt = numpy.array(enc_t,dtype=numpy.uint8)
-#     img1 = Image.fromarray(rdt,"RGB")
-#     img1.save(save_path)
-#     # img1.show()
-
-# def return_Ori(enc_t1,enc_t2):
-#     result = [0,0,0]
-#     r1,g1,b1 = enc_t1
-#     r2,g2,b2 = enc_t2
-#     result[0] = r2*256+r1
-#     result[1] = g2*256+g1
-#     result[2] = b2*256+b1
-#     return result
-
-# def decryption_image(n,d,file_name):
-#     img = Image.open('pic/temp/'+file_name)
-#     pixels = img.load()
-#     col,row = img.size
-#     col=col//2
-    
-#     dec = [[0 for x in range(col)] for y in range(row)]
-#     for i in range(row):
-#         for j in range(col):
-#             r,g,b = return_Ori(pixels[j*2,i],pixels[j*2+1,i])
-#             r1 = pow(r,d,n)-10
-#             g1 = pow(g,d,n)-10
-#             b1 = pow(b,d,n)-10
-#             dec[i][j] = [r1,g1,b1]
-#     img2 = numpy.array(dec,dtype = numpy.uint8)
-#     img3 = Image.fromarray(img2,"RGB")
-#     img3.show()
-#     img3.save('out.jpg')
-
+# main
 if choice == 'encrypt':
     e = key
     encryption_image(n, e, filename)

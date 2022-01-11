@@ -299,7 +299,6 @@ namespace Secure_file_storage_system__RSA_
             {
                 MessageBox.Show("An Error occured"+err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
 
@@ -449,6 +448,14 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
+            //for (int i = 0; i < numSelectedImg; i++)
+            //{
+            //    Image img = LoadedImages[imageList.CheckedIndices[i]];
+            //    string SavePath = path + "\\" + imageList.CheckedItems[i].Text;
+
+            //    DownloadImage(img, SavePath, "bmp");
+            //}
+
             var responseTask2 = client.GetAsync("https://slave-of-deadlines.herokuapp.com/customers/" + userID_form.idUser.Text);
             if (responseTask2.IsCompleted)
             {
@@ -482,7 +489,7 @@ namespace Secure_file_storage_system__RSA_
                    "cryption",
                    "731936666387127",
                    "INiU8DQHajhzDIZQmBWAFl4_HFk");
-
+                    
                     Cloudinary cloudinary = new Cloudinary(account);
                     var uploadParams = new ImageUploadParams()
                     {
