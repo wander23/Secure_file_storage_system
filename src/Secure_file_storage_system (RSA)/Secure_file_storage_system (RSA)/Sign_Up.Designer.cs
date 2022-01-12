@@ -133,7 +133,7 @@
             this.pubkey_n.Name = "pubkey_n";
             this.pubkey_n.Size = new System.Drawing.Size(236, 30);
             this.pubkey_n.TabIndex = 2;
-            this.pubkey_n.Text = "Public key (255<n<100.000)";
+            this.pubkey_n.Text = "Public key (255<n<65.000)";
             this.pubkey_n.Enter += new System.EventHandler(this.pubkeyn_Enter);
             this.pubkey_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pubkey_n_KeyPress);
             this.pubkey_n.Leave += new System.EventHandler(this.pubkeyn_Leave);

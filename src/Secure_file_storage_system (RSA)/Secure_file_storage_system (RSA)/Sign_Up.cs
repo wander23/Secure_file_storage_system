@@ -93,14 +93,14 @@ namespace Secure_file_storage_system__RSA_
         {
             if (pubkey_n.Text == "")
             {
-                pubkey_n.Text = "Public key (255<n<100.000)";
+                pubkey_n.Text = "Public key (255<n<65.000)";
                 pubkey_n.ForeColor = Color.Gray;
             }
         }
 
         private void pubkeyn_Enter(object sender, EventArgs e)
         {
-            if (pubkey_n.Text == "Public key (255<n<100.000)")
+            if (pubkey_n.Text == "Public key (255<n<65.000)")
             {
                 pubkey_n.Text = "";
                 pubkey_n.ForeColor = Color.White;
@@ -139,10 +139,10 @@ namespace Secure_file_storage_system__RSA_
                 return;
             }
 
-            if (int.Parse(pubkey_n.Text) <= 255 || int.Parse(pubkey_n.Text) >= 100000)
+            if (int.Parse(pubkey_n.Text) <= 255 || int.Parse(pubkey_n.Text) >= 65000)
             {
                 lb_an.Visible = false;
-                MessageBox.Show("(n) must:\n 255 < n < 100.0000", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("(n) must:\n 255 < n < 65.0000", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

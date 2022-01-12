@@ -59,7 +59,7 @@
             this.lb_Login.Location = new System.Drawing.Point(114, 139);
             this.lb_Login.Name = "lb_Login";
             this.lb_Login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Login.Size = new System.Drawing.Size(211, 39);
+            this.lb_Login.Size = new System.Drawing.Size(230, 44);
             this.lb_Login.TabIndex = 30;
             this.lb_Login.Text = "FIND USER";
             // 
@@ -71,7 +71,7 @@
             this.lb_usrname.ForeColor = System.Drawing.Color.White;
             this.lb_usrname.Location = new System.Drawing.Point(67, 288);
             this.lb_usrname.Name = "lb_usrname";
-            this.lb_usrname.Size = new System.Drawing.Size(74, 20);
+            this.lb_usrname.Size = new System.Drawing.Size(78, 24);
             this.lb_usrname.TabIndex = 33;
             this.lb_usrname.Text = "User ID";
             // 
@@ -102,12 +102,12 @@
             // 
             this.id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id.ForeColor = System.Drawing.Color.Gray;
-            this.id.Location = new System.Drawing.Point(53, 8);
+            this.id.Location = new System.Drawing.Point(45, 10);
             this.id.Multiline = true;
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(243, 30);
+            this.id.Size = new System.Drawing.Size(254, 30);
             this.id.TabIndex = 9;
             this.id.Text = "ID";
             this.id.Enter += new System.EventHandler(this.id_Enter);
@@ -155,7 +155,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(67, 374);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.Size = new System.Drawing.Size(143, 24);
             this.label1.TabIndex = 36;
             this.label1.Text = "Private key (d)";
             // 
@@ -186,12 +186,12 @@
             // 
             this.key_d.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.key_d.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.key_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.key_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.key_d.ForeColor = System.Drawing.Color.Gray;
-            this.key_d.Location = new System.Drawing.Point(53, 8);
+            this.key_d.Location = new System.Drawing.Point(45, 8);
             this.key_d.Multiline = true;
             this.key_d.Name = "key_d";
-            this.key_d.Size = new System.Drawing.Size(243, 30);
+            this.key_d.Size = new System.Drawing.Size(251, 30);
             this.key_d.TabIndex = 9;
             this.key_d.Text = "private key (d)";
             this.key_d.Enter += new System.EventHandler(this.key_d_Enter);
@@ -215,7 +215,7 @@
             this.lb_announce.ForeColor = System.Drawing.Color.Black;
             this.lb_announce.Location = new System.Drawing.Point(130, 456);
             this.lb_announce.Name = "lb_announce";
-            this.lb_announce.Size = new System.Drawing.Size(46, 17);
+            this.lb_announce.Size = new System.Drawing.Size(51, 20);
             this.lb_announce.TabIndex = 35;
             this.lb_announce.Text = "label2";
             this.lb_announce.Visible = false;
@@ -223,7 +223,7 @@
             // UserID
             // 
             this.AcceptButton = this.btnSend;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(434, 609);
